@@ -8,7 +8,7 @@
       "Name": "servitor_heavy",
       "_components": [
         {
-          "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor^heavy.json",
+          "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor_heavy^default.json",
           "$type": "Strategy.Components.Item.InventoryTemplateComponent",
           "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
         },

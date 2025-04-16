@@ -8,7 +8,7 @@
       "Name": "servitor_heavy",
       "_components": [
         {
-          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/mechanical/xenonaut/servitor_heavy.json",
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor_heavy.json",
           "$type": "Xenonauts.Common.Components.Item.DefaultArmourComponent",
           "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
         },

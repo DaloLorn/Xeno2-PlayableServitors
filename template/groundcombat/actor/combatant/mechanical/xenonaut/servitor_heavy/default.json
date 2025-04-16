@@ -2,7 +2,7 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/servitor/default/servitor_heavy/default.json",
+        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-actor/combatant/servitor/default/servitor_heavy/default.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "default",
