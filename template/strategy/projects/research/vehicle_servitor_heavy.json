@@ -12,21 +12,6 @@
           "$type": "Common.Components.DescriptionComponent"
         },
         {
-          "$content": [
-            {
-              "GUID": "22aa4ea2-4012-4887-8a09-8b8b6e42db74",
-              "TargetComponent": "Common.Components.NameComponent",
-              "Request": "Translate"
-            },
-            {
-              "GUID": "8ac27101-2774-4861-ba3f-b733311bdccb",
-              "TargetComponent": "Common.Components.DescriptionComponent",
-              "Request": "Translate"
-            }
-          ],
-          "$type": "Common.Components.LocalizableGUIDComponent"
-        },
-        {
           "$content": "Heavy Servitor Reconstruction",
           "$type": "Common.Components.NameComponent"
         },

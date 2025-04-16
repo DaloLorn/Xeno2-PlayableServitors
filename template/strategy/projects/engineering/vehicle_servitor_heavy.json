@@ -12,21 +12,6 @@
         "$type": "Common.Components.DescriptionComponent"
       },
       {
-        "$content": [
-          {
-            "GUID": "a24a6df2-7e72-4a4f-ad81-0d198981b1f2",
-            "TargetComponent": "Common.Components.NameComponent",
-            "Request": "Translate"
-          },
-          {
-            "GUID": "9996aa4d-6dcf-4cac-8041-30f09f24ca84",
-            "TargetComponent": "Common.Components.DescriptionComponent",
-            "Request": "Translate"
-          }
-        ],
-        "$type": "Common.Components.LocalizableGUIDComponent"
-      },
-      {
         "$content": "Harbinger Support Platform",
         "$type": "Common.Components.NameComponent"
       },

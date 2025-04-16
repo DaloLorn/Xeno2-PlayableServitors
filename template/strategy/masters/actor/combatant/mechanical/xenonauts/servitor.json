@@ -1,0 +1,142 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/combatant.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "servitor",
+      "_components": [
+        {
+          "_min": 0.0,
+          "_val": 0.0,
+          "_max": 0.0,
+          "$type": "Xenonauts.Strategy.Components.AgeComponent"
+        },
+        { "$content": "small", "$type": "Xenonauts.Common.Components.BodySize" },
+        {
+          "species": "servitor",
+          "group": "default",
+          "ethnicity": "default",
+          "gender": "default",
+          "$type": "Xenonauts.Common.Assets.Identifiers.BodyIdentifierComponent"
+        },
+        {
+          "$content": "StressImmune,MoraleImmune",
+          "$type": "Xenonauts.Common.Components.Combatant.CombatantMetaComponent"
+        },
+        {
+          "_min": 1.0,
+          "_val": 1.0,
+          "_max": 1.0,
+          "$type": "Xenonauts.Strategy.Components.Ranges.CombatRating"
+        },
+        {
+          "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/heavy.json",
+          "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
+          "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
+        },
+        {
+          "$content": "Soldier",
+          "$type": "Xenonauts.Strategy.Components.DivisionTypeComponent"
+        },
+        {
+          "$content": 5000.0,
+          "$type": "Xenonauts.Strategy.Systems.ExpenseComponent"
+        },
+        {
+          "$content": "Loadout/Combatant/Mechanical",
+          "$type": "Xenonauts.Common.Components.InventoryTaxonomyComponent"
+        },
+        {
+          "TriggerEffects": {},
+          "EntryEffects": {},
+          "ExitEffects": {},
+          "State": "Available",
+          "$type": "Xenonauts.Strategy.Components.MechanicalActorAssignmentStateMachineComponent"
+        },
+        {
+          "$content": "None",
+          "$type": "Xenonauts.Strategy.Components.NationalityComponent"
+        },
+        {
+          "_min": 0.0,
+          "_val": 10.0,
+          "_max": 99.0,
+          "$type": "Common.Components.NightVisionRange"
+        },
+        {
+          "_min": 0.0,
+          "_val": 0.0,
+          "_max": 0.0,
+          "$type": "Xenonauts.Strategy.Components.OperationPoints"
+        },
+        {
+          "_min": 0.0,
+          "_val": 0.0,
+          "_max": 0.0,
+          "$type": "Xenonauts.Strategy.Components.PersonnelCapacity"
+        },
+        {
+          "_min": 1.0,
+          "_val": 1.0,
+          "_max": 1.0,
+          "$type": "Xenonauts.Strategy.Components.Quantity"
+        },
+        {
+          "$content": "private",
+          "$type": "Xenonauts.Common.Components.Combatant.Rank"
+        },
+        {
+          "$content": 10000.0,
+          "$type": "Xenonauts.Strategy.Components.SellPriceComponent"
+        },
+        {
+          "$content": 0.0,
+          "$type": "Xenonauts.Strategy.Components.SellPriceTransactionDeltaComponent"
+        },
+        {
+          "$content": 0.4,
+          "$type": "Xenonauts.Strategy.Components.SellPriceMinComponent"
+        },
+        { "$content": 250.0, "$type": "Common.Components.SortOrderComponent" },
+        {
+          "$content": "FullRecover,DisableLoadoutProfiles,NoExperienceGain,NoMedalGain,DisableCarryCapacity",
+          "$type": "Strategy.Components.Xenonaut.StrategyCombatantMetaComponent"
+        },
+        {
+          "$content": "",
+          "$type": "Xenonauts.Strategy.Components.StrategyItemMetaComponent"
+        },
+        {
+          "_min": 50.0,
+          "_val": 50.0,
+          "_max": 50.0,
+          "$type": "Xenonauts.Common.Stats.Strength"
+        },
+        {
+          "_min": 60.0,
+          "_val": 60.0,
+          "_max": 60.0,
+          "$type": "Common.Components.UnmodifiedHitPoints"
+        },
+        {
+          "_min": 1.0,
+          "_val": 1.0,
+          "_max": 1.0,
+          "$type": "Xenonauts.Common.Stats.Weight"
+        },
+        {
+          "$content": "Expenses/Vehicles",
+          "$type": "Xenonauts.Strategy.Systems.FundingCategory"
+        },
+        {
+          "$content": 1.0,
+          "$type": "Xenonauts.Strategy.Components.SellPriceMaxComponent"
+        }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  

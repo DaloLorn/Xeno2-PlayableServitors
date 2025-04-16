@@ -2,11 +2,18 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-actor/combatant/servitor/default/servitor_heavy/default.json",
+        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/drone/servitor.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "default",
       "_components": [
+        { "$content": "small", "$type": "Xenonauts.Common.Components.BodySize" },
+        {
+          "$content": [
+            "Common.Validation.TemplateValidators.PrototypeComponentValidator"
+          ],
+          "$type": "Common.Validation.IgnoredValidatorsComponent"
+        },
         {
           "$content": "Harbinger Support Platform",
           "$type": "Common.Components.NameComponent"

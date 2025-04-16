@@ -2,7 +2,7 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/mechanical/xenonauts/mechanical.json",
+        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/mechanical/xenonauts/servitor.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "servitor",
@@ -28,6 +28,10 @@
           "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json",
           "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
           "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
+        },
+        {
+          "$content": "servitor",
+          "$type": "Xenonauts.Common.Components.Combatant.Rank"
         },
         {
           "_min": 60.0,

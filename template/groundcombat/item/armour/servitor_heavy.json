@@ -18,22 +18,7 @@
         "$type": "Xenonauts.Common.Stats.HitPoints"
       },
       {
-        "$content": [
-          {
-            "GUID": "8db33b35-af64-402c-9052-44b592feea43",
-            "TargetComponent": "Common.Components.NameComponent",
-            "Request": "Ignore"
-          },
-          {
-            "GUID": "395bc89e-4f1e-4cb5-8761-5a206219f2d8",
-            "TargetComponent": "Common.Components.DescriptionComponent",
-            "Request": "Ignore"
-          }
-        ],
-        "$type": "Common.Components.LocalizableGUIDComponent"
-      },
-      {
-        "$content": "Heavy Servitor Armor",
+        "$content": "Harbinger Armor",
         "$type": "Common.Components.NameComponent"
       },
       {

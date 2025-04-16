@@ -18,6 +18,10 @@
           "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
         },
         {
+          "$content": "servitor_heavy",
+          "$type": "Xenonauts.Common.Components.Combatant.Rank"
+        },
+        {
           "_min": 120.0,
           "_val": 120.0,
           "_max": 120.0,

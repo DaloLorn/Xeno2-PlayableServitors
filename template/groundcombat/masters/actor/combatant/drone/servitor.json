@@ -92,7 +92,7 @@
         "$type": "Xenonauts.GroundCombat.Components.GCAbilityDefinitionsComponent"
       },
       {
-        "$content": "Move,Turn,VaultDescending,VaultAscending,VaultEqual,ClimbDescending,ClimbAscending,Interact,Flying,EMPVulnerable,PsionicInvulnerable,InjuryImmune,AlwaysHovering",
+        "$content": "Move,Turn,VaultDescending,VaultAscending,VaultEqual,ClimbDescending,ClimbAscending,Interact,Flying,EMPVulnerable,PsionicInvulnerable,InjuryImmune,AlwaysHovering,InvisibleInventory",
         "$type": "Xenonauts.GroundCombat.Components.GCCombatantMetaComponent"
       },
       {

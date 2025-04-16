@@ -18,22 +18,7 @@
         "$type": "Xenonauts.Common.Stats.HitPoints"
       },
       {
-        "$content": [
-          {
-            "GUID": "900afa5e-29b7-40e0-b086-9697c6b0c651",
-            "TargetComponent": "Common.Components.NameComponent",
-            "Request": "Ignore"
-          },
-          {
-            "GUID": "ca58e768-4f67-4af7-9106-4bd8239bab3d",
-            "TargetComponent": "Common.Components.DescriptionComponent",
-            "Request": "Ignore"
-          }
-        ],
-        "$type": "Common.Components.LocalizableGUIDComponent"
-      },
-      {
-        "$content": "Servitor Armor",
+        "$content": "Herald Armor",
         "$type": "Common.Components.NameComponent"
       },
       {
