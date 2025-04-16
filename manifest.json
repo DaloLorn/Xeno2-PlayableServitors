@@ -1,0 +1,14 @@
+{
+    "version": "0.1.0",
+    "asset": {
+        "Name": "Heralds & Harbingers",
+        "UID": "dalolorn-heralds-and-harbingers",
+        "Description": "A proof-of-concept mod introducing the ability to rebuild destroyed Servitors and Heavy Servitors for use by the Xenonaut Initiative.",
+        "Author": "DaloLorn",
+        "Website": "https://github.com/DaloLorn",
+        "Tags":["Mod"],
+        "Version": "0.1.0",
+        "$type": "Common.Content.DataStructures.ContentPackManifest"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+}
