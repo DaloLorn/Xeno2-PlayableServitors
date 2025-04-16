@@ -1,0 +1,47 @@
+{
+  "version": "0.1.0",
+  "asset": {
+    "Parent": {
+      "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/item/armour_alien.json",
+      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+    },
+    "Name": "gundrone",
+    "_components": [
+      {
+        "$content": "servitor_heavy",
+        "$type": "Xenonauts.GroundCombat.Assets.Identifiers.ArmorIdentifierComponent"
+      },
+      {
+        "_min": 0.0,
+        "_val": 35.0,
+        "_max": 35.0,
+        "$type": "Xenonauts.Common.Stats.HitPoints"
+      },
+      {
+        "$content": [
+          {
+            "GUID": "8db33b35-af64-402c-9052-44b592feea43",
+            "TargetComponent": "Common.Components.NameComponent",
+            "Request": "Ignore"
+          },
+          {
+            "GUID": "395bc89e-4f1e-4cb5-8761-5a206219f2d8",
+            "TargetComponent": "Common.Components.DescriptionComponent",
+            "Request": "Ignore"
+          }
+        ],
+        "$type": "Common.Components.LocalizableGUIDComponent"
+      },
+      {
+        "$content": "Heavy Servitor Armor",
+        "$type": "Common.Components.NameComponent"
+      },
+      {
+        "$content": "Xenonauts.GameScreens.GroundCombat-::-ui/item/armor/placeholder.png",
+        "$type": "Common.Components.PortraitComponent"
+      }
+    ],
+    "$type": "Artitas.Template"
+  },
+  "$type": "Common.Content.DataStructures.VersionedAsset"
+}

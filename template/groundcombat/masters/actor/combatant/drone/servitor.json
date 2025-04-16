@@ -1,0 +1,208 @@
+{
+  "version": "0.1.0",
+  "asset": {
+    "Parent": {
+      "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/alien_robotic.json",
+      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+    },
+    "Name": "gundrone",
+    "_components": [
+      {
+        "species": "servitor",
+        "group": "default",
+        "ethnicity": "default",
+        "gender": "default",
+        "$type": "Xenonauts.Common.Assets.Identifiers.BodyIdentifierComponent"
+      },
+      {
+        "$content": [
+          {
+            "Trigger": [
+              {
+                "Mask": "Dead",
+                "$type": "Xenonauts.GroundCombat.Systems.LifeStatusEnvironmentEffectTrigger"
+              }
+            ],
+            "Handler": [
+              {
+                "Target": "Target",
+                "Damage": {
+                  "explosion": null,
+                  "explosionRange": 2.0,
+                  "explosionForce": 500.0,
+                  "explosionPrefab": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-sfx/weapon/explode/source/explosion_light.prefab",
+                    "$type": "Common.Content.AssetReference`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "damage": {
+                    "damageType": "kinetic",
+                    "direct": 40.0,
+                    "stun": 0.0,
+                    "morale": 0.0,
+                    "suppression": 0.0,
+                    "empDamage": 0.0,
+                    "armour": 0.0,
+                    "scale": 1.0,
+                    "damageLocation": { "Value": null, "IsSet": false },
+                    "gibs": "Allow",
+                    "destroyedItemsOnDeath": false
+                  },
+                  "spawnInExplosion": [
+                    {
+                      "Chance": 0,
+                      "Template": {
+                        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-blueprints/common/common/simple/effect/environmental/smoke_1x1.json",
+                        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                      }
+                    }
+                  ],
+                  "$type": "Xenonauts.GroundCombat.Abilities.ExplosionDamage"
+                },
+                "Origin": null,
+                "$type": "Xenonauts.GroundCombat.Systems.DamageEnvironmentEffect"
+              }
+            ],
+            "$type": "Xenonauts.GroundCombat.Systems.EnvironmentEffect"
+          }
+        ],
+        "$type": "Xenonauts.GroundCombat.Components.EnvironmentEffectComponent"
+      },
+      {
+        "$type": "Xenonauts.GroundCombat.Components.EnvironmentEffectStateComponent",
+        "$state": "Active"
+      },
+      {
+        "$content": "EnvironmentEffect",
+        "$type": "Xenonauts.GroundCombat.Boards.Natures.GameLogicComponent"
+      },
+      {
+        "$content": [
+          {
+            "Range": 6,
+            "PercentageOfDamageHealed": 0.5,
+            "LineProjectilePrefab": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-sfx/projectile/auto_heal^default.prefab",
+            "SoundFX": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-sfx/heal/heal_servitor_beam.ogg",
+            "FXDuration": 0.8,
+            "HealMeta": "Healable",
+            "Name": "Auto Heal",
+            "Tooltip": { "Value": null, "IsSet": false },
+            "$type": "Xenonauts.GroundCombat.Components.AutoHealAbilityDefinition"
+          }
+        ],
+        "$type": "Xenonauts.GroundCombat.Components.GCAbilityDefinitionsComponent"
+      },
+      {
+        "$content": "Move,Turn,VaultDescending,VaultAscending,VaultEqual,ClimbDescending,ClimbAscending,Interact,Flying,EMPVulnerable,PsionicInvulnerable,InjuryImmune,AlwaysHovering",
+        "$type": "Xenonauts.GroundCombat.Components.GCCombatantMetaComponent"
+      },
+      {
+        "$content": [
+          "Common.Validation.TemplateValidators.PrototypeComponentValidator"
+        ],
+        "$type": "Common.Validation.IgnoredValidatorsComponent"
+      },
+      {
+        "Dead": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/corpse/corpse_servitor.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "$type": "Xenonauts.Common.Components.Combatant.RecoveredBodyComponent"
+      },
+      {
+        "_min": 0.0,
+        "_val": 55.0,
+        "_max": 3.402823e38,
+        "$type": "Xenonauts.Common.Stats.Accuracy"
+      },
+      {
+        "OneLinkTemplates": {},
+        "ManyLinkTemplates": {
+          "Xenonauts.Common.Components.Item.InventorySlotsLink": [
+            {
+              "Value": {
+                "Parent": {
+                  "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/loadout/combatant/structure/slot_armor.json",
+                  "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                },
+                "_components": []
+              },
+              "$type": "Artitas.Core.Utils.Reference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            },
+            {
+              "Value": {
+                "Parent": {
+                  "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/loadout/combatant/structure/slot_primary.json",
+                  "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                },
+                "_components": []
+              },
+              "$type": "Artitas.Core.Utils.Reference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            },
+            {
+              "Value": {
+                "Parent": {
+                  "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/loadout/combatant/structure/slot_secondary.json",
+                  "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                },
+                "_components": []
+              },
+              "$type": "Artitas.Core.Utils.Reference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            },
+            {
+              "Value": {
+                "Parent": {
+                  "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/loadout/combatant/structure/slot_belt.json",
+                  "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                },
+                "_components": []
+              },
+              "$type": "Artitas.Core.Utils.Reference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            },
+            {
+              "Value": {
+                "Parent": {
+                  "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/loadout/combatant/structure/slot_backpack.json",
+                  "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                },
+                "_components": []
+              },
+              "$type": "Artitas.Core.Utils.Reference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            }
+          ]
+        },
+        "ShallowReferenceTemplates": {},
+        "ListTemplates": {},
+        "$type": "Artitas.Components.TemplateRelationshipsComponent"
+      },
+      {
+        "attack": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-weights/default.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "retreat": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-weights/range_retreat.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "flee": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-weights/flee.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "aggressive^attack": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-weights/aggressive.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "defend^attack": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-weights/defend.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "passive^attack": {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-weights/passive.json",
+          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        "$type": "Xenonauts.GroundCombat.Components.AIWeightDefinitionComponent"
+      }
+    ],
+    "$type": "Artitas.Template"
+  },
+  "$type": "Common.Content.DataStructures.VersionedAsset"
+}
