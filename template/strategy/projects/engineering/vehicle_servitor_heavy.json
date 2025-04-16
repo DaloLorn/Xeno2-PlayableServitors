@@ -1,0 +1,178 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/projects/engineering/engineering_duration4.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "vehicle_servitor_heavy",
+      "_components": [
+        {
+          "$content": "Produces one Harbinger Support Platform, a tougher Herald with improved weapons and armor.",
+          "$type": "Common.Components.DescriptionComponent"
+        },
+        {
+          "$content": [
+            {
+              "GUID": "a24a6df2-7e72-4a4f-ad81-0d198981b1f2",
+              "TargetComponent": "Common.Components.NameComponent",
+              "Request": "Translate"
+            },
+            {
+              "GUID": "9996aa4d-6dcf-4cac-8041-30f09f24ca84",
+              "TargetComponent": "Common.Components.DescriptionComponent",
+              "Request": "Translate"
+            }
+          ],
+          "$type": "Common.Components.LocalizableGUIDComponent"
+        },
+        {
+          "$content": "Harbinger Support Platform",
+          "$type": "Common.Components.NameComponent"
+        },
+        {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png",
+          "$type": "Common.Components.PortraitComponent"
+        },
+        {
+          "$content": [
+            {
+              "Operator": "All",
+              "Number": 0,
+              "selector": {
+                "Player": "xenonauts",
+                "$type": "Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector"
+              },
+              "prerequisites": [
+                {
+                  "value": 250000.0,
+                  "Variant": "Cost",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.OperationPointsPrerequisite"
+                }
+              ],
+              "Variant": "Cost",
+              "modifierStorage": null,
+              "$type": "Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite"
+            },
+            {
+              "Operator": "All",
+              "Number": 0,
+              "selector": {
+                "Target": null,
+                "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
+              },
+              "prerequisites": [
+                {
+                  "Quantity": 10,
+                  "Item": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-item/alenium.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "Consumes": true,
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
+                  },
+                  "Variant": "Cost",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ItemsPrerequisite"
+                },
+                {
+                  "Quantity": 4,
+                  "Item": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-item/corpse/corpse_servitor.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "Consumes": true,
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
+                  },
+                  "Variant": "Cost",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ItemsPrerequisite"
+                },
+                {
+                  "Quantity": 20,
+                  "Item": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-item/alloys.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "Consumes": true,
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
+                  },
+                  "Variant": "Cost",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ItemsPrerequisite"
+                }
+              ],
+              "Variant": "Cost",
+              "modifierStorage": null,
+              "$type": "Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite"
+            },
+            {
+              "Project": {
+                "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor_heavy.json",
+                "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+              },
+              "Status": "Finished",
+              "Variant": "Unlocks",
+              "modifierStorage": null,
+              "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+            }
+          ],
+          "$type": "Xenonauts.Strategy.Components.PrerequisitesComponent"
+        },
+        {
+          "TriggerEffects": {},
+          "EntryEffects": {
+            "Finished": [
+              {
+                "Arg0Selector": {
+                  "Player": "xenonauts",
+                  "$type": "Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector"
+                },
+                "Arg1Selector": {
+                  "Target": null,
+                  "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
+                },
+                "Effect": {
+                  "Quantity": { "_min": 1.0, "_val": 1.0, "_max": 1.0 },
+                  "TemplateRef": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor_heavy.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "IgnoreCost": true,
+                  "Delayed": false,
+                  "Randomize": true,
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.EntityEffects.GenerateAndRecruitActorEffect"
+                },
+                "modifierStorage": null,
+                "$type": "Strategy.Data.EntityEffects.BinaryArgsDelegateEffect"
+              }
+            ]
+          },
+          "ExitEffects": {},
+          "State": "Setup",
+          "$type": "Xenonauts.Strategy.Components.ProjectStateMachineComponent"
+        },
+        {
+          "$content": [
+            {
+              "$content": "Xenonauts.GameScreens.Strategy-::-sort_categories/project/engineering/vehicles.json",
+              "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            }
+          ],
+          "$type": "Strategy.Components.SortCategoriesReferenceComponent"
+        },
+        { "$content": 283.0, "$type": "Common.Components.SortOrderComponent" }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  

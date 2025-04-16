@@ -1,0 +1,29 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/servitor/default/servitor/default.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "default",
+      "_components": [
+        {
+          "$content": "Herald Support Platform",
+          "$type": "Common.Components.NameComponent"
+        },
+        {
+          "$content": [
+            "xenonauts-:-Xenonauts.GameScreens.Strategy-::-ui/portraits/character/ares^head.png"
+          ],
+          "$type": "Xenonauts.Strategy.Components.PortraitLayersComponent"
+        },
+        {
+          "$content": "ares",
+          "$type": "Xenonauts.Common.Components.Combatant.Rank"
+        }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  

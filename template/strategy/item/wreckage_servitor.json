@@ -1,0 +1,44 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "Xenonauts.GameScreens.Strategy-::-masters/items/default.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "wreckage_servitor",
+      "_components": [
+        {
+          "$content": [
+            {
+              "GUID": "ba665c70-0e2f-49c6-91f4-3328b083dd6b",
+              "TargetComponent": "Common.Components.NameComponent",
+              "Request": "Translate"
+            }
+          ],
+          "$type": "Common.Components.LocalizableGUIDComponent"
+        },
+        {
+          "$content": "Herald Wreckage",
+          "$type": "Common.Components.NameComponent"
+        },
+        {
+          "$content": 25000.0,
+          "$type": "Xenonauts.Strategy.Components.SellPriceComponent"
+        },
+        { "$content": 2104.0, "$type": "Common.Components.SortOrderComponent" },
+        {
+          "$content": "ExcludeFromArmory,Transferable,Sellable",
+          "$type": "Xenonauts.Strategy.Components.StrategyItemMetaComponent"
+        },
+        {
+          "_min": 1.0,
+          "_val": 1.0,
+          "_max": 1.0,
+          "$type": "Xenonauts.Common.Stats.Weight"
+        }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  

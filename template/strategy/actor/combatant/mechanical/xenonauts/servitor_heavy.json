@@ -1,0 +1,37 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "servitor_heavy",
+      "_components": [
+        {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/mechanical/xenonaut/servitor_heavy.json",
+          "$type": "Xenonauts.Common.Components.Item.DefaultArmourComponent",
+          "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        {
+          "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor_heavy.json",
+          "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
+          "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
+        },
+        {
+          "_min": 120.0,
+          "_val": 120.0,
+          "_max": 120.0,
+          "$type": "Xenonauts.Common.Stats.HitPoints"
+        },
+        { "Harbinger": 0, "$type": "Strategy.Components.KeyedCounterComponent" },
+        {
+          "$content": "Harbinger {Harbinger}",
+          "$type": "Strategy.Components.NameFormatterComponent"
+        },
+        { "$content": 2099.0, "$type": "Common.Components.SortOrderComponent" }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  

@@ -1,0 +1,83 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/mechanical/xenonauts/mechanical.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "servitor",
+      "_components": [
+        {
+          "_min": 55.0,
+          "_val": 55.0,
+          "_max": 55.0,
+          "$type": "Xenonauts.Common.Stats.Accuracy"
+        },
+        {
+          "_min": 100.0,
+          "_val": 100.0,
+          "_max": 100.0,
+          "$type": "Xenonauts.Common.Stats.Bravery"
+        },
+        {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/mechanical/xenonaut/servitor.json",
+          "$type": "Xenonauts.Common.Components.Item.DefaultArmourComponent",
+          "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        {
+          "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json",
+          "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
+          "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
+        },
+        {
+          "_min": 60.0,
+          "_val": 60.0,
+          "_max": 60.0,
+          "$type": "Xenonauts.Common.Stats.HitPoints"
+        },
+        { "Herald": 0, "$type": "Strategy.Components.KeyedCounterComponent" },
+        {
+          "$content": "Herald {Herald}",
+          "$type": "Strategy.Components.NameFormatterComponent"
+        },
+        {
+          "$content": [
+            "xenonauts-:-Xenonauts.GameScreens.Strategy-::-ui/portraits/character/mars^head.png"
+          ],
+          "$type": "Xenonauts.Strategy.Components.PortraitLayersComponent"
+        },
+        {
+          "$content": "ares",
+          "$type": "Xenonauts.Common.Components.Combatant.Rank"
+        },
+        {
+          "_min": 50.0,
+          "_val": 50.0,
+          "_max": 50.0,
+          "$type": "Xenonauts.Common.Stats.Reflexes"
+        },
+        {
+          "$content": 50000.0,
+          "$type": "Xenonauts.Strategy.Components.SellPriceComponent"
+        },
+        { "$content": 2098.0, "$type": "Common.Components.SortOrderComponent" },
+        {
+          "$content": "Transferable,Sellable,Unique",
+          "$type": "Xenonauts.Strategy.Components.StrategyItemMetaComponent"
+        },
+        {
+          "_min": 60.0,
+          "_val": 60.0,
+          "_max": 60.0,
+          "$type": "Xenonauts.Common.Stats.TimeUnits"
+        },
+        {
+          "$content": "Flying",
+          "$type": "Xenonauts.GroundCombat.Components.GCCombatantMetaComponent"
+        }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  

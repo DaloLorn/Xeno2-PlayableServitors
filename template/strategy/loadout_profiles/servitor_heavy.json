@@ -1,0 +1,35 @@
+{
+    "version": "0.1.0",
+    "asset": {
+      "Parent": {
+        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/loadout_profiles/mechanical.json",
+        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      "Name": "servitor_heavy",
+      "_components": [
+        {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor^heavy.json",
+          "$type": "Strategy.Components.Item.InventoryTemplateComponent",
+          "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        },
+        {
+          "$content": [
+            {
+              "GUID": "0ebea24a-5ca5-4e1d-9dec-322283e069df",
+              "TargetComponent": "Common.Components.NameComponent",
+              "Request": "Translate"
+            }
+          ],
+          "$type": "Common.Components.LocalizableGUIDComponent"
+        },
+        { "$content": "Harbinger", "$type": "Common.Components.NameComponent" },
+        {
+          "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profile/none.png",
+          "$type": "Common.Components.PortraitComponent"
+        }
+      ],
+      "$type": "Artitas.Template"
+    },
+    "$type": "Common.Content.DataStructures.VersionedAsset"
+  }
+  
