@@ -15,6 +15,10 @@
           "$type": "Common.Validation.IgnoredValidatorsComponent"
         },
         {
+          "$content": [],
+          "$type": "Common.Components.LocalizableGUIDComponent"
+        },
+        {
           "$content": "Herald Support Platform",
           "$type": "Common.Components.NameComponent"
         },
@@ -25,7 +29,7 @@
           "$type": "Xenonauts.Strategy.Components.PortraitLayersComponent"
         },
         {
-          "$content": "ares",
+          "$content": "servitor",
           "$type": "Xenonauts.Common.Components.Combatant.Rank"
         }
       ],

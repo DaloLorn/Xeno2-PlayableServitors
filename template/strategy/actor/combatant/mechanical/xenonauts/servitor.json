@@ -51,10 +51,6 @@
           "$type": "Xenonauts.Strategy.Components.PortraitLayersComponent"
         },
         {
-          "$content": "ares",
-          "$type": "Xenonauts.Common.Components.Combatant.Rank"
-        },
-        {
           "_min": 50.0,
           "_val": 50.0,
           "_max": 50.0,

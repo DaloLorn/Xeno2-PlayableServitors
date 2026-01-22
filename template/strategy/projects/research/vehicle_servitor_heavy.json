@@ -1,71 +1,74 @@
 {
-    "version": "0.1.0",
-    "asset": {
-      "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/projects/research/research_duration1.json",
-        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-      },
-      "Name": "vehicle_servitor_heavy",
-      "_components": [
-        {
-          "$content": "Intensive study of the aliens' Heavy Servitor drones, aimed at advancing our Servitor reconstruction protocols.",
-          "$type": "Common.Components.DescriptionComponent"
-        },
-        {
-          "$content": "Heavy Servitor Reconstruction",
-          "$type": "Common.Components.NameComponent"
-        },
-        {
-          "$content": [
-            {
-              "Operator": "All",
-              "Number": 0,
-              "selector": {
-                "Player": "xenonauts",
-                "$type": "Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector"
-              },
-              "prerequisites": [
-                  {
-                    "Project": {
-                      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor.json",
-                      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                    },
-                    "Status": "Finished",
-                    "Variant": "Unlocks",
-                    "modifierStorage": null,
-                    "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
-                  },
-                  {
-                    "Project": {
-                      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/alien_weapons_fusion.json",
-                      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                    },
-                    "Status": "Finished",
-                    "Variant": "Unlocks",
-                    "modifierStorage": null,
-                    "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
-                  },
-                  {
-                    "Project": {
-                      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/abstract_alien_antigrav_emitter.json",
-                      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                    },
-                    "Status": "Finished",
-                    "Variant": "Unlocks",
-                    "modifierStorage": null,
-                    "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
-                  }
-              ],
-              "Variant": "Unlocks",
-              "modifierStorage": null,
-              "$type": "Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite"
-            }
-          ],
-          "$type": "Xenonauts.Strategy.Components.PrerequisitesComponent"
-        }
-      ],
-      "$type": "Artitas.Template"
+  "version": "0.1.0",
+  "asset": {
+    "Parent": {
+      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/projects/research/research_duration1.json",
+      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
     },
-    "$type": "Common.Content.DataStructures.VersionedAsset"
-  }
-  
+    "Name": "vehicle_servitor_heavy",
+    "_components": [
+      {
+        "$content": "Intensive study of the aliens' Heavy Servitor drones, aimed at advancing our Servitor reconstruction protocols.",
+        "$type": "Common.Components.DescriptionComponent"
+      },
+      {
+        "$content": [],
+        "$type": "Common.Components.LocalizableGUIDComponent"
+      },
+      {
+        "$content": "Heavy Servitor Reconstruction",
+        "$type": "Common.Components.NameComponent"
+      },
+      {
+        "$content": [
+          {
+            "Operator": "All",
+            "Number": 0,
+            "selector": {
+              "Player": "xenonauts",
+              "$type": "Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector"
+            },
+            "prerequisites": [
+                {
+                  "Project": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "Status": "Finished",
+                  "Variant": "Unlocks",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+                },
+                {
+                  "Project": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/alien_weapons_fusion.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "Status": "Finished",
+                  "Variant": "Unlocks",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+                },
+                {
+                  "Project": {
+                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/abstract_alien_antigrav_emitter.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "Status": "Finished",
+                  "Variant": "Unlocks",
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+                }
+            ],
+            "Variant": "Unlocks",
+            "modifierStorage": null,
+            "$type": "Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite"
+          }
+        ],
+        "$type": "Xenonauts.Strategy.Components.PrerequisitesComponent"
+      }
+    ],
+    "$type": "Artitas.Template"
+  },
+  "$type": "Common.Content.DataStructures.VersionedAsset"
+}
