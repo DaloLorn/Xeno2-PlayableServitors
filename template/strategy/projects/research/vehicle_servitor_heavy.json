@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "asset": {
     "Parent": {
-      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/projects/research/research_duration1.json",
+      "$content": "Xenonauts.GameScreens.Strategy-::-masters/projects/research/research_duration1.json",
       "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
     },
     "Name": "vehicle_servitor_heavy",
@@ -31,7 +31,7 @@
             "prerequisites": [
                 {
                   "Project": {
-                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor.json",
+                    "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor.json",
                     "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                   },
                   "Status": "Finished",
@@ -41,7 +41,7 @@
                 },
                 {
                   "Project": {
-                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/alien_weapons_fusion.json",
+                    "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/alien_weapons_fusion.json",
                     "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                   },
                   "Status": "Finished",
@@ -51,7 +51,7 @@
                 },
                 {
                   "Project": {
-                    "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/research/abstract_alien_antigrav_emitter.json",
+                    "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/abstract_alien_antigrav_emitter.json",
                     "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                   },
                   "Status": "Finished",

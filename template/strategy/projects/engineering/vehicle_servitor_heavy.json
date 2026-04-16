@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "asset": {
     "Parent": {
-      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/projects/engineering/engineering_duration0.json",
+      "$content": "Xenonauts.GameScreens.Strategy-::-masters/projects/engineering/engineering_duration0.json",
       "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
     },
     "Name": "vehicle_servitor_heavy",
@@ -20,7 +20,7 @@
         "$type": "Common.Components.NameComponent"
       },
       {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png",
+        "$content": "Xenonauts.GameScreens.GroundCombat-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png",
         "$type": "Common.Components.PortraitComponent"
       },
       {
@@ -37,7 +37,7 @@
                 "value": 250000.0,
                 "Variant": "Cost",
                 "modifierStorage": null,
-                "$type": "Xenonauts.Strategy.Data.Prerequisites.OperationPointsPrerequisite"
+                "$t": "CashPq"
               }
             ],
             "Variant": "Cost",
@@ -63,7 +63,7 @@
               "Effect": {
                 "Quantity": { "_min": 1.0, "_val": 1.0, "_max": 1.0 },
                 "TemplateRef": {
-                  "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor_heavy.json",
+                  "$content": "Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor_heavy.json",
                   "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 },
                 "IgnoreCost": true,
@@ -76,77 +76,97 @@
               "$type": "Strategy.Data.EntityEffects.BinaryArgsDelegateEffect"
             },
             {
-                "selector": {
-                  "Target": null,
-                  "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
-                },
-                "effects": [
-                  {
-                    "Quantity": 1.0,
-                    "Rounding": "None",
-                    "Item": {
-                      "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-item/armour/servitor_heavy.json",
-                      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                    },
-                    "SlotType": {
-                      "$content": "Stores",
-                      "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
-                    },
-                    "modifierStorage": null,
-                    "$type": "Xenonauts.Strategy.Data.DeltaItemEffect"
-                  }
-                ],
-                "modifierStorage": null,
-                "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
+              "selector": {
+                "Target": null,
+                "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
               },
-              {
-                  "selector": {
-                    "Target": null,
-                    "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
-                  },
-                  "effects": [
-                    {
-                      "Quantity": 1.0,
-                      "Rounding": "None",
-                      "Item": {
-                        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-item/weapon/alien_servitor_cannon_heavy.json",
-                        "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                      },
-                      "SlotType": {
-                        "$content": "Stores",
-                        "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
-                      },
-                      "modifierStorage": null,
-                      "$type": "Xenonauts.Strategy.Data.DeltaItemEffect"
-                    }
-                  ],
-                  "modifierStorage": null,
-                  "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
-                },
+              "effects": [
                 {
-                    "selector": {
-                      "Target": null,
-                      "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
-                    },
-                    "effects": [
-                      {
-                        "Quantity": 1000.0,
-                        "Rounding": "None",
-                        "Item": {
-                          "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-item/ammo/alien_servitor_cell_heavy.json",
-                          "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                        },
-                        "SlotType": {
-                          "$content": "Stores",
-                          "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
-                        },
-                        "modifierStorage": null,
-                        "$type": "Xenonauts.Strategy.Data.DeltaItemEffect"
-                      }
-                    ],
-                    "modifierStorage": null,
-                    "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
-                  }
+                  "Quantity": 1.0,
+                  "Rounding": "None",
+                  "Item": {
+                    "$content": "Xenonauts.GameScreens.Strategy-::-item/armour/servitor_heavy.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
+                  },
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.DeltaItemEffect"
+                }
+              ],
+              "modifierStorage": null,
+              "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
+            },
+            {
+              "selector": {
+                "Target": null,
+                "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
+              },
+              "effects": [
+                {
+                  "Quantity": 1.0,
+                  "Rounding": "None",
+                  "Item": {
+                    "$content": "Xenonauts.GameScreens.Strategy-::-item/weapon/alien_servitor_cannon_heavy.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
+                  },
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.DeltaItemEffect"
+                }
+              ],
+              "modifierStorage": null,
+              "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
+            },
+            {
+              "selector": {
+                "Target": null,
+                "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
+              },
+              "effects": [
+                {
+                  "Quantity": Infinity,
+                  "Rounding": "None",
+                  "Item": {
+                    "$content": "Xenonauts.GameScreens.Strategy-::-item/ammo/alien_servitor_cell_heavy.json",
+                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  },
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$type": "Xenonauts.Common.Components.Item.MainBaseSlots"
+                  },
+                  "modifierStorage": null,
+                  "$type": "Xenonauts.Strategy.Data.DeltaItemEffect"
+                }
+              ],
+              "modifierStorage": null,
+              "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
+            },              
+            {
+              "selector": {
+                "Tag": "Xenonauts.Common.CampaignTag",
+                "$t": "TaggedEntitySe"
+              },
+              "effects": [
+                {
+                  "Quantity": Infinity,
+                  "Item": {
+                    "$content": "ST-::-item/ammo/alien_servitor_cell_heavy.json",
+                    "$t": "ar_Template"
+                  },
+                  "SlotType": { "$content": "Stores", "$t": "MainBaseSlots" },
+                  "modifierStorage": null,
+                  "$t": "AddItemToGeoBaseRequisitionEffect"
+                }
+              ],
+              "modifierStorage": null,
+              "$t": "ADelegateEffect"
+            }
           ]
         },
         "ExitEffects": {},

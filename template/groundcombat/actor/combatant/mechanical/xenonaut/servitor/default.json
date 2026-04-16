@@ -2,7 +2,7 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/drone/servitor.json",
+        "$content": "Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/drone/servitor.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "default",
@@ -24,7 +24,7 @@
         },
         {
           "$content": [
-            "xenonauts-:-Xenonauts.GameScreens.Strategy-::-ui/portraits/character/ares^head.png"
+            "Xenonauts.GameScreens.Strategy-::-ui/portraits/character/ares^head.png"
           ],
           "$type": "Xenonauts.Strategy.Components.PortraitLayersComponent"
         },

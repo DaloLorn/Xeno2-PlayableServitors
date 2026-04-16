@@ -2,18 +2,18 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor.json",
+        "$content": "Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "servitor_heavy",
       "_components": [
         {
-          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor_heavy.json",
+          "$content": "Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor_heavy.json",
           "$type": "Xenonauts.Common.Components.Item.DefaultArmourComponent",
           "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
         },
         {
-          "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor_heavy.json",
+          "Target": "Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor_heavy.json",
           "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
           "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
         },

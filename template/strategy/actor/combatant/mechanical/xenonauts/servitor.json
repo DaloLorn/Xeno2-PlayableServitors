@@ -2,7 +2,7 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/mechanical/xenonauts/servitor.json",
+        "$content": "Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/mechanical/xenonauts/servitor.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "servitor",
@@ -20,12 +20,12 @@
           "$type": "Xenonauts.Common.Stats.Bravery"
         },
         {
-          "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor.json",
+          "$content": "Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor.json",
           "$type": "Xenonauts.Common.Components.Item.DefaultArmourComponent",
           "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
         },
         {
-          "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json",
+          "Target": "Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json",
           "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
           "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
         },
@@ -46,7 +46,7 @@
         },
         {
           "$content": [
-            "xenonauts-:-Xenonauts.GameScreens.Strategy-::-ui/portraits/character/mars^head.png"
+            "Xenonauts.GameScreens.Strategy-::-ui/portraits/character/mars^head.png"
           ],
           "$type": "Xenonauts.Strategy.Components.PortraitLayersComponent"
         },

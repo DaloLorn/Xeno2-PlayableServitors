@@ -2,7 +2,7 @@
     "version": "0.1.0",
     "asset": {
       "Parent": {
-        "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/combatant.json",
+        "$content": "Xenonauts.GameScreens.Strategy-::-masters/actor/combatant/combatant.json",
         "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
       },
       "Name": "servitor",
@@ -69,7 +69,7 @@
           "_min": 0.0,
           "_val": 0.0,
           "_max": 0.0,
-          "$type": "Xenonauts.Strategy.Components.OperationPoints"
+          "$t": "Cash"
         },
         {
           "_min": 0.0,

@@ -1,14 +1,29 @@
 {
     "version": "0.1.0",
     "asset": {
+        "Source": "Manual",
         "Name": "Heralds & Harbingers",
         "UID": "dalolorn-heralds-and-harbingers",
         "Description": "A proof-of-concept mod introducing the ability to rebuild destroyed Servitors and Heavy Servitors for use by the Xenonaut Initiative.",
         "Author": "DaloLorn",
         "Website": "https://github.com/DaloLorn/Xeno2-PlayableServitors",
         "Tags": ["Mod"],
-        "Version": "0.1.0",
-        "$type": "Common.Content.DataStructures.ContentPackManifest"
+        "SupportedLanguages": [
+            "en-US"
+        ],
+        "Version": "0.2.0",
+        "MinimumVersion": {
+            "&v": {
+                "$content": "7.19.2",
+                "$id": "5"
+            }
+        },
+        "MaximumVersion": {
+            "&v": {
+                "$ref": "5"
+            }
+        },
+        "$t": "14"
     },
-    "$type": "Common.Content.DataStructures.VersionedAsset"
+    "$t": "15"
 }
