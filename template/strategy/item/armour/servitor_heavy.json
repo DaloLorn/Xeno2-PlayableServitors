@@ -11,7 +11,10 @@
         "$content": [],
         "$t": "LocalizableGUID"
       },
-      { "$content": "Harbinger Armor", "$t": "Name" }
+      {
+        "$content": "Harbinger Armor",
+        "$t": "Name"
+      }
     ],
     "$t": "4"
   },

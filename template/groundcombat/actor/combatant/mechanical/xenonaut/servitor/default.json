@@ -3,11 +3,14 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.GroundCombat-::-masters/actor/combatant/drone/servitor.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "default",
     "_components": [
-      { "$content": "small", "$type": "Xenonauts.Common.Components.BodySize" },
+      {
+        "$content": "small",
+        "$type": "Xenonauts.Common.Components.BodySize"
+      },
       {
         "$content": [
           "Common.Validation.TemplateValidators.PrototypeComponentValidator"
@@ -62,24 +65,38 @@
                 "AllowedSlotTypes": [
                   {
                     "DefaultSize": 1,
-                    "Type": { "$content": "Primary", "$t": "CombatantSlots" },
+                    "Type": {
+                      "$content": "Primary",
+                      "$t": "CombatantSlots"
+                    },
                     "$t": "21"
                   },
                   {
                     "DefaultSize": 1,
-                    "Type": { "$content": "Secondary", "$t": "CombatantSlots" },
+                    "Type": {
+                      "$content": "Secondary",
+                      "$t": "CombatantSlots"
+                    },
                     "$t": "21"
                   },
                   {
                     "DefaultSize": 1,
-                    "Type": { "$content": "Armour", "$t": "CombatantSlots" },
+                    "Type": {
+                      "$content": "Armour",
+                      "$t": "CombatantSlots"
+                    },
                     "$t": "21"
                   }
                 ],
-                "RequestStrategy": { "$t": "82" }
+                "RequestStrategy": {
+                  "$t": "82"
+                }
               }
             ],
-            "DefaultCategory": { "Value": 0, "IsSet": false },
+            "DefaultCategory": {
+              "Value": 0,
+              "IsSet": false
+            },
             "$t": "22"
           }
         ],
@@ -126,8 +143,7 @@
         "$t": "TemplateRelationships"
       }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }
-  

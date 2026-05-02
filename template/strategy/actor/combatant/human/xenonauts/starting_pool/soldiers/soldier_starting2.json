@@ -6,7 +6,12 @@
       "$t": "ar_Template"
     },
     "Name": "soldier_starting1",
-    "_components": [{ "$content": 3, "$t": "PreferredStrikeTeamSlot" }],
+    "_components": [
+      {
+        "$content": 3,
+        "$t": "PreferredStrikeTeamSlot"
+      }
+    ],
     "$t": "4"
   },
   "$t": "15"

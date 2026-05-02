@@ -3,7 +3,7 @@
   "asset": {
     "Parent": {
       "$content": "xenonauts-:-Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor_heavy.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "gundrone",
     "_components": [
@@ -22,7 +22,7 @@
         "$type": "Common.Components.NameComponent"
       }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

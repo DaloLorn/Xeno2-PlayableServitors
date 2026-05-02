@@ -1,9 +1,9 @@
-﻿{
+{
   "version": "0.1.0",
   "asset": {
     "Parent": {
       "$content": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-projects/engineering/corpse_analysis/analysis_corpse_servitor.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "analysis_corpse_cleaner",
     "_components": [
@@ -37,7 +37,7 @@
         "$type": "Xenonauts.Strategy.Components.ProjectStateMachineComponent"
       }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

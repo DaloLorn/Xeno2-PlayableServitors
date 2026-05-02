@@ -3,26 +3,29 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.Strategy-::-masters/loadout_profiles/mechanical.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "servitor",
     "_components": [
       {
         "$content": "Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor^default.json",
-        "$type": "Strategy.Components.Item.InventoryTemplateComponent",
-        "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$type": "Strategy.Components.Item.InventoryTemplateComponent"
       },
       {
         "$content": [],
         "$type": "Common.Components.LocalizableGUIDComponent"
       },
-      { "$content": "Herald", "$type": "Common.Components.NameComponent" },
+      {
+        "$content": "Herald",
+        "$type": "Common.Components.NameComponent"
+      },
       {
         "$content": "Xenonauts.GameScreens.Strategy-::-loadout_profile/none.png",
         "$type": "Common.Components.PortraitComponent"
       }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

@@ -11,7 +11,10 @@
         "$content": [],
         "$t": "LocalizableGUID"
       },
-      { "$content": "Harbinger Burst Cannon", "$t": "Name" },
+      {
+        "$content": "Harbinger Burst Cannon",
+        "$t": "Name"
+      },
       {
         "$content": "GC-::-ui/item/weapon/alien_fusion_rifle.png",
         "$t": "Portrait"

@@ -1,0 +1,8 @@
+strategy:
+  parent:
+    screen: ST
+    path: actor/combatant/mechanical/xenonauts/servitor_heavy
+  name: soldier_starting1
+  $path: actor/combatant/human/xenonauts/starting_pool/soldiers/soldier_starting2
+  components:
+    :PreferredStrikeTeamSlot: 3

@@ -1,0 +1,23 @@
+strategy:
+  parent:
+    pack: xenonauts
+    screen: ST
+    path: item/armour/servitor_heavy
+  name: gundrone
+  $path: item/armour/servitor_heavy
+  components:
+    :LocalizableGUID: []
+    :Name: Harbinger Armor
+groundcombat:
+  parent:
+    pack: xenonauts
+    screen: Xenonauts.GameScreens.GroundCombat
+    path: item/armour/servitor_heavy
+  name: gundrone
+  $path: item/armour/servitor_heavy
+  components:
+    :Common.Components.LocalizableGUIDComponent:
+      - GUID: 395bc89e-4f1e-4cb5-8761-5a206219f2d8
+        TargetComponent: Common.Components.DescriptionComponent
+        Request: Ignore
+    :Common.Components.NameComponent: Harbinger Armor

@@ -3,7 +3,7 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.Strategy-::-item/wreckage_servitor.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "wreckage_servitor_heavy",
     "_components": [
@@ -11,9 +11,12 @@
         "$content": "Harbinger Wreckage",
         "$type": "Common.Components.NameComponent"
       },
-      { "$content": 2105.0, "$type": "Common.Components.SortOrderComponent" }
+      {
+        "$content": 2105,
+        "$type": "Common.Components.SortOrderComponent"
+      }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

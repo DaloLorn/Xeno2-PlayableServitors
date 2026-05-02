@@ -1,0 +1,22 @@
+strategy:
+  parent:
+    pack: xenonauts
+    screen: ST
+    path: item/weapon/alien_servitor_cannon_heavy
+  name: alien_gundrone_cannon
+  $path: item/weapon/alien_servitor_cannon_heavy
+  components:
+    :LocalizableGUID: []
+    :Name: Harbinger Burst Cannon
+    :SItemMeta: ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer
+groundcombat:
+  parent:
+    pack: xenonauts
+    screen: GC
+    path: item/weapon/alien_servitor_cannon_heavy
+  name: alien_gundrone_cannon
+  $path: item/weapon/alien_servitor_cannon_heavy
+  components:
+    :LocalizableGUID: []
+    :Name: Harbinger Burst Cannon
+    :Portrait: GC-::-ui/item/weapon/alien_fusion_rifle.png

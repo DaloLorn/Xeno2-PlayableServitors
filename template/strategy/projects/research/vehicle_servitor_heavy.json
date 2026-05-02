@@ -3,7 +3,7 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.Strategy-::-masters/projects/research/research_duration1.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "vehicle_servitor_heavy",
     "_components": [
@@ -29,36 +29,36 @@
               "$type": "Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector"
             },
             "prerequisites": [
-                {
-                  "Project": {
-                    "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor.json",
-                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                  },
-                  "Status": "Finished",
-                  "Variant": "Unlocks",
-                  "modifierStorage": null,
-                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+              {
+                "Project": {
+                  "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/vehicle_servitor.json",
+                  "$t": "ar_Template"
                 },
-                {
-                  "Project": {
-                    "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/alien_weapons_fusion.json",
-                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                  },
-                  "Status": "Finished",
-                  "Variant": "Unlocks",
-                  "modifierStorage": null,
-                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+                "Status": "Finished",
+                "Variant": "Unlocks",
+                "modifierStorage": null,
+                "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+              },
+              {
+                "Project": {
+                  "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/alien_weapons_fusion.json",
+                  "$t": "ar_Template"
                 },
-                {
-                  "Project": {
-                    "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/abstract_alien_antigrav_emitter.json",
-                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                  },
-                  "Status": "Finished",
-                  "Variant": "Unlocks",
-                  "modifierStorage": null,
-                  "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
-                }
+                "Status": "Finished",
+                "Variant": "Unlocks",
+                "modifierStorage": null,
+                "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+              },
+              {
+                "Project": {
+                  "$content": "Xenonauts.GameScreens.Strategy-::-projects/research/abstract_alien_antigrav_emitter.json",
+                  "$t": "ar_Template"
+                },
+                "Status": "Finished",
+                "Variant": "Unlocks",
+                "modifierStorage": null,
+                "$type": "Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite"
+              }
             ],
             "Variant": "Unlocks",
             "modifierStorage": null,
@@ -68,7 +68,7 @@
         "$type": "Xenonauts.Strategy.Components.PrerequisitesComponent"
       }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

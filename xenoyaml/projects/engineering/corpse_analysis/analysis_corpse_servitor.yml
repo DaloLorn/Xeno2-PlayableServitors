@@ -1,0 +1,27 @@
+strategy:
+  parent:
+    pack: xenonauts
+    screen: Xenonauts.GameScreens.Strategy
+    path: projects/engineering/corpse_analysis/analysis_corpse_servitor
+  name: analysis_corpse_cleaner
+  $path: projects/engineering/corpse_analysis/analysis_corpse_servitor
+  components:
+    :Xenonauts.Strategy.Components.ProjectStateMachineComponent:
+      TriggerEffects: {}
+      EntryEffects:
+        Finished:
+          - :Xenonauts.Strategy.Data.ADelegateEffect:
+              selector:
+                :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
+                  Player: xenonauts
+              effects:
+                - :Xenonauts.Strategy.Data.EntityEffects.MainBase.DeltaSpeciesDamageModifiersEffect:
+                    Species: servitor
+                    Minimum: 0.1
+                    Maximum: 0.1
+                    Value: 0.1
+                    modifierStorage: null
+              modifierStorage: null
+      ExitEffects: {}
+      Prerequisites: null
+      State: Setup

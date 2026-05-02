@@ -3,18 +3,21 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "servitor_heavy",
     "_components": [
       {
         "$content": "Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor_heavy^default.json",
-        "$type": "Strategy.Components.Item.InventoryTemplateComponent",
-        "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        "$valuetype": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$type": "Strategy.Components.Item.InventoryTemplateComponent"
       },
-      { "$content": "Harbinger", "$type": "Common.Components.NameComponent" }
+      {
+        "$content": "Harbinger",
+        "$type": "Common.Components.NameComponent"
+      }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

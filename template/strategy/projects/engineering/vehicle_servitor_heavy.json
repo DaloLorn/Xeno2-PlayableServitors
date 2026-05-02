@@ -3,7 +3,7 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.Strategy-::-masters/projects/engineering/engineering_duration0.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "vehicle_servitor_heavy",
     "_components": [
@@ -34,7 +34,7 @@
             },
             "prerequisites": [
               {
-                "value": 250000.0,
+                "value": 250000,
                 "Variant": "Cost",
                 "modifierStorage": null,
                 "$t": "CashPq"
@@ -61,10 +61,14 @@
                 "$type": "Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector"
               },
               "Effect": {
-                "Quantity": { "_min": 1.0, "_val": 1.0, "_max": 1.0 },
+                "Quantity": {
+                  "_min": 1,
+                  "_val": 1,
+                  "_max": 1
+                },
                 "TemplateRef": {
                   "$content": "Xenonauts.GameScreens.Strategy-::-actor/combatant/mechanical/xenonauts/servitor_heavy.json",
-                  "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$t": "ar_Template"
                 },
                 "IgnoreCost": true,
                 "Delayed": false,
@@ -82,11 +86,11 @@
               },
               "effects": [
                 {
-                  "Quantity": 1.0,
+                  "Quantity": 1,
                   "Rounding": "None",
                   "Item": {
                     "$content": "Xenonauts.GameScreens.Strategy-::-item/armour/servitor_heavy.json",
-                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                    "$t": "ar_Template"
                   },
                   "SlotType": {
                     "$content": "Stores",
@@ -106,11 +110,11 @@
               },
               "effects": [
                 {
-                  "Quantity": 1.0,
+                  "Quantity": 1,
                   "Rounding": "None",
                   "Item": {
                     "$content": "Xenonauts.GameScreens.Strategy-::-item/weapon/alien_servitor_cannon_heavy.json",
-                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                    "$t": "ar_Template"
                   },
                   "SlotType": {
                     "$content": "Stores",
@@ -134,7 +138,7 @@
                   "Rounding": "None",
                   "Item": {
                     "$content": "Xenonauts.GameScreens.Strategy-::-item/ammo/alien_servitor_cell_heavy.json",
-                    "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                    "$t": "ar_Template"
                   },
                   "SlotType": {
                     "$content": "Stores",
@@ -146,7 +150,7 @@
               ],
               "modifierStorage": null,
               "$type": "Xenonauts.Strategy.Data.ADelegateEffect"
-            },              
+            },
             {
               "selector": {
                 "Tag": "Xenonauts.Common.CampaignTag",
@@ -159,7 +163,10 @@
                     "$content": "ST-::-item/ammo/alien_servitor_cell_heavy.json",
                     "$t": "ar_Template"
                   },
-                  "SlotType": { "$content": "Stores", "$t": "MainBaseSlots" },
+                  "SlotType": {
+                    "$content": "Stores",
+                    "$t": "MainBaseSlots"
+                  },
                   "modifierStorage": null,
                   "$t": "AddItemToGeoBaseRequisitionEffect"
                 }
@@ -177,14 +184,17 @@
         "$content": [
           {
             "$content": "Xenonauts.GameScreens.Strategy-::-sort_categories/project/engineering/vehicles.json",
-            "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$t": "ar_Template"
           }
         ],
         "$type": "Strategy.Components.SortCategoriesReferenceComponent"
       },
-      { "$content": 283.0, "$type": "Common.Components.SortOrderComponent" }
+      {
+        "$content": 283,
+        "$type": "Common.Components.SortOrderComponent"
+      }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

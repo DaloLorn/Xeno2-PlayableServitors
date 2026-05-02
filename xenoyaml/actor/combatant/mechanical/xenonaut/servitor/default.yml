@@ -1,0 +1,80 @@
+groundcombat:
+  parent:
+    screen: Xenonauts.GameScreens.GroundCombat
+    path: masters/actor/combatant/drone/servitor
+  name: default
+  $path: actor/combatant/mechanical/xenonaut/servitor/default
+  components:
+    :Xenonauts.Common.Components.BodySize: small
+    :Common.Validation.IgnoredValidatorsComponent:
+      - Common.Validation.TemplateValidators.PrototypeComponentValidator
+    :Common.Components.LocalizableGUIDComponent: []
+    :Common.Components.NameComponent: Herald Support Platform
+    :Xenonauts.Strategy.Components.PortraitLayersComponent:
+      - Xenonauts.GameScreens.Strategy-::-ui/portraits/character/ares^head.png
+    :GCCombatantMeta: Move,Turn,VaultEqual,ClimbDescending,ClimbAscending,Interact,Flying,EMPVulnerable,PsionicInvulnerable,InvisibleInventory,InjuryImmune,AlwaysHovering
+    :RecoveredBody:
+      Dead:
+        :ar_Template:
+          screen: GC
+          path: item/corpse/corpse_servitor
+    :Xenonauts.Common.Components.Combatant.Rank: servitor
+    :TemplateEditorDecorators:
+      - :22:
+          Guid: 3d921750-e11d-4866-9691-8de0f689357d
+          Name: null
+          Tooltip: null
+          Icon: null
+          IsDefault: false
+          Views:
+            - InventorySetup: External
+              Structure:
+                :ar_Template:
+                  screen: GC
+                  path: masters/loadout/combatant/structure/mechanical
+              Name: Mechanical Inventory
+              AllowedSlotTypes:
+                - :21:
+                    DefaultSize: 1
+                    Type:
+                      :CombatantSlots: Primary
+                - :21:
+                    DefaultSize: 1
+                    Type:
+                      :CombatantSlots: Secondary
+                - :21:
+                    DefaultSize: 1
+                    Type:
+                      :CombatantSlots: Armour
+              RequestStrategy:
+                :82: {}
+          DefaultCategory:
+            Value: 0
+            IsSet: false
+    :TemplateRelationships:
+      OneLinkTemplates: {}
+      ManyLinkTemplates:
+        Xenonauts.Common.Components.Item.InventorySlotsLink:
+          - :0:
+              Value:
+                Parent:
+                  :ar_Template:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_armor
+                _components: []
+          - :0:
+              Value:
+                Parent:
+                  :ar_Template:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_primary
+                _components: []
+          - :0:
+              Value:
+                Parent:
+                  :ar_Template:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_secondary
+                _components: []
+      ShallowReferenceTemplates: {}
+      ListTemplates: {}

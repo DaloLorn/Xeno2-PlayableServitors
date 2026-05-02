@@ -1,0 +1,53 @@
+strategy:
+  parent:
+    screen: Xenonauts.GameScreens.Strategy
+    path: masters/projects/research/research_duration1
+  name: vehicle_servitor
+  $path: projects/research/vehicle_servitor
+  components:
+    :Common.Components.DescriptionComponent: Intensive study of alien Servitor
+      drones, aimed at reconstructing and reprogramming them for our own uses.
+    :Common.Components.LocalizableGUIDComponent: []
+    :Common.Components.NameComponent: Servitor Reconstruction
+    :Xenonauts.Strategy.Components.PrerequisitesComponent:
+      - :Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite:
+          Operator: All
+          Number: 0
+          selector:
+            :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
+              Player: xenonauts
+          prerequisites:
+            - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                Project:
+                  :ar_Template:
+                    screen: Xenonauts.GameScreens.Strategy
+                    path: projects/research/vehicle_mars
+                Status: Finished
+                Variant: Unlocks
+                modifierStorage: null
+            - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                Project:
+                  :ar_Template:
+                    screen: Xenonauts.GameScreens.Strategy
+                    path: projects/research/alien_weapons_plasma
+                Status: Finished
+                Variant: Unlocks
+                modifierStorage: null
+            - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                Project:
+                  :ar_Template:
+                    screen: Xenonauts.GameScreens.Strategy
+                    path: projects/engineering/corpse_analysis/analysis_corpse_servitor
+                Status: Finished
+                Variant: Unlocks
+                modifierStorage: null
+            - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                Project:
+                  :ar_Template:
+                    screen: Xenonauts.GameScreens.Strategy
+                    path: projects/research/abstract_alien_electronics
+                Status: Finished
+                Variant: Unlocks
+                modifierStorage: null
+          Variant: Unlocks
+          modifierStorage: null

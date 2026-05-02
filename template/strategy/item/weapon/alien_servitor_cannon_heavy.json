@@ -11,7 +11,10 @@
         "$content": [],
         "$t": "LocalizableGUID"
       },
-      { "$content": "Harbinger Burst Cannon", "$t": "Name" },
+      {
+        "$content": "Harbinger Burst Cannon",
+        "$t": "Name"
+      },
       {
         "$content": "ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer",
         "$t": "SItemMeta"

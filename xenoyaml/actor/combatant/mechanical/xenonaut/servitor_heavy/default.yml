@@ -1,0 +1,10 @@
+groundcombat:
+  parent:
+    screen: Xenonauts.GameScreens.GroundCombat
+    path: actor/combatant/mechanical/xenonaut/servitor/default
+  name: default
+  $path: actor/combatant/mechanical/xenonaut/servitor_heavy/default
+  components:
+    :Common.Components.LocalizableGUIDComponent: []
+    :Common.Components.NameComponent: Harbinger Support Platform
+    :Xenonauts.Common.Components.Combatant.Rank: servitor_heavy

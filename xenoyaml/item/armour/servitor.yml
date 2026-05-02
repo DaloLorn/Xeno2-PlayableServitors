@@ -1,0 +1,23 @@
+strategy:
+  parent:
+    pack: xenonauts
+    screen: ST
+    path: item/armour/servitor
+  name: gundrone
+  $path: item/armour/servitor
+  components:
+    :LocalizableGUID: []
+    :Name: Herald Armor
+groundcombat:
+  parent:
+    pack: xenonauts
+    screen: Xenonauts.GameScreens.GroundCombat
+    path: item/armour/servitor
+  name: gundrone
+  $path: item/armour/servitor
+  components:
+    :Common.Components.LocalizableGUIDComponent:
+      - GUID: ca58e768-4f67-4af7-9106-4bd8239bab3d
+        TargetComponent: Common.Components.DescriptionComponent
+        Request: Ignore
+    :Common.Components.NameComponent: Herald Armor

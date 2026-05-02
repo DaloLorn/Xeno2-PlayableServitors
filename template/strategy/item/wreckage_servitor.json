@@ -3,7 +3,7 @@
   "asset": {
     "Parent": {
       "$content": "Xenonauts.GameScreens.Strategy-::-masters/items/default.json",
-      "$type": "Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      "$t": "ar_Template"
     },
     "Name": "wreckage_servitor",
     "_components": [
@@ -16,22 +16,25 @@
         "$type": "Common.Components.NameComponent"
       },
       {
-        "$content": 25000.0,
+        "$content": 25000,
         "$type": "Xenonauts.Strategy.Components.SellPriceComponent"
       },
-      { "$content": 2104.0, "$type": "Common.Components.SortOrderComponent" },
+      {
+        "$content": 2104,
+        "$type": "Common.Components.SortOrderComponent"
+      },
       {
         "$content": "ExcludeFromArmory,Transferable,Sellable",
         "$type": "Xenonauts.Strategy.Components.StrategyItemMetaComponent"
       },
       {
-        "_min": 1.0,
-        "_val": 1.0,
-        "_max": 1.0,
+        "_min": 1,
+        "_val": 1,
+        "_max": 1,
         "$type": "Xenonauts.Common.Stats.Weight"
       }
     ],
-    "$type": "Artitas.Template"
+    "$t": "4"
   },
-  "$type": "Common.Content.DataStructures.VersionedAsset"
+  "$t": "15"
 }

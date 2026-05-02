@@ -1,0 +1,23 @@
+strategy:
+  parent:
+    screen: Xenonauts.GameScreens.Strategy
+    path: actor/combatant/mechanical/xenonauts/servitor
+  name: servitor_heavy
+  $path: actor/combatant/mechanical/xenonauts/servitor_heavy
+  components:
+    :Xenonauts.Common.Components.Item.DefaultArmourComponent:
+      $content: Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor_heavy.json
+      $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+    :Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent:
+      Target: Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor_heavy.json
+      $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+    :Xenonauts.Common.Components.Combatant.Rank: servitor_heavy
+    :Xenonauts.Common.Stats.HitPoints:
+      _min: 120
+      _val: 120
+      _max: 120
+    :Strategy.Components.KeyedCounterComponent:
+      Harbinger: 0
+    :Strategy.Components.NameFormatterComponent: Harbinger {Harbinger}
+    :Common.Components.SortOrderComponent: 2099
