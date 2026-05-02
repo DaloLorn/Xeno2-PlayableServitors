@@ -32,7 +32,7 @@
           "$type": "Xenonauts.Strategy.Components.Ranges.CombatRating"
         },
         {
-          "Target": "xenonauts-:-Xenonauts.GameScreens.Strategy-::-loadout_profiles/heavy.json",
+          "Target": "Xenonauts.GameScreens.Strategy-::-loadout_profiles/heavy.json",
           "$type": "Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent",
           "$valuetype": "Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy"
         },
