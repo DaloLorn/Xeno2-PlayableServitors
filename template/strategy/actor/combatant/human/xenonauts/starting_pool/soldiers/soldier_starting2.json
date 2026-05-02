@@ -1,18 +1,1 @@
-{
-  "version": "0.1.0",
-  "asset": {
-    "Parent": {
-      "$content": "ST-::-actor/combatant/mechanical/xenonauts/servitor_heavy.json",
-      "$t": "ar_Template"
-    },
-    "Name": "soldier_starting1",
-    "_components": [
-      {
-        "$content": 3,
-        "$t": "PreferredStrikeTeamSlot"
-      }
-    ],
-    "$t": "4"
-  },
-  "$t": "15"
-}
+{"version":"0.1.0","asset":{"Parent":{"$content":"ST-::-actor/combatant/mechanical/xenonauts/servitor_heavy.json","$t":"ar_Template"},"Name":"soldier_starting1","_components":[{"$content":3,"$t":"PreferredStrikeTeamSlot"}],"$t":"4"},"$t":"15"}
