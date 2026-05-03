@@ -1,1 +1,1 @@
-{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-ST-::-item/armour/servitor_heavy.json","$t":"ar_Template"},"Name":"gundrone","_components":[{"$content":[],"$t":"LocalizableGUID"},{"$content":"Harbinger Armor","$t":"Name"}],"$t":"4"},"$t":"15"}
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-ST-::-item/armour/servitor_heavy.json","$t":"ar_Template"},"Name":"gundrone","_components":[{"$content":"Harbinger Armor","$t":"Name"},{"$content":[],"$t":"LocalizableGUID"}],"$t":"4"},"$t":"15"}

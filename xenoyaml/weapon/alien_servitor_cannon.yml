@@ -1,3 +1,9 @@
+$schema: 0.4.0
+$aliases:
+  Shared: &Shared
+    :LocalizableGUID: []
+    :Name: Herald Burst Cannon
+
 strategy:
   parent:
     pack: xenonauts
@@ -6,8 +12,7 @@ strategy:
   name: alien_gundrone_cannon
   $path: item/weapon/alien_servitor_cannon
   components:
-    :LocalizableGUID: []
-    :Name: Herald Burst Cannon
+    <<: *Shared
     :SItemMeta: ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer
 groundcombat:
   parent:
@@ -17,6 +22,5 @@ groundcombat:
   name: alien_gundrone_cannon
   $path: item/weapon/alien_servitor_cannon
   components:
-    :LocalizableGUID: []
-    :Name: Herald Burst Cannon
+    <<: *Shared
     :Portrait: GC-::-ui/item/weapon/alien_plasma_rifle.png

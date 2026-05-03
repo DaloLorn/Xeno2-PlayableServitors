@@ -1,104 +1,96 @@
+$schema: 0.4.0
+$aliases:
+  Shared: &Shared
+    :LocalizableGUID: []
+  HasTechs: &HasTechs
+    Operator: All
+    Number: 0
+    selector:
+      :PlayerSe:
+        Player: xenonauts
+    Variant: Unlocks
+    modifierStorage: null
+  HasTech: &HasTech
+    Status: Finished
+    Variant: Unlocks
+    modifierStorage: null
+
 strategy:
   projects/research:
 
     # Heavy Servitor Reconstruction
     vehicle_servitor_heavy:
       parent:
-        screen: Xenonauts.GameScreens.Strategy
+        screen: ST
         path: masters/projects/research/research_duration1
       name: vehicle_servitor_heavy
       $path: ""
       components:
-        :Common.Components.DescriptionComponent: Intensive study of the aliens' Heavy
+        <<: *Shared
+        :Description: Intensive study of the aliens' Heavy
           Servitor drones, aimed at advancing our Servitor reconstruction protocols.
-        :Common.Components.LocalizableGUIDComponent: []
-        :Common.Components.NameComponent: Heavy Servitor Reconstruction
-        :Xenonauts.Strategy.Components.PrerequisitesComponent:
-          - :Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite:
-              Operator: All
-              Number: 0
-              selector:
-                :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
-                  Player: xenonauts
+        :LocalizableGUID: []
+        :Name: Heavy Servitor Reconstruction
+        :Prerequisites:
+          - :ADelegatePq:
+              <<: *HasTechs
               prerequisites:
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/research/vehicle_servitor
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                    <<: *HasTech
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/research/alien_weapons_fusion
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                    <<: *HasTech
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/research/abstract_alien_antigrav_emitter
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-              Variant: Unlocks
-              modifierStorage: null
+                    <<: *HasTech
 
     # Servitor Reconstruction
     vehicle_servitor:
       parent:
-        screen: Xenonauts.GameScreens.Strategy
+        screen: ST
         path: masters/projects/research/research_duration1
       name: vehicle_servitor
       $path: ""
       components:
-        :Common.Components.DescriptionComponent: Intensive study of alien Servitor
+        <<: *Shared
+        :Description: Intensive study of alien Servitor
           drones, aimed at reconstructing and reprogramming them for our own uses.
-        :Common.Components.LocalizableGUIDComponent: []
-        :Common.Components.NameComponent: Servitor Reconstruction
-        :Xenonauts.Strategy.Components.PrerequisitesComponent:
-          - :Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite:
-              Operator: All
-              Number: 0
-              selector:
-                :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
-                  Player: xenonauts
+        :Name: Servitor Reconstruction
+        :Prerequisites:
+          - :ADelegatePq:
+              <<: *HasTechs
               prerequisites:
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/research/vehicle_mars
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                    <<: *HasTech
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/research/alien_weapons_plasma
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                    <<: *HasTech
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/engineering/corpse_analysis/analysis_corpse_servitor
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-                - :Xenonauts.Strategy.Data.Prerequisites.ProjectPrerequisite:
+                    <<: *HasTech
+                - :ProjectPq:
                     Project:
                       :ar_Template:
-                        screen: Xenonauts.GameScreens.Strategy
+                        screen: ST
                         path: projects/research/abstract_alien_electronics
-                    Status: Finished
-                    Variant: Unlocks
-                    modifierStorage: null
-              Variant: Unlocks
-              modifierStorage: null
+                    <<: *HasTech

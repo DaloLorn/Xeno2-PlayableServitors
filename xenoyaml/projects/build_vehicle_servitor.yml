@@ -1,106 +1,113 @@
+$schema: 0.4.0
+$aliases:
+  Shared: &Shared
+    :LocalizableGUID: []
+    :Portrait: GC-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png
+    :SortCategoriesReference:
+      - :ar_Template:
+          screen: ST
+          path: sort_categories/project/engineering/vehicles
+  RecruitActorWrapper: &RecruitActorWrapper
+    Arg0Selector:
+      :PlayerSe:
+        Player: xenonauts
+    Arg1Selector:
+      :MyGeoBaseSe:
+        Target: null
+    modifierStorage: null
+  RecruitActor: &RecruitActor
+    Quantity:
+      _min: 1
+      _val: 1
+      _max: 1
+    IgnoreCost: true
+    Delayed: false
+    Randomize: true
+    modifierStorage: null
+  AddItem: &AddItem
+    Quantity: 1
+    Rounding: None
+    SlotType:
+      :MainBaseSlots: Stores
+    modifierStorage: null
+  AddItemToFutureBases: &AddItemToFutureBases
+    Quantity: Infinity
+    SlotType:
+      :MainBaseSlots: Stores
+    modifierStorage: null
+  ProjectCosts: &ProjectCosts
+    Operator: All
+    Number: 0
+    Variant: Cost
+    modifierStorage: null
+
+
 strategy:
   projects/engineering:
 
     # Harbinger
     vehicle_servitor_heavy:
       parent:
-        screen: Xenonauts.GameScreens.Strategy
+        screen: ST
         path: masters/projects/engineering/engineering_duration0
       name: vehicle_servitor_heavy
       $path: ""
       components:
-        :Common.Components.DescriptionComponent: Produces one Harbinger Support
-          Platform, a tougher Herald with improved weapons and armor.
-        :Common.Components.LocalizableGUIDComponent: []
-        :Common.Components.NameComponent: Harbinger Support Platform
-        :Common.Components.PortraitComponent: Xenonauts.GameScreens.GroundCombat-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png
-        :Xenonauts.Strategy.Components.PrerequisitesComponent:
-          - :Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite:
-              Operator: All
-              Number: 0
+        <<: *Shared
+        :Description: Produces one Harbinger Support Platform, a tougher Herald
+          with improved weapons and armor.
+        :LocalizableGUID: []
+        :Name: Harbinger Support Platform
+        :Portrait: GC-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png
+        :Prerequisites:
+          - :ADelegatePq:
+              <<: *ProjectCosts
               selector:
-                :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
+                :PlayerSe:
                   Player: xenonauts
               prerequisites:
                 - :CashPq:
                     value: 250000
                     Variant: Cost
                     modifierStorage: null
-              Variant: Cost
-              modifierStorage: null
-        :Xenonauts.Strategy.Components.ProjectStateMachineComponent:
+        :ProjectFSM:
           TriggerEffects: {}
           EntryEffects:
             Finished:
-              - :Strategy.Data.EntityEffects.BinaryArgsDelegateEffect:
-                  Arg0Selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
-                      Player: xenonauts
-                  Arg1Selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
-                      Target: null
+              - :BinaryArgsDelegateEffect:
+
                   Effect:
-                    :Xenonauts.Strategy.Data.EntityEffects.GenerateAndRecruitActorEffect:
-                      Quantity:
-                        _min: 1
-                        _val: 1
-                        _max: 1
+                    <<: *RecruitActorWrapper
+                    :GenerateAndRecruitActorEffect:
+                      <<: *RecruitActor
                       TemplateRef:
                         :ar_Template:
-                          screen: Xenonauts.GameScreens.Strategy
+                          screen: ST
                           path: actor/combatant/mechanical/xenonauts/servitor_heavy
-                      IgnoreCost: true
-                      Delayed: false
-                      Randomize: true
-                      modifierStorage: null
-                  modifierStorage: null
-              - :Xenonauts.Strategy.Data.ADelegateEffect:
+              - :ADelegateEffect:
                   selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
+                    :MyGeoBaseSe:
                       Target: null
                   effects:
-                    - :Xenonauts.Strategy.Data.DeltaItemEffect:
-                        Quantity: 1
-                        Rounding: None
+                    - :DeltaItemEffect:
+                        <<: *AddItem
                         Item:
                           :ar_Template:
-                            screen: Xenonauts.GameScreens.Strategy
+                            screen: ST
                             path: item/armour/servitor_heavy
-                        SlotType:
-                          :Xenonauts.Common.Components.Item.MainBaseSlots: Stores
-                        modifierStorage: null
-                  modifierStorage: null
-              - :Xenonauts.Strategy.Data.ADelegateEffect:
-                  selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
-                      Target: null
-                  effects:
-                    - :Xenonauts.Strategy.Data.DeltaItemEffect:
-                        Quantity: 1
-                        Rounding: None
+                    - :DeltaItemEffect:
+                        <<: *AddItem
                         Item:
                           :ar_Template:
-                            screen: Xenonauts.GameScreens.Strategy
+                            screen: ST
                             path: item/weapon/alien_servitor_cannon_heavy
-                        SlotType:
-                          :Xenonauts.Common.Components.Item.MainBaseSlots: Stores
-                        modifierStorage: null
-                  modifierStorage: null
-              - :Xenonauts.Strategy.Data.ADelegateEffect:
-                  selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
-                      Target: null
-                  effects:
-                    - :Xenonauts.Strategy.Data.DeltaItemEffect:
+                    - :DeltaItemEffect:
+                        <<: *AddItem
                         Quantity: Infinity
-                        Rounding: None
                         Item:
                           :ar_Template:
-                            screen: Xenonauts.GameScreens.Strategy
+                            screen: ST
                             path: item/ammo/alien_servitor_cell_heavy
-                        SlotType:
-                          :Xenonauts.Common.Components.Item.MainBaseSlots: Stores
-                        modifierStorage: null
                   modifierStorage: null
               - :ADelegateEffect:
                   selector:
@@ -108,123 +115,76 @@ strategy:
                       Tag: Xenonauts.Common.CampaignTag
                   effects:
                     - :AddItemToGeoBaseRequisitionEffect:
-                        Quantity: Infinity
+                        <<: *AddItemToFutureBases
                         Item:
                           :ar_Template:
                             screen: ST
                             path: item/ammo/alien_servitor_cell_heavy
-                        SlotType:
-                          :MainBaseSlots: Stores
-                        modifierStorage: null
                   modifierStorage: null
           ExitEffects: {}
           State: Setup
-        :Strategy.Components.SortCategoriesReferenceComponent:
-          - :ar_Template:
-              screen: Xenonauts.GameScreens.Strategy
-              path: sort_categories/project/engineering/vehicles
-        :Common.Components.SortOrderComponent: 283
+        :SortOrder: 283
 
     # Herald
     vehicle_servitor:
       parent:
-        screen: Xenonauts.GameScreens.Strategy
+        screen: ST
         path: masters/projects/engineering/engineering_duration0
       name: vehicle_servitor
       $path: ""
       components:
-        :Common.Components.DescriptionComponent: Produces one Herald Support Platform, a
+        <<: *Shared
+        :Description: Produces one Herald Support Platform, a
           refurbished alien Servitor that can support your soldiers in battle.
-        :Common.Components.LocalizableGUIDComponent: []
-        :Common.Components.NameComponent: Herald Support Platform
-        :Common.Components.PortraitComponent: Xenonauts.GameScreens.GroundCombat-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png
-        :Xenonauts.Strategy.Components.PrerequisitesComponent:
-          - :Xenonauts.Strategy.Data.Prerequisites.ADelegatePrerequisite:
-              Operator: All
-              Number: 0
+        :Name: Herald Support Platform
+        :Prerequisites:
+          - :ADelegatePq:
+              <<: *ProjectCosts
               selector:
-                :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
+                :PlayerSe:
                   Player: xenonauts
               prerequisites:
                 - :CashPq:
                     value: 250000
                     Variant: Cost
                     modifierStorage: null
-              Variant: Cost
-              modifierStorage: null
-        :Xenonauts.Strategy.Components.ProjectStateMachineComponent:
+        :ProjectFSM:
           TriggerEffects: {}
           EntryEffects:
             Finished:
-              - :Strategy.Data.EntityEffects.BinaryArgsDelegateEffect:
-                  Arg0Selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.PlayerSelector:
-                      Player: xenonauts
-                  Arg1Selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
-                      Target: null
+              - :BinaryArgsDelegateEffect:
+                  <<: *RecruitActorWrapper
                   Effect:
-                    :Xenonauts.Strategy.Data.EntityEffects.GenerateAndRecruitActorEffect:
-                      Quantity:
-                        _min: 1
-                        _val: 1
-                        _max: 1
+                    :GenerateAndRecruitActorEffect:
+                      <<: *RecruitActor
                       TemplateRef:
                         :ar_Template:
-                          screen: Xenonauts.GameScreens.Strategy
+                          screen: ST
                           path: actor/combatant/mechanical/xenonauts/servitor
-                      IgnoreCost: true
-                      Delayed: false
-                      Randomize: true
-                      modifierStorage: null
-                  modifierStorage: null
-              - :Xenonauts.Strategy.Data.ADelegateEffect:
+              - :ADelegateEffect:
                   selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
+                    :MyGeoBaseSe:
                       Target: null
                   effects:
-                    - :Xenonauts.Strategy.Data.DeltaItemEffect:
-                        Quantity: 1
-                        Rounding: None
+                    - :DeltaItemEffect:
+                        <<: *AddItem
                         Item:
                           :ar_Template:
-                            screen: Xenonauts.GameScreens.Strategy
+                            screen: ST
                             path: item/armour/servitor
-                        SlotType:
-                          :Xenonauts.Common.Components.Item.MainBaseSlots: Stores
-                        modifierStorage: null
-                  modifierStorage: null
-              - :Xenonauts.Strategy.Data.ADelegateEffect:
-                  selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
-                      Target: null
-                  effects:
-                    - :Xenonauts.Strategy.Data.DeltaItemEffect:
-                        Quantity: 1
-                        Rounding: None
+                    - :DeltaItemEffect:
+                        <<: *AddItem
                         Item:
                           :ar_Template:
-                            screen: Xenonauts.GameScreens.Strategy
+                            screen: ST
                             path: item/weapon/alien_servitor_cannon
-                        SlotType:
-                          :Xenonauts.Common.Components.Item.MainBaseSlots: Stores
-                        modifierStorage: null
-                  modifierStorage: null
-              - :Xenonauts.Strategy.Data.ADelegateEffect:
-                  selector:
-                    :Xenonauts.Strategy.Data.EntitySelectors.MyGeoBaseSelector:
-                      Target: null
-                  effects:
-                    - :Xenonauts.Strategy.Data.DeltaItemEffect:
+                    - :DeltaItemEffect:
+                        <<: *AddItem
                         Quantity: Infinity
-                        Rounding: None
                         Item:
                           :ar_Template:
-                            screen: Xenonauts.GameScreens.Strategy
+                            screen: ST
                             path: item/ammo/alien_servitor_cell
-                        SlotType:
-                          :Xenonauts.Common.Components.Item.MainBaseSlots: Stores
-                        modifierStorage: null
                   modifierStorage: null
               - :ADelegateEffect:
                   selector:
@@ -232,19 +192,12 @@ strategy:
                       Tag: Xenonauts.Common.CampaignTag
                   effects:
                     - :AddItemToGeoBaseRequisitionEffect:
-                        Quantity: Infinity
+                        <<: *AddItemToFutureBases
                         Item:
                           :ar_Template:
                             screen: ST
                             path: item/ammo/alien_servitor_cell
-                        SlotType:
-                          :MainBaseSlots: Stores
-                        modifierStorage: null
                   modifierStorage: null
           ExitEffects: {}
           State: Setup
-        :Strategy.Components.SortCategoriesReferenceComponent:
-          - :ar_Template:
-              screen: Xenonauts.GameScreens.Strategy
-              path: sort_categories/project/engineering/vehicles
-        :Common.Components.SortOrderComponent: 282
+        :SortOrder: 282
