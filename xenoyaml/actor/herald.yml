@@ -78,3 +78,47 @@ groundcombat:
                 _components: []
       ShallowReferenceTemplates: {}
       ListTemplates: {}
+strategy:
+  parent:
+    screen: Xenonauts.GameScreens.Strategy
+    path: masters/actor/combatant/mechanical/xenonauts/servitor
+  name: servitor
+  $path: actor/combatant/mechanical/xenonauts/servitor
+  components:
+    :Xenonauts.Common.Stats.Accuracy:
+      _min: 55
+      _val: 55
+      _max: 55
+    :Xenonauts.Common.Stats.Bravery:
+      _min: 100
+      _val: 100
+      _max: 100
+    :Xenonauts.Common.Components.Item.DefaultArmourComponent:
+      $content: Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor.json
+      $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+    :Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent:
+      Target: Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json
+      $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+    :Xenonauts.Common.Components.Combatant.Rank: servitor
+    :Xenonauts.Common.Stats.HitPoints:
+      _min: 60
+      _val: 60
+      _max: 60
+    :Strategy.Components.KeyedCounterComponent:
+      Herald: 0
+    :Strategy.Components.NameFormatterComponent: Herald {Herald}
+    :Xenonauts.Strategy.Components.PortraitLayersComponent:
+      - Xenonauts.GameScreens.Strategy-::-ui/portraits/character/mars^head.png
+    :Xenonauts.Common.Stats.Reflexes:
+      _min: 50
+      _val: 50
+      _max: 50
+    :Xenonauts.Strategy.Components.SellPriceComponent: 50000
+    :Common.Components.SortOrderComponent: 2098
+    :Xenonauts.Strategy.Components.StrategyItemMetaComponent: Transferable,Sellable,Unique
+    :Xenonauts.Common.Stats.TimeUnits:
+      _min: 60
+      _val: 60
+      _max: 60
+    :Xenonauts.GroundCombat.Components.GCCombatantMetaComponent: Flying
