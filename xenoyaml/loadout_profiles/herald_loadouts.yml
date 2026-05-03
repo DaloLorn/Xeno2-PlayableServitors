@@ -1,0 +1,31 @@
+strategy:
+  loadout_profiles:
+    # Herald Loadout
+    servitor:
+      parent:
+        screen: Xenonauts.GameScreens.Strategy
+        path: masters/loadout_profiles/mechanical
+      name: servitor
+      $path: ""
+      components:
+        :Strategy.Components.Item.InventoryTemplateComponent:
+          $content: Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor^default.json
+          $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+        :Common.Components.LocalizableGUIDComponent: []
+        :Common.Components.NameComponent: Herald
+        :Common.Components.PortraitComponent: Xenonauts.GameScreens.Strategy-::-loadout_profile/none.png
+
+    # Harbinger Loadout
+    servitor_heavy:
+      parent:
+        screen: Xenonauts.GameScreens.Strategy
+        path: loadout_profiles/servitor
+      name: servitor_heavy
+      $path: ""
+      components:
+        :Strategy.Components.Item.InventoryTemplateComponent:
+          $content: Xenonauts.GameScreens.Strategy-::-loadout/combatant/servitor^default^servitor_heavy^default.json
+          $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+        :Common.Components.NameComponent: Harbinger

@@ -1,0 +1,30 @@
+strategy:
+  item:
+    # Herald Wreckage
+    wreckage_servitor:
+      parent:
+        screen: Xenonauts.GameScreens.Strategy
+        path: masters/items/default
+      name: wreckage_servitor
+      $path: ""
+      components:
+        :Common.Components.LocalizableGUIDComponent: []
+        :Common.Components.NameComponent: Herald Wreckage
+        :Xenonauts.Strategy.Components.SellPriceComponent: 25000
+        :Common.Components.SortOrderComponent: 2104
+        :Xenonauts.Strategy.Components.StrategyItemMetaComponent: ExcludeFromArmory,Transferable,Sellable
+        :Xenonauts.Common.Stats.Weight:
+          _min: 1
+          _val: 1
+          _max: 1    
+
+    # Harbinger Wreckage
+    wreckage_servitor_heavy:
+      parent:
+        screen: Xenonauts.GameScreens.Strategy
+        path: item/wreckage_servitor
+      name: wreckage_servitor_heavy
+      $path: ""
+      components:
+        :Common.Components.NameComponent: Harbinger Wreckage
+        :Common.Components.SortOrderComponent: 2105

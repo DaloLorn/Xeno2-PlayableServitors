@@ -1,9 +1,0 @@
-strategy:
-  parent:
-    screen: Xenonauts.GameScreens.Strategy
-    path: item/wreckage_servitor
-  name: wreckage_servitor_heavy
-  $path: item/wreckage_servitor_heavy
-  components:
-    :Common.Components.NameComponent: Harbinger Wreckage
-    :Common.Components.SortOrderComponent: 2105

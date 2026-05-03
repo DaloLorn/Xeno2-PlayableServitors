@@ -1,0 +1,243 @@
+groundcombat:
+  actor/combatant/mechanical/xenonaut:
+    # Herald GC
+    servitor:
+      parent:
+        screen: Xenonauts.GameScreens.GroundCombat
+        path: masters/actor/combatant/drone/servitor
+      name: default
+      $path: default
+      components:
+        :Xenonauts.Common.Components.BodySize: small
+        :Common.Validation.IgnoredValidatorsComponent:
+          - Common.Validation.TemplateValidators.PrototypeComponentValidator
+        :Common.Components.LocalizableGUIDComponent: []
+        :Common.Components.NameComponent: Herald Support Platform
+        :Xenonauts.Strategy.Components.PortraitLayersComponent:
+          - Xenonauts.GameScreens.Strategy-::-ui/portraits/character/ares^head.png
+        :GCCombatantMeta: Move,Turn,VaultEqual,ClimbDescending,ClimbAscending,Interact,Flying,EMPVulnerable,PsionicInvulnerable,InvisibleInventory,InjuryImmune,AlwaysHovering
+        :RecoveredBody:
+          Dead:
+            :ar_Template:
+              screen: GC
+              path: item/corpse/corpse_servitor
+        :Xenonauts.Common.Components.Combatant.Rank: servitor
+        :TemplateEditorDecorators:
+          - :22:
+              Guid: 3d921750-e11d-4866-9691-8de0f689357d
+              Name: null
+              Tooltip: null
+              Icon: null
+              IsDefault: false
+              Views:
+                - InventorySetup: External
+                  Structure:
+                    :ar_Template:
+                      screen: GC
+                      path: masters/loadout/combatant/structure/mechanical
+                  Name: Mechanical Inventory
+                  AllowedSlotTypes:
+                    - :21:
+                        DefaultSize: 1
+                        Type:
+                          :CombatantSlots: Primary
+                    - :21:
+                        DefaultSize: 1
+                        Type:
+                          :CombatantSlots: Secondary
+                    - :21:
+                        DefaultSize: 1
+                        Type:
+                          :CombatantSlots: Armour
+                  RequestStrategy:
+                    :82: {}
+              DefaultCategory:
+                Value: 0
+                IsSet: false
+        :TemplateRelationships:
+          OneLinkTemplates: {}
+          ManyLinkTemplates:
+            Xenonauts.Common.Components.Item.InventorySlotsLink:
+              - :0:
+                  Value:
+                    Parent:
+                      :ar_Template:
+                        screen: GC
+                        path: masters/loadout/combatant/structure/slot_armor
+                    _components: []
+              - :0:
+                  Value:
+                    Parent:
+                      :ar_Template:
+                        screen: GC
+                        path: masters/loadout/combatant/structure/slot_primary
+                    _components: []
+              - :0:
+                  Value:
+                    Parent:
+                      :ar_Template:
+                        screen: GC
+                        path: masters/loadout/combatant/structure/slot_secondary
+                    _components: []
+          ShallowReferenceTemplates: {}
+          ListTemplates: {}
+
+    # Harbinger GC
+    servitor_heavy:
+      parent:
+        screen: Xenonauts.GameScreens.GroundCombat
+        path: actor/combatant/mechanical/xenonaut/servitor/default
+      name: default
+      $path: default
+      components:
+        :Common.Components.LocalizableGUIDComponent: []
+        :Common.Components.NameComponent: Harbinger Support Platform
+        :Xenonauts.Common.Components.Combatant.Rank: servitor_heavy
+
+strategy:
+  # Playable Servitor ST Master
+  masters:
+    parent:
+      screen: Xenonauts.GameScreens.Strategy
+      path: masters/actor/combatant/combatant
+    name: servitor
+    $path: actor/combatant/mechanical/xenonauts/servitor
+    components:
+      :Xenonauts.Strategy.Components.AgeComponent:
+        _min: 0
+        _val: 0
+        _max: 0
+      :Xenonauts.Common.Components.BodySize: small
+      :Xenonauts.Common.Assets.Identifiers.BodyIdentifierComponent:
+        species: servitor
+        group: default
+        ethnicity: default
+        gender: default
+      :Xenonauts.Common.Components.Combatant.CombatantMetaComponent: StressImmune,MoraleImmune
+      :Xenonauts.Strategy.Components.Ranges.CombatRating:
+        _min: 1
+        _val: 1
+        _max: 1
+      :Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent:
+        Target: Xenonauts.GameScreens.Strategy-::-loadout_profiles/heavy.json
+        $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+      :Xenonauts.Strategy.Components.DivisionTypeComponent: Soldier
+      :Xenonauts.Strategy.Systems.ExpenseComponent: 5000
+      :Xenonauts.Common.Components.InventoryTaxonomyComponent: Loadout/Combatant/Mechanical
+      :Xenonauts.Strategy.Components.MechanicalActorAssignmentStateMachineComponent:
+        TriggerEffects: {}
+        EntryEffects: {}
+        ExitEffects: {}
+        State: Available
+      :Xenonauts.Strategy.Components.NationalityComponent: None
+      :Common.Components.NightVisionRange:
+        _min: 0
+        _val: 10
+        _max: 99
+      :Cash:
+        _min: 0
+        _val: 0
+        _max: 0
+      :Xenonauts.Strategy.Components.PersonnelCapacity:
+        _min: 0
+        _val: 0
+        _max: 0
+      :Xenonauts.Strategy.Components.Quantity:
+        _min: 1
+        _val: 1
+        _max: 1
+      :Xenonauts.Common.Components.Combatant.Rank: private
+      :Xenonauts.Strategy.Components.SellPriceComponent: 10000
+      :Xenonauts.Strategy.Components.SellPriceTransactionDeltaComponent: 0
+      :Xenonauts.Strategy.Components.SellPriceMinComponent: 0.4
+      :Common.Components.SortOrderComponent: 250
+      :Strategy.Components.Xenonaut.StrategyCombatantMetaComponent:
+        FullRecover,DisableLoadoutProfiles,NoExperienceGain,NoMedalGain,DisableCarryCapacity
+      :Xenonauts.Strategy.Components.StrategyItemMetaComponent: ""
+      :Xenonauts.Common.Stats.Strength:
+        _min: 50
+        _val: 50
+        _max: 50
+      :Common.Components.UnmodifiedHitPoints:
+        _min: 60
+        _val: 60
+        _max: 60
+      :Xenonauts.Common.Stats.Weight:
+        _min: 1
+        _val: 1
+        _max: 1
+      :Xenonauts.Strategy.Systems.FundingCategory: Expenses/Vehicles
+      :Xenonauts.Strategy.Components.SellPriceMaxComponent: 1
+
+
+  actor/combatant/mechanical/xenonauts:
+    # Herald ST
+    servitor:
+      parent:
+        screen: Xenonauts.GameScreens.Strategy
+        path: masters/actor/combatant/mechanical/xenonauts/servitor
+      name: servitor
+      $path: ""
+      components:
+        :Xenonauts.Common.Stats.Accuracy:
+          _min: 55
+          _val: 55
+          _max: 55
+        :Xenonauts.Common.Stats.Bravery:
+          _min: 100
+          _val: 100
+          _max: 100
+        :Xenonauts.Common.Components.Item.DefaultArmourComponent:
+          $content: Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor.json
+          $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+        :Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent:
+          Target: Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor.json
+          $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+        :Xenonauts.Common.Components.Combatant.Rank: servitor
+        :Xenonauts.Common.Stats.HitPoints:
+          _min: 60
+          _val: 60
+          _max: 60
+        :Strategy.Components.KeyedCounterComponent:
+          Herald: 0
+        :Strategy.Components.NameFormatterComponent: Herald {Herald}
+        :Xenonauts.Strategy.Components.PortraitLayersComponent:
+          - Xenonauts.GameScreens.Strategy-::-ui/portraits/character/mars^head.png
+        :Xenonauts.Common.Stats.Reflexes:
+          _min: 50
+          _val: 50
+          _max: 50
+        :Xenonauts.Strategy.Components.SellPriceComponent: 50000
+        :Common.Components.SortOrderComponent: 2098
+        :Xenonauts.Strategy.Components.StrategyItemMetaComponent: Transferable,Sellable,Unique
+        :Xenonauts.Common.Stats.TimeUnits:
+          _min: 60
+          _val: 60
+          _max: 60
+        :Xenonauts.GroundCombat.Components.GCCombatantMetaComponent: Flying
+
+    # Harbinger ST
+    servitor_heavy:
+      parent:
+        screen: Xenonauts.GameScreens.Strategy
+        path: actor/combatant/mechanical/xenonauts/servitor
+      name: servitor_heavy
+      $path: ""
+      components:
+        :Xenonauts.Common.Components.Item.DefaultArmourComponent:
+          $content: Xenonauts.GameScreens.GroundCombat-::-item/armour/servitor_heavy.json
+          $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+        :Xenonauts.Strategy.Components.DefaultLoadoutProfileComponent:
+          Target: Xenonauts.GameScreens.Strategy-::-loadout_profiles/servitor_heavy.json
+          $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+        :Xenonauts.Common.Components.Combatant.Rank: servitor_heavy
+        :Xenonauts.Common.Stats.HitPoints:
+          _min: 120
+          _val: 120
+          _max: 120
+        :Strategy.Components.KeyedCounterComponent:
+          Harbinger: 0
+        :Strategy.Components.NameFormatterComponent: Harbinger {Harbinger}
+        :Common.Components.SortOrderComponent: 2099
