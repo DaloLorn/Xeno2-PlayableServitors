@@ -140,3 +140,109 @@ $builders:
             modifierStorage: null
       modifierStorage: null
   
+  # Flattens a RangeComponent into a single value.
+  $FlatRange:
+    $args:
+      - $val
+    _min: $val
+    _val: $val
+    _max: $val
+
+  # Sets all BodyID properties to "default" except the species.
+  $Species:
+    $args:
+      - $species
+    :BodyID:
+      species: $species
+      group: default
+      ethnicity: default
+      gender: default
+
+  # Builds a BodyIDPq for a given species with all other props omitted.
+  # Essentially $Species, but for prerequisites.
+  $SpeciesPq:
+    $args:
+      - $species
+    :BodyIDPq:
+      Species:
+        "&v": $species
+      Group: false
+      Ethnicity: false
+      Gender: false
+      Variant: Unlocks
+      modifierStorage: null
+
+  # Builds a prerequisite to check for the actor's rank (e.g. sentry guns).
+  $RankPq:
+    $args:
+      - $rank
+    :DLEPq:
+      Target: Xenonauts.Common.Components.Combatant.Rank
+      Compare: Is
+      Value:
+        :Rank: $rank
+      UseInventoryType: false
+      Variant: Unlocks
+      modifierStorage: null
+
+  # Negates all child prerequisites.
+  $NonePq:
+    $args:
+      - $reqs
+    :LogicPq:
+      Operator: None
+      Number: 0
+      Children: $reqs
+      Variant: Unlocks
+      modifierStorage: null
+
+  # Requires all child prerequisites to be met.
+  $AndPq:
+    $args:
+      - $reqs
+    :LogicPq:
+      Operator: All
+      Number: 0
+      Children: $reqs
+      Variant: Unlocks
+      modifierStorage: null
+
+  # Requires any child prerequisites to be met.
+  $OrPq:
+    $args:
+      - $reqs
+    :LogicPq:
+      Operator: Any
+      Number: 0
+      Children: $reqs
+      Variant: Unlocks
+      modifierStorage: null
+
+  # Builds a restriction against equipping an item in ground combat
+  # based on the inventory slot owner.
+  $SlotOwnerPq:
+    $args:
+      - $mode
+      - $reqs
+    :ADelegatePq:
+      Operator: $mode
+      Number: 0
+      selector:
+        :OneEntitySe:
+          OneComponent: Xenonauts.Common.Components.Item.InventorySlotOwnerLink
+      prerequisites: $reqs
+
+  # Builds a set of restrictions against equipping an item in ground combat.
+  $GCEquipReqs:
+    $args:
+      - $reqs
+    :InventorySlotAddPrerequisites:
+      - :IgnoreInTestWrapperPq:
+          Prerequisite:
+            :ForwardInventorySlotPq:
+              Forward: Slot
+              Delegate: $reqs
+              Variant: Unlocks
+              modifierStorage: null
+          Variant: Unlocks
+          modifierStorage: null

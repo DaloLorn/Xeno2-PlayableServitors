@@ -1,6 +1,17 @@
 $schema: 0.4.0
 $aliases:
   Name: &Name { :Name: Harbinger Armor }
+$builders:
+  $HeavyServitorOnly:
+    $GCEquipReqs:
+      $reqs:
+        $SlotOwnerPq:
+          $mode: All
+          $reqs:
+            - $SpeciesPq:
+                $species: servitor
+            - $RankPq:
+                $rank: servitor_heavy
 
 strategy:
   parent:
@@ -11,7 +22,7 @@ strategy:
   $path: item/armour/servitor_heavy
   components:
     <<: *Name
-    :LocalizableGUID: []
+    $NoLocale: {}
 
 groundcombat:
   parent:
@@ -26,3 +37,4 @@ groundcombat:
       - GUID: 395bc89e-4f1e-4cb5-8761-5a206219f2d8
         TargetComponent: Common.Components.DescriptionComponent
         Request: Ignore
+    $HeavyServitorOnly: {}

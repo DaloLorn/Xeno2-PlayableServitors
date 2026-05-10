@@ -1,7 +1,7 @@
 $schema: 0.4.0
 $aliases:
   Shared: &Shared
-    :LocalizableGUID: []
+    $NoLocale: {}
     :Name: Harbinger Burst Cannon
 
 strategy:
@@ -24,3 +24,4 @@ groundcombat:
   components:
     <<: *Shared
     :Portrait: GC-::-ui/item/weapon/alien_fusion_rifle.png
+    $HeavyServitorOnly: {}

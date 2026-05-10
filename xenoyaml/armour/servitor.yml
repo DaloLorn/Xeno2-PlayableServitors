@@ -1,6 +1,17 @@
 $schema: 0.4.0
 $aliases:
   Name: &Name { :Name: Herald Armor }
+$builders:
+  $ServitorOnly:
+    $GCEquipReqs:
+      $reqs: 
+        $SlotOwnerPq:
+          $mode: All
+          $reqs:
+            - $SpeciesPq: 
+                $species: servitor
+            - $RankPq:
+                $rank: servitor
 
 strategy:
   parent:
@@ -11,7 +22,7 @@ strategy:
   $path: item/armour/servitor
   components:
     <<: *Name
-    :LocalizableGUID: []
+    $NoLocale: {}
 
 groundcombat:
   parent:
@@ -26,3 +37,4 @@ groundcombat:
       - GUID: ca58e768-4f67-4af7-9106-4bd8239bab3d
         TargetComponent: Common.Components.DescriptionComponent
         Request: Ignore
+    $ServitorOnly: {}

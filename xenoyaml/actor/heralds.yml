@@ -3,8 +3,6 @@ $aliases:
   SmallBody: &SmallBody { :BodySize: small }
   HeraldRank: &HeraldRank { :Rank: servitor }
   HarbingerRank: &HarbingerRank { :Rank: servitor_heavy }
-  DefaultArmourValueType: &DefaultArmourValueType 
-    $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
 groundcombat:
   actor/combatant/mechanical/xenonaut:
@@ -20,7 +18,7 @@ groundcombat:
           - *SmallBody
           - *HeraldRank
         :Name: Herald Support Platform
-        :LocalizableGUID: []
+        $NoLocale: {}
         :IgnoredValidators:
           - Common.Validation.TemplateValidators.PrototypeComponentValidator
         :PortraitLayers:
@@ -115,19 +113,14 @@ strategy:
       <<:
         - *SmallBody
       :Age:
-        _min: 0
-        _val: 0
-        _max: 0
-      :BodyID:
-        species: servitor
-        group: default
-        ethnicity: default
-        gender: default
+        $FlatRange:
+          $val: 0
+      $Species:
+        $species: servitor
       :CombatantMeta: StressImmune,MoraleImmune
       :CombatRating:
-        _min: 1
-        _val: 1
-        _max: 1
+        $FlatRange:
+          $val: 1
       :DefaultLoadoutProfile:
         Target: ST-::-loadout_profiles/heavy.json
         $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
@@ -145,17 +138,14 @@ strategy:
         _val: 10
         _max: 99
       :Cash:
-        _min: 0
-        _val: 0
-        _max: 0
+        $FlatRange:
+          $val: 0
       :PersonnelCapacity:
-        _min: 0
-        _val: 0
-        _max: 0
+        $FlatRange:
+          $val: 0
       :Quantity:
-        _min: 1
-        _val: 1
-        _max: 1
+        $FlatRange:
+          $val: 1
       :Rank: private
       :SellPrice: 10000
       :SellPriceTransactionDelta: 0
@@ -165,17 +155,14 @@ strategy:
         FullRecover,DisableLoadoutProfiles,NoExperienceGain,NoMedalGain,DisableCarryCapacity
       :SItemMeta: ""
       :Strength:
-        _min: 50
-        _val: 50
-        _max: 50
+        $FlatRange:
+          $val: 50
       :UnmodifiedHitPoints:
-        _min: 60
-        _val: 60
-        _max: 60
+        $FlatRange:
+          $val: 60
       :Weight:
-        _min: 1
-        _val: 1
-        _max: 1
+        $FlatRange:
+          $val: 1
       :FundingCategory: Expenses/Vehicles
       :SellPriceMax: 1
 
@@ -192,39 +179,34 @@ strategy:
         <<:
           - *HeraldRank
         :Accuracy:
-          _min: 55
-          _val: 55
-          _max: 55
+          $FlatRange:
+            $val: 55
         :Bravery:
-          _min: 100
-          _val: 100
-          _max: 100
+          $FlatRange:
+            $val: 100
         :DefaultArmour:
           $content: GC-::-item/armour/servitor.json
-          <<: *DefaultArmourValueType
+          $valuetypekey: ar_Template
         :DefaultLoadoutProfile:
           Target: ST-::-loadout_profiles/servitor.json
           $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
         :HitPoints:
-          _min: 60
-          _val: 60
-          _max: 60
+          $FlatRange:
+            $val: 60
         :KeyedCounter:
           Herald: 0
         :NameFormatter: Herald {Herald}
         :PortraitLayers:
           - ST-::-ui/portraits/character/mars^head.png
         :Reflexes:
-          _min: 50
-          _val: 50
-          _max: 50
+          $FlatRange:
+            $val: 50
         :SellPrice: 50000
         :SortOrder: 2098
         :SItemMeta: Transferable,Sellable,Unique
         :TimeUnits:
-          _min: 60
-          _val: 60
-          _max: 60
+          $FlatRange:
+            $val: 60
         :GCCombatantMeta: Flying
 
     # Harbinger ST
@@ -239,14 +221,13 @@ strategy:
           - *HarbingerRank
         :DefaultArmour:
           $content: GC-::-item/armour/servitor_heavy.json
-          <<: *DefaultArmourValueType
+          $valuetypekey: ar_Template
         :DefaultLoadoutProfile:
           Target: ST-::-loadout_profiles/servitor_heavy.json
           $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
         :HitPoints:
-          _min: 120
-          _val: 120
-          _max: 120
+          $FlatRange:
+            $val: 120
         :KeyedCounter:
           Harbinger: 0
         :NameFormatter: Harbinger {Harbinger}
