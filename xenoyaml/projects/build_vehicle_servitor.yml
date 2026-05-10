@@ -56,9 +56,7 @@ strategy:
         <<: *Shared
         :Description: Produces one Harbinger Support Platform, a tougher Herald
           with improved weapons and armor.
-        :LocalizableGUID: []
         :Name: Harbinger Support Platform
-        :Portrait: GC-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png
         :Prerequisites:
           - :ADelegatePq:
               <<: *ProjectCosts

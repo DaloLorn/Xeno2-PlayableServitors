@@ -29,7 +29,6 @@ strategy:
         <<: *Shared
         :Description: Intensive study of the aliens' Heavy
           Servitor drones, aimed at advancing our Servitor reconstruction protocols.
-        :LocalizableGUID: []
         :Name: Heavy Servitor Reconstruction
         :Prerequisites:
           - :ADelegatePq:
