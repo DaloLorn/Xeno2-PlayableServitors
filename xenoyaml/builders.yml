@@ -1,7 +1,11 @@
 $schema: 0.4.0
 $builders:
+  # Disables localization on the template.
   $NoLocale:
     :LocalizableGUID: []
+
+  # Adds an unlock check for whether the player meets all of the specified conditions.
+  # These can technically be non-tech things, but whatever.
   $HasTechs:
     $args: 
       - $techs
@@ -14,6 +18,9 @@ $builders:
       Variant: Unlocks
       modifierStorage: null
       prerequisites: $techs
+
+  # Adds an unlock check for whether the player has completed a project.
+  # (Meant to be used with $HasTechs or other ADelegatePqs.)
   $HasTech:
     $args:
       - $pack
@@ -27,3 +34,109 @@ $builders:
       Status: Finished
       Variant: Unlocks
       modifierStorage: null
+      
+  # Checks whether all costs of a project are met.
+  # Uses $HasTechs under the hood as a stress test,
+  # because they're basically the same otherwise.
+  $HasCosts:
+    $args:
+      - $costs
+    $HasTechs:
+      :ADelegatePq:
+        Variant: Cost
+      $techs: $costs
+
+  # Checks whether the player has enough cash to pay for the project.
+  # Should be used inside a $HasCosts.
+  $CashCost:
+    $args:
+      - $amount
+    :CashPq:
+      value: $amount
+      Variant: Cost
+      modifierStorage: null
+
+  # Generates and recruits new actors at the selected base.
+  $RecruitActor:
+    $args:
+      - $amount
+      - $pack
+      - $actor
+    :BinaryArgsDelegateEffect:
+      Arg0Selector:
+        :PlayerSe:
+          Player: xenonauts
+      Arg1Selector:
+        :MyGeoBaseSe:
+          Target: null
+      Effect:
+        :GenerateAndRecruitActorEffect:
+          Quantity:
+            _min: $amount
+            _val: $amount
+            _max: $amount
+          TemplateRef:
+            :ar_Template:
+              pack: $pack
+              screen: ST
+              path: $actor
+          IgnoreCost: true
+          Delayed: false
+          Randomize: true
+          modifierStorage: null
+      modifierStorage: null
+
+  # Executes a delegate effect on the selected base.
+  $MyBaseEffect:
+    $args:
+      - $effects
+    :ADelegateEffect:
+      selector:
+        :MyGeoBaseSe:
+          Target: null
+      effects: $effects
+      modifierStorage: null
+  
+  # Adds new items to the selected base's inventory.
+  # (Should be invoked inside a MyBaseEffect or similar.)
+  $AddItem:
+    $args:
+      - $amount
+      - $pack
+      - $item
+    :DeltaItemEffect:
+      Quantity: 1
+      Rounding: None
+      Item:
+        :ar_Template:
+          pack: $pack
+          screen: ST
+          path: $item
+      SlotType:
+        :MainBaseSlots: Stores
+      modifierStorage: null
+
+  # Adds new items to future bases.
+  # This is always assumed to be infinite because nothing else makes sense.
+  # (I can always redefine it later.)
+  $AddItemToFutureBases:
+    $args:
+      - $pack
+      - $item
+    :ADelegateEffect:
+      selector:
+        :TaggedEntitySe:
+          Tag: Xenonauts.Common.CampaignTag
+      effects:
+        - :AddItemToGeoBaseRequisitionEffect:
+            Quantity: Infinity
+            SlotType:
+              :MainBaseSlots: Stores
+            Item:
+              :ar_Template:
+                pack: $pack
+                screen: ST
+                path: $item
+            modifierStorage: null
+      modifierStorage: null
+  

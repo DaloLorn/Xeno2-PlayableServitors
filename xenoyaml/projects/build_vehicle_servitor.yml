@@ -1,46 +1,12 @@
 $schema: 0.4.0
 $aliases:
   Shared: &Shared
-    :LocalizableGUID: []
+    $NoLocale: {}
     :Portrait: GC-::-ui/item/corpse/servitor^default^servitor^dead^default^default.png
     :SortCategoriesReference:
       - :ar_Template:
           screen: ST
           path: sort_categories/project/engineering/vehicles
-  RecruitActorWrapper: &RecruitActorWrapper
-    Arg0Selector:
-      :PlayerSe:
-        Player: xenonauts
-    Arg1Selector:
-      :MyGeoBaseSe:
-        Target: null
-    modifierStorage: null
-  RecruitActor: &RecruitActor
-    Quantity:
-      _min: 1
-      _val: 1
-      _max: 1
-    IgnoreCost: true
-    Delayed: false
-    Randomize: true
-    modifierStorage: null
-  AddItem: &AddItem
-    Quantity: 1
-    Rounding: None
-    SlotType:
-      :MainBaseSlots: Stores
-    modifierStorage: null
-  AddItemToFutureBases: &AddItemToFutureBases
-    Quantity: Infinity
-    SlotType:
-      :MainBaseSlots: Stores
-    modifierStorage: null
-  ProjectCosts: &ProjectCosts
-    Operator: All
-    Number: 0
-    Variant: Cost
-    modifierStorage: null
-
 
 strategy:
   projects/engineering:
@@ -58,67 +24,30 @@ strategy:
           with improved weapons and armor.
         :Name: Harbinger Support Platform
         :Prerequisites:
-          - :ADelegatePq:
-              <<: *ProjectCosts
-              selector:
-                :PlayerSe:
-                  Player: xenonauts
-              prerequisites:
-                - :CashPq:
-                    value: 250000
-                    Variant: Cost
-                    modifierStorage: null
+          - $HasCosts:
+              $costs:
+                - $CashCost:
+                    $amount: 250000
         :ProjectFSM:
           TriggerEffects: {}
           EntryEffects:
             Finished:
-              - :BinaryArgsDelegateEffect:
-
-                  Effect:
-                    <<: *RecruitActorWrapper
-                    :GenerateAndRecruitActorEffect:
-                      <<: *RecruitActor
-                      TemplateRef:
-                        :ar_Template:
-                          screen: ST
-                          path: actor/combatant/mechanical/xenonauts/servitor_heavy
-              - :ADelegateEffect:
-                  selector:
-                    :MyGeoBaseSe:
-                      Target: null
-                  effects:
-                    - :DeltaItemEffect:
-                        <<: *AddItem
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/armour/servitor_heavy
-                    - :DeltaItemEffect:
-                        <<: *AddItem
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/weapon/alien_servitor_cannon_heavy
-                    - :DeltaItemEffect:
-                        <<: *AddItem
-                        Quantity: Infinity
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/ammo/alien_servitor_cell_heavy
-                  modifierStorage: null
-              - :ADelegateEffect:
-                  selector:
-                    :TaggedEntitySe:
-                      Tag: Xenonauts.Common.CampaignTag
-                  effects:
-                    - :AddItemToGeoBaseRequisitionEffect:
-                        <<: *AddItemToFutureBases
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/ammo/alien_servitor_cell_heavy
-                  modifierStorage: null
+              - $RecruitActor:
+                  $amount: 1
+                  $actor: actor/combatant/mechanical/xenonauts/servitor_heavy
+              - $MyBaseEffect:
+                  $effects:
+                    - $AddItem:
+                        $amount: 1
+                        $item: item/armour/servitor_heavy
+                    - $AddItem:
+                        $amount: 1
+                        $item: item/weapon/alien_servitor_cannon_heavy
+                    - $AddItem:
+                        $amount: Infinity
+                        $item: item/ammo/alien_servitor_cell_heavy
+              - $AddItemToFutureBases:
+                  $item: item/ammo/alien_servitor_cell_heavy
           ExitEffects: {}
           State: Setup
         :SortOrder: 283
@@ -136,66 +65,30 @@ strategy:
           refurbished alien Servitor that can support your soldiers in battle.
         :Name: Herald Support Platform
         :Prerequisites:
-          - :ADelegatePq:
-              <<: *ProjectCosts
-              selector:
-                :PlayerSe:
-                  Player: xenonauts
-              prerequisites:
-                - :CashPq:
-                    value: 250000
-                    Variant: Cost
-                    modifierStorage: null
+          - $HasCosts:
+              $costs:
+                - $CashCost:
+                    $amount: 250000
         :ProjectFSM:
           TriggerEffects: {}
           EntryEffects:
             Finished:
-              - :BinaryArgsDelegateEffect:
-                  <<: *RecruitActorWrapper
-                  Effect:
-                    :GenerateAndRecruitActorEffect:
-                      <<: *RecruitActor
-                      TemplateRef:
-                        :ar_Template:
-                          screen: ST
-                          path: actor/combatant/mechanical/xenonauts/servitor
-              - :ADelegateEffect:
-                  selector:
-                    :MyGeoBaseSe:
-                      Target: null
-                  effects:
-                    - :DeltaItemEffect:
-                        <<: *AddItem
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/armour/servitor
-                    - :DeltaItemEffect:
-                        <<: *AddItem
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/weapon/alien_servitor_cannon
-                    - :DeltaItemEffect:
-                        <<: *AddItem
-                        Quantity: Infinity
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/ammo/alien_servitor_cell
-                  modifierStorage: null
-              - :ADelegateEffect:
-                  selector:
-                    :TaggedEntitySe:
-                      Tag: Xenonauts.Common.CampaignTag
-                  effects:
-                    - :AddItemToGeoBaseRequisitionEffect:
-                        <<: *AddItemToFutureBases
-                        Item:
-                          :ar_Template:
-                            screen: ST
-                            path: item/ammo/alien_servitor_cell
-                  modifierStorage: null
+              - $RecruitActor:
+                  $amount: 1
+                  $actor: actor/combatant/mechanical/xenonauts/servitor
+              - $MyBaseEffect:
+                  $effects:
+                    - $AddItem:
+                        $amount: 1
+                        $item: item/armour/servitor
+                    - $AddItem:
+                        $amount: 1
+                        $item: item/weapon/alien_servitor_cannon
+                    - $AddItem:
+                        $amount: Infinity
+                        $item: item/ammo/alien_servitor_cell
+              - $AddItemToFutureBases:
+                  $item: item/ammo/alien_servitor_cell
           ExitEffects: {}
           State: Setup
         :SortOrder: 282
