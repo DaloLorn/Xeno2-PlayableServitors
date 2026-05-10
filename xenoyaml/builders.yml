@@ -1,0 +1,29 @@
+$schema: 0.4.0
+$builders:
+  $NoLocale:
+    :LocalizableGUID: []
+  $HasTechs:
+    $args: 
+      - $techs
+    :ADelegatePq:
+      Operator: All
+      Number: 0
+      selector:
+        :PlayerSe:
+          Player: xenonauts
+      Variant: Unlocks
+      modifierStorage: null
+      prerequisites: $techs
+  $HasTech:
+    $args:
+      - $pack
+      - $tech
+    :ProjectPq:
+      Project:
+        :ar_Template:
+          pack: $pack
+          screen: ST
+          path: $tech
+      Status: Finished
+      Variant: Unlocks
+      modifierStorage: null
