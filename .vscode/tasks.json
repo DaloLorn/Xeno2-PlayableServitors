@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Build Code Mod",
+			"presentation": {
+				"group": "build",
+				"panel": "shared"
+			}
+		},
+		{
+			"type": "shell",
+			"command": "rd /s /q template && xenoyaml xenoyaml",
+			"group": "build",
+			"label": "Build Template Mod",
+			"presentation": {
+				"group": "build",
+				"panel": "shared"
+			}
+		},
+		{
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"Build Template Mod",
+				"Build Code Mod",
+			],
+			"label": "Full Build"
+		}
+	]
+}

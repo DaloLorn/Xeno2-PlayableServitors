@@ -2,16 +2,16 @@
     "version": "0.1.0",
     "asset": {
         "Source": "Manual",
-        "Name": "Heralds & Harbingers",
-        "UID": "dalolorn-heralds-and-harbingers",
-        "Description": "A proof-of-concept mod introducing the ability to rebuild destroyed Servitors and Heavy Servitors for use by the Xenonaut Initiative.",
+        "Name": "The Unification War",
+        "UID": "dalolorn-unification-war",
+        "Description": "A mod attempting to extensively rebalance the game while also tweaking the story to make the outcomes depicted in the final cutscene seem a little less sudden. Expect a very different tactical experience, hacked and salvaged alien hardware, recruitable defectors, and possibly more! (... You know, in a later version that actually follows through on any of my plans.)",
         "Author": "DaloLorn",
-        "Website": "https://github.com/DaloLorn/Xeno2-PlayableServitors",
+        "Website": "https://github.com/DaloLorn/Xeno2-TheUnificationWar",
         "Tags": ["Mod"],
         "SupportedLanguages": [
             "en-US"
         ],
-        "Version": "0.2.0",
+        "Version": "0.3.0",
         "MinimumVersion": {
             "&v": {
                 "$content": "7.19.2",

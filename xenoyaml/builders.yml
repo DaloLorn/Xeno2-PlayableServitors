@@ -148,7 +148,7 @@ $builders:
     _val: $val
     _max: $val
 
-  # Sets all BodyID properties to "default" except the species.
+  # Sets up a body ID for a default unit of the given species.
   $Species:
     $args:
       - $species
@@ -157,6 +157,15 @@ $builders:
       group: default
       ethnicity: default
       gender: default
+
+  # Sets up a body ID for a Xenonaut unit of the given species.
+  $XenonautSpecies:
+    $args:
+      - $species
+    $Species:
+      $species: $species
+      :BodyID:
+        group: xenonaut
 
   # Builds a BodyIDPq for a given species with all other props omitted.
   # Essentially $Species, but for prerequisites.

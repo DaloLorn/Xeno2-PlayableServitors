@@ -5,7 +5,7 @@ $aliases:
   HarbingerRank: &HarbingerRank { :Rank: servitor_heavy }
 
 groundcombat:
-  actor/combatant/mechanical/xenonaut:
+  actor/combatant/servitor/xenonaut:
     # Herald GC
     servitor:
       parent:
@@ -29,6 +29,7 @@ groundcombat:
             :ar_Template:
               screen: GC
               path: item/corpse/corpse_servitor
+        :InventoryTaxonomy: Combatant/Mechanical
         :TemplateEditorDecorators:
           - :22:
               Guid: 3d921750-e11d-4866-9691-8de0f689357d
@@ -93,7 +94,7 @@ groundcombat:
     servitor_heavy:
       parent:
         screen: GC
-        path: actor/combatant/mechanical/xenonaut/servitor/default
+        path: actor/combatant/servitor/xenonaut/servitor/default
       name: default
       $path: default
       components:
@@ -112,10 +113,11 @@ strategy:
     components:
       <<:
         - *SmallBody
+      $NoLocale: {}
       :Age:
         $FlatRange:
           $val: 0
-      $Species:
+      $XenonautSpecies:
         $species: servitor
       :CombatantMeta: StressImmune,MoraleImmune
       :CombatRating:
