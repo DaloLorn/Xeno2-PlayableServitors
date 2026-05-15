@@ -72,6 +72,6 @@
 
         <Copy SourceFiles="@(BuiltArtifacts)"
               DestinationFolder="$(ModInstanceFolder)/assembly/common"
-              SkipUnchangedFiles="false" />
+              SkipUnchangedFiles="true" />
       </Target>
 </Project>

@@ -1,0 +1,91 @@
+$schema: 0.4.0
+strategy:
+  parent:
+    screen: ST
+    path: masters/actor/combatant/human/xenonauts/soldier_master
+  name: psyon_defector
+  $path: actor/combatant/psyon/xenonauts/psyon_defector
+  components:
+    :DefaultLoadoutProfile:
+      Target: ST-::-loadout_profiles/psyon_defector.json
+      $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+    :PsionicStrength:
+      $FlatRange:
+        $val: 50
+    $XenonautSpecies:
+      $species: psyon
+    :DefaultArmour:
+      $content: GC-::-item/armour/psyon_noncom.json
+      $valuetypekey: ar_Template
+    :PortraitLayers:
+      - ST-::-ui/portraits/character/mars^head.png
+    
+  
+groundcombat:
+  actor/combatant/psyon/xenonaut:
+    private:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/default/officer/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+        :PortraitLayers:
+          - ST-::-ui/portraits/character/mars^head.png
+    corporal:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+    sergeant:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+    sergeantmajor:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+    lieutenant:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+    captain:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+    major:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
+    colonel:
+      parent:
+        screen: GC
+        path: actor/combatant/psyon/xenonaut/private/default
+      name: psyon_defector
+      $path: default
+      components:
+        $NoLocale: {}
