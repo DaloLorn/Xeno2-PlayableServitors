@@ -8,6 +8,7 @@ $aliases:
       {{_context.tooltips.concept filename:"hp" text:"Hit Points"}} and cure their
       {{_context.tooltips.concept filename:"bleeding_wounds" text:"Bleeding
       Wounds"}}.
+      
 
       Like the Medikit, the Nano-Medspray can only restore half of the damage
       taken by your soldiers; the other half must be healed back at a base.
