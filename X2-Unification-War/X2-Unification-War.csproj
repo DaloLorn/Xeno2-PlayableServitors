@@ -48,6 +48,10 @@
           <HintPath>$(GameFolder)\UnityEngine.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+          <HintPath>$(GameFolder)\UnityEngine.AudioModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule">
           <HintPath>$(GameFolder)\UnityEngine.CoreModule.dll</HintPath>
           <Private>False</Private>

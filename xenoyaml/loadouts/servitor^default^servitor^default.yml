@@ -1,0 +1,147 @@
+$schema: 0.4.0
+strategy:
+  parent:
+    screen: GC
+    path: masters/loadout/combatant/humanoid_create
+  name: drone^default^gundrone^default
+  $path: loadout/combatant/servitor^default^servitor^default
+  components:
+    :TemplateRelationships:
+      OneLinkTemplates: {}
+      ManyLinkTemplates:
+        Xenonauts.Common.Components.Item.InventorySlotsLink:
+          - :0:
+              Value:
+                Parent:
+                  :ar_Template:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_armor
+                _components:
+                  - :TemplateRelationships:
+                      OneLinkTemplates: {}
+                      ManyLinkTemplates:
+                        Xenonauts.Common.Components.Item.InventoryLink:
+                          - :0:
+                              Value:
+                                _components:
+                                  - :ItemID:
+                                      $content: ST-::-item/armour/servitor.json
+                                      $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+                                        Version=0.0.0.0, Culture=neutral,
+                                        PublicKeyToken=null]]
+                                  - :ItemRequest:
+                                      $valuetype: Xenonauts.Common.Components.Item.CreateItemRequestStrategy
+                                      $valueid: "-18"
+                                  - :ItemRequestStatus: Pending
+                                  - :Quantity:
+                                      _min: 0
+                                      _val: 1
+                                      _max: Infinity
+                      ShallowReferenceTemplates: {}
+                      ListTemplates: {}
+          - :0:
+              Value:
+                Parent:
+                  :ar_Template:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_primary
+                _components:
+                  - :TemplateRelationships:
+                      OneLinkTemplates: {}
+                      ManyLinkTemplates:
+                        Xenonauts.Common.Components.Item.InventoryLink:
+                          - :0:
+                              Value:
+                                _components:
+                                  - :InventoryTemplate:
+                                      Value:
+                                        _components:
+                                          - :TemplateRelationships:
+                                              OneLinkTemplates: {}
+                                              ManyLinkTemplates:
+                                                Xenonauts.Common.Components.Item.InventorySlotsLink:
+                                                  - :0:
+                                                      Value:
+                                                        _components:
+                                                          - :ComposableFormatter: "{$ID} InventorySlot - {InventorySlotType}
+                                                              [{InventorySlotOwne\
+                                                              r}]"
+                                                          - :InventorySlotMeta: CanApplyModifiers,WillApplyModifiers
+                                                          - :InventorySlotSize:
+                                                              _min: 0
+                                                              _val: 1
+                                                              _max: 1
+                                                          - :InventorySlotType:
+                                                              - :FirearmSlots: Ammo
+                                                          - :TemplateRelationships:
+                                                              OneLinkTemplates: {}
+                                                              ManyLinkTemplates:
+                                                                Xenonauts.Common.Components.Item.InventoryLink:
+                                                                  - :0:
+                                                                      Value:
+                                                                        _components:
+                                                                          - :ItemID:
+                                                                              $content: ST-::-item/ammo/alien_servitor_cell.json
+                                                                              $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+                                                                                Version=0.0.0.0,
+                                                                                Culture=neutral,
+                                                                                PublicKeyToken=null]]
+                                                                          - :ItemRequest:
+                                                                              $valuereference: "-18"
+                                                                          - :ItemRequestStatus: Pending
+                                                                          - :Quantity:
+                                                                              _min: 0
+                                                                              _val: 1
+                                                                              _max: Infinity
+                                                              ShallowReferenceTemplates: {}
+                                                              ListTemplates: {}
+                                              ShallowReferenceTemplates: {}
+                                              ListTemplates: {}
+                                      $valuetype: Artitas.Core.Utils.Reference`1[[Artitas.Template, Assembly-CSharp,
+                                        Version=0.0.0.0, Culture=neutral,
+                                        PublicKeyToken=null]]
+                                  - :ItemID:
+                                      $content: ST-::-item/weapon/alien_servitor_cannon.json
+                                      $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+                                        Version=0.0.0.0, Culture=neutral,
+                                        PublicKeyToken=null]]
+                                  - :ItemRequest:
+                                      $valuereference: "-18"
+                                  - :ItemRequestStatus: Pending
+                                  - :Quantity:
+                                      _min: 0
+                                      _val: 1
+                                      _max: Infinity
+                      ShallowReferenceTemplates: {}
+                      ListTemplates: {}
+          - :0:
+              Value:
+                Parent:
+                  :ar_Template:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_secondary
+                _components: 
+                  - :TemplateRelationships:
+                      OneLinkTemplates: {}
+                      ManyLinkTemplates:
+                        Xenonauts.Common.Components.Item.InventoryLink:
+                          - :0:
+                              Value:
+                                _components:
+                                  - :ItemID:
+                                      $content: ST-::-item/weapon/dl_x2uw_herald_medispray.json
+                                      $valuetype: Common.Content.AssetReference`1[[Artitas.Template, Assembly-CSharp,
+                                        Version=0.0.0.0, Culture=neutral,
+                                        PublicKeyToken=null]]
+                                  - :ItemRequest:
+                                      $valuereference: "-18"
+                                  - :ItemRequestStatus: Pending
+                                  - :ComposableFormatter: "{$ID} ItemRequest: {ItemID}"
+                                  - :Quantity:
+                                      _min: 0
+                                      _val: 1
+                                      _max: Infinity
+                      ShallowReferenceTemplates: {}
+                      ListTemplates: {}
+      ShallowReferenceTemplates: {}
+      ListTemplates: {}

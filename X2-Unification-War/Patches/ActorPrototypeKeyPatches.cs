@@ -14,7 +14,7 @@ namespace X2UnificationWar.Patches {
         
         /// <summary>
         /// Updates the KeyFactory.KeyTransform associated with combatant::body_identifier.group,
-        /// in order to remap "defector" to "default". This allows me to reuse the default prefabs
+        /// in order to remap "xenonaut" to "default". This allows me to reuse the default prefabs
         /// for alien units while still defining unique defector actors!
         /// </summary>
         [HarmonyPostfix]
@@ -31,9 +31,9 @@ namespace X2UnificationWar.Patches {
                 part.Transform = obj =>
                 {
                     var composable = (IComposable)obj;
-                    var BodyID = composable.Get<BodyIdentifierComponent>();
-                    var species = BodyID.species;
-                    var group = BodyID.group;
+                    var bodyId = composable.Get<BodyIdentifierComponent>();
+                    var species = bodyId.species;
+                    var group = bodyId.group;
                     return !PlayableSpecies.Contains(species.value) && group.value == DefectorGroup ? DefaultGroup : group;
                 };
                 Log.Info($"[X2-Unification-War] Patched combatant::body_identifier.group - mapping ${DefectorGroup} to ${DefaultGroup}");

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using Artitas;
 using Artitas.Utils;
 using Common.Content;
-using Common.Editor.Inspector;
 using Common.Modding;
 using HarmonyLib;
 using log4net;
-using Xenonauts.GroundCombat.Components;
+using X2UnificationWar.Components;
 
 namespace X2UnificationWar {
     
@@ -23,19 +21,22 @@ namespace X2UnificationWar {
         private static readonly bool IsInfoEnabled = Log.IsInfoEnabled;
 
         #endregion
-
-        public void Create(Mod mod, Harmony patcher) {
+        
+        public void Create(Mod mod, Harmony patcher)
+        {
             Log.Warn("[X2-Unification-War] Loaded Unification War!");
 
-            /* Don't mind me, was just messing around with the type registry
             var LowercaseKeyToType = (Dictionary<string, Type>) typeof(TypeKeyIndexRuntime).GetField("LowercaseKeyToType", BindingFlags.Static | BindingFlags.NonPublic).GetValue(TypeKeyIndexRuntime.Instance);
             var TypeToKey = (Dictionary<Type, string>)
                 typeof(TypeKeyIndexRuntime).GetField("TypeToKey", BindingFlags.Static | BindingFlags.NonPublic).GetValue(TypeKeyIndexRuntime.Instance);
 
-            LowercaseKeyToType.Add("MedikitAbility", typeof(MedikitAbilityDefinition));
-            LowercaseKeyToType.Add("InventoryBoardSlot", typeof(InventorySlotWithBoardFactory));
-            LowercaseKeyToType.Add("InventorySizeSlot", typeof(InventorySlotWithSizeFactory));
-            */
+            RegisterType(LowercaseKeyToType, TypeToKey, "DL_X2UW_MedisprayAbility", typeof(MedisprayAbilityDefinition));
+        }
+
+        void RegisterType(Dictionary<string, Type> LowercaseKeyToType, Dictionary<Type, string> TypeToKey, string Key, Type Type)
+        {
+            LowercaseKeyToType.Add(Key, Type);
+            TypeToKey.Add(Type, Key);
         }
         
         public void Destroy() {

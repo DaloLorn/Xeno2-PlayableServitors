@@ -1,0 +1,71 @@
+$schema: 0.4.0
+$aliases:
+  Shared: &Shared
+    $NoLocale: {}
+    :Description: >-
+      A ranged alien medikit designed for use by Servitors,
+      spraying healing nanites at wounded soldiers to restore their lost
+      {{_context.tooltips.concept filename:"hp" text:"Hit Points"}} and cure their
+      {{_context.tooltips.concept filename:"bleeding_wounds" text:"Bleeding
+      Wounds"}}.
+
+      Like the Medikit, the Nano-Medspray can only restore half of the damage
+      taken by your soldiers; the other half must be healed back at a base.
+    :Name: Nano-Medspray
+
+strategy:
+  parent:
+    screen: ST
+    path: item/weapon/medikit
+  name: dl_x2uw_herald_medispray
+  $path: item/weapon/dl_x2uw_herald_medispray
+  components:
+    <<: *Shared
+    :SortOrder: 612
+    :SItemMeta: ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer
+
+groundcombat:
+  parent:
+    screen: GC
+    path: item/weapon/medikit
+  name: dl_x2uw_herald_medispray
+  $path: item/weapon/dl_x2uw_herald_medispray
+  components:
+    <<: *Shared
+    :GCItemMeta: CannotBeActive,Integrated,HideAmmoSlot
+    :RecoveredItems: []
+    :Portrait: GC-::-ui/item/weapon/alien_magnetic_rifle.png
+    :Prototype:
+      value: GC-::-item/weapon/empty.prefab
+      addColliders: false
+      dontInstantiate: true
+      pool: false
+    $GCEquipReqs:
+      $reqs: 
+        $SlotOwnerPq:
+          $mode: All
+          $reqs:
+            - $SpeciesPq: 
+                $species: servitor
+    :GCAbilityDefinitions:
+      - :DL_X2UW_MedisprayAbility:
+          Range: 5
+          LineProjectilePrefab: GC-::-sfx/projectile/auto_heal^default.prefab
+          FXDuration: 0.8
+          SoundFX: GC-::-sfx/heal/heal_servitor_beam.ogg
+          Name: Heal
+          AbsoluteCostTimeUnits: 25
+          PercentageCostTimeUnits: 0
+          ImportanceScale: 1
+          Crosshair: GC-::-ui/crosshairs/crosshair_heal
+          Accuracy: 100
+          Tooltip: false
+      - :93:
+          Range: 5
+          PercentageOfDamageHealed: 0.5
+          LineProjectilePrefab: GC-::-sfx/projectile/auto_heal^default.prefab
+          SoundFX: GC-::-sfx/heal/heal_servitor_beam.ogg
+          FXDuration: 0.8
+          HealMeta: Healable
+          Name: Auto Heal
+          Tooltip: false
