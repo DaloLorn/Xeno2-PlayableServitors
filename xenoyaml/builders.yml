@@ -158,7 +158,7 @@ $builders:
       ethnicity: default
       gender: default
 
-  # Sets up a body ID for a Xenonaut unit of the given species.
+  # Sets up a body ID for a Xenonaut defector unit of the given species.
   $XenonautSpecies:
     $args:
       - $species
@@ -166,6 +166,7 @@ $builders:
       $species: $species
       :BodyID:
         group: xenonaut
+    :DL_X2UW_ActorRoleGroupOverride: default
 
   # Builds a BodyIDPq for a given species with all other props omitted.
   # Essentially $Species, but for prerequisites.

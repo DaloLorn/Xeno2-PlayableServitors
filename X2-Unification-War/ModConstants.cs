@@ -1,7 +1,6 @@
 using System.Reflection;
 using Artitas.Utils;
 using log4net;
-using Xenonauts.Common.Components;
 
 namespace X2UnificationWar {
     
@@ -16,8 +15,7 @@ namespace X2UnificationWar {
 
         #endregion
 
-        public static readonly string[] PlayableSpecies = [Species.Human().value, Species.Mechanical().value];
-        public static readonly string DefectorGroup = RoleGroup.Xenonaut().value;
-        public static readonly string DefaultGroup = RoleGroup.Default().value;
+        public static readonly string MedisprayType = "DL_X2UW_MedisprayAbility";
+        public static readonly string ActorRoleGroupOverrideType = "DL_X2UW_ActorRoleGroupOverride";
     }
 }

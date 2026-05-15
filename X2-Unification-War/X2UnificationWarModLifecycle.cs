@@ -30,7 +30,8 @@ namespace X2UnificationWar {
             var TypeToKey = (Dictionary<Type, string>)
                 typeof(TypeKeyIndexRuntime).GetField("TypeToKey", BindingFlags.Static | BindingFlags.NonPublic).GetValue(TypeKeyIndexRuntime.Instance);
 
-            RegisterType(LowercaseKeyToType, TypeToKey, "DL_X2UW_MedisprayAbility", typeof(MedisprayAbilityDefinition));
+            RegisterType(LowercaseKeyToType, TypeToKey, ModConstants.MedisprayType, typeof(MedisprayAbilityDefinition));
+            RegisterType(LowercaseKeyToType, TypeToKey, ModConstants.ActorRoleGroupOverrideType, typeof(ActorRoleGroupOverride));
         }
 
         void RegisterType(Dictionary<string, Type> LowercaseKeyToType, Dictionary<Type, string> TypeToKey, string Key, Type Type)
