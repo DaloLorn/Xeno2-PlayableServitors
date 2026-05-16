@@ -78,26 +78,17 @@ groundcombat:
           ManyLinkTemplates:
             Xenonauts.Common.Components.Item.InventorySlotsLink:
               - :0:
-                  Value:
-                    Parent:
-                      :ar_Template:
-                        screen: GC
-                        path: masters/loadout/combatant/structure/slot_armor
-                    _components: []
+                  parent:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_armor
               - :0:
-                  Value:
-                    Parent:
-                      :ar_Template:
-                        screen: GC
-                        path: masters/loadout/combatant/structure/slot_primary
-                    _components: []
+                  parent:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_primary
               - :0:
-                  Value:
-                    Parent:
-                      :ar_Template:
-                        screen: GC
-                        path: masters/loadout/combatant/structure/slot_secondary
-                    _components: []
+                  parent:
+                    screen: GC
+                    path: masters/loadout/combatant/structure/slot_secondary
           ShallowReferenceTemplates: {}
           ListTemplates: {}
 
