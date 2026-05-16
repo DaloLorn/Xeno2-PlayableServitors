@@ -5,6 +5,17 @@ $aliases:
   HarbingerRank: &HarbingerRank { :Rank: servitor_heavy }
 
 groundcombat:
+  # Omitting the Servitor's medspray ability from the combatant,
+  # since it is now handled by the medspray weapon.
+  masters/actor/combatant/drone/servitor:
+    parent:
+      screen: GC
+      path: masters/actor/combatant/drone/servitor
+    name: gundrone
+    $path: ""
+    components:
+      :GCAbilityDefinitions: []
+
   actor/combatant/servitor/xenonaut:
     # Herald GC
     servitor:

@@ -6,6 +6,7 @@ using Common.Input;
 using Common.RPG;
 using Common.Util;
 using log4net;
+using System;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -141,6 +142,14 @@ namespace X2UnificationWar.Abilities
     }
 
     public override bool CancelForceFireWhenCyclingAbility() => true;
+
+    public override float ComputeTimeUnits()
+    {
+      base.ComputeTimeUnits();
+      if(Target != null && Target.HitPoints().AtMaximum() && (!Target.HasStun() || Target.Stun().AtMinimum()))
+        TimeUnits = (float) Math.Floor(TimeUnits / 5.0f);
+      return TimeUnits;
+    }
 
     protected override void OnCompute()
     {

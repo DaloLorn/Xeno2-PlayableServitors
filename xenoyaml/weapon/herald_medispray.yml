@@ -7,7 +7,14 @@ $aliases:
       spraying healing nanites at wounded soldiers to restore their lost
       {{_context.tooltips.concept filename:"hp" text:"Hit Points"}} and cure their
       {{_context.tooltips.concept filename:"bleeding_wounds" text:"Bleeding
-      Wounds"}}.
+      Wounds"}} within a range of 5 tiles.
+
+
+      If a healable ally takes damage within the Nano-Medspray's range,
+      they are automatically healed without spending Time Units. However,
+      this reactive spray is not precise enough to cure Bleeding Wounds,
+      and a manual follow-up is needed. This manual follow-up will cost
+      only 20% of the normal TU cost (rounding down) of using the Nano-Medspray.
       
 
       Like the Medikit, the Nano-Medspray can only restore half of the damage
@@ -61,12 +68,18 @@ groundcombat:
           Crosshair: GC-::-ui/crosshairs/crosshair_heal
           Accuracy: 100
           Tooltip: false
-      - :93:
-          Range: 5
-          PercentageOfDamageHealed: 0.5
-          LineProjectilePrefab: GC-::-sfx/projectile/auto_heal^default.prefab
-          SoundFX: GC-::-sfx/heal/heal_servitor_beam.ogg
-          FXDuration: 0.8
-          HealMeta: Healable
-          Name: Auto Heal
-          Tooltip: false
+    :Modifiers:
+      - :35:
+          Precedence: 0
+          UniqueKey: false
+          _modificationType: Xenonauts.GroundCombat.Components.GCAbilityDefinitionsComponent
+          Added:
+            - :93:
+                Range: 5
+                PercentageOfDamageHealed: 0.5
+                LineProjectilePrefab: GC-::-sfx/projectile/auto_heal^default.prefab
+                SoundFX: GC-::-sfx/heal/heal_servitor_beam.ogg
+                FXDuration: 0.8
+                HealMeta: Healable
+                Name: Auto Heal
+                Tooltip: false

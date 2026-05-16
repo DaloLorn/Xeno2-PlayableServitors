@@ -104,7 +104,7 @@ namespace X2UnificationWar.Abilities
             if (!medisprayConflict2.IsTargetValid(target) || !medisprayConflict2.TargetIsWithinRange)
                 return false;
             GCBoardSystem system = target.World.GetSystem<GCBoardSystem>();
-            return medisprayConflict2.Target.IsFriendlyTo(medisprayConflict2.Attacker) && ((!target.HitPoints().AtMaximum() ? 1 : 0) | (!target.HasStun() ? 0 : (!target.Stun().AtMinimum() ? 1 : 0))) != 0;
+            return medisprayConflict2.Target.IsFriendlyTo(medisprayConflict2.Attacker) && ((!target.HitPoints().AtMaximum() ? 1 : 0) | (!target.HasStun() ? 0 : (!target.Stun().AtMinimum() ? 1 : 0)) | (BleedingSystem.IsCombatantBleeding(target) ? 1 : 0)) != 0;
         },
         Effects = {
           medisprayAbility.AnimateUse()
