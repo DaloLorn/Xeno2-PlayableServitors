@@ -90,12 +90,10 @@ groundcombat:
                   - $NotColossus: {}
         $unlock:
           $SlotOwnerPq:
-            $mode: All
+            $mode: Any
             $reqs:
-              - $TwoHandedReq: {}
-              - $NonePq:
-            #     - $IsMantid: {}
-                  - $IsPsyon: {}
+              - $IsHuman: {}
+              - $IsCleaner: {}
 
   item/weapon:
     shield_combat:
