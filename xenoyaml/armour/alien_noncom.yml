@@ -31,6 +31,19 @@ strategy:
 
 
 groundcombat:
+  masters/item:
+    armour_alien:
+      parent:
+        screen: GC
+        path: masters/item/armour_alien
+      $path: ""
+      components:
+        :TooltipReference:
+          $content: NL-::-ui/tooltip/item/weapon/tooltip_armour.prefab
+          $valuetype: Common.Content.AssetReference`1[[UnityEngine.GameObject,
+            UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null]]
+
   item/armour:
     psyon_noncom:
       parent:
@@ -89,7 +102,7 @@ groundcombat:
     wraith_noncom:
       parent:
         screen: GC
-        path: item/armour/secton_noncom
+        path: item/armour/wraith_noncom
       $path: ""
       components:
         <<: *WraithNoncom
