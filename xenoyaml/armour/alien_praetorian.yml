@@ -11,6 +11,15 @@ strategy:
         $NoLocale: {}
         :Name: Praetorian Plating
 
+    mantid_praetorian:
+      parent:
+        screen: ST
+        path: item/armour/mantid_elite
+      $path: ""
+      components: &MantidPraetorian
+        $NoLocale: {}
+        :Name: Mantid Praetorian Armour
+
 groundcombat:
   item/armour:
     psyon_praetorian:
@@ -43,9 +52,10 @@ groundcombat:
     mantid_praetorian:
       parent:
         screen: GC
-        path: item/armour/mantid_praetorian
+        path: item/armour/mantid_elite
       $path: ""
       components:
+        <<: *MantidPraetorian
         $HitPoints: 130
         $ArmorHardness: 20
 
