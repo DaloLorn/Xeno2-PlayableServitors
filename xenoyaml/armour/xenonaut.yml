@@ -1,0 +1,382 @@
+$schema: 0.4.0
+$aliases:
+  SteelPlating: &SteelPlating
+    :HitPoints:
+      $MaxRange:
+        $val: 45
+  AlloyPlating: &AlloyPlating
+    :HitPoints:
+      $MaxRange:
+        $val: 70
+    :ArmourPenetrationReduction:
+      _min: 0
+      _val: 10
+      _max: 100
+  CeramitePlating: &CeramitePlating
+    :HitPoints:
+      $MaxRange:
+        $val: 105
+    :ArmourPenetrationReduction:
+      _min: 0
+      _val: 20
+      _max: 100
+  ShieldedPlating: &ShieldedPlating
+    :HitPoints:
+      $MaxRange:
+        $val: 165
+    :ArmourPenetrationReduction:
+      _min: 0
+      _val: 30
+      _max: 100
+  SteelPlatingARES: &SteelPlatingARES
+    <<: *SteelPlating
+    :HitPoints:
+      $MaxRange:
+        $val: 50
+  AlloyPlatingARES: &AlloyPlatingARES
+    <<: *AlloyPlating
+    :HitPoints:
+      $MaxRange:
+        $val: 75
+  CeramitePlatingARES: &CeramitePlatingARES
+    <<: *CeramitePlating
+    :HitPoints:
+      $MaxRange:
+        $val: 115
+  ShieldedPlatingARES: &ShieldedPlatingARES
+    <<: *ShieldedPlating
+    :HitPoints:
+      $MaxRange:
+        $val: 180
+$builders:
+  $HeavyPlating:
+    $args:
+      - $hp
+    $HeavyArmour:
+      $hp: $hp
+    :Description: "Heavy Plating is an optional module that increases the
+      {{_context.tooltips.concept filename:\"armour\" text:\"Armour\"}} of this
+      vehicle, making it tougher.\r
+
+      \r
+
+      Unfortunately, the increased weight will also reduce the
+      {{_context.tooltips.concept filename:\"tu\" text:\"Time Units\"}} of the
+      vehicle, making it slower and reducing its rate of fire." 
+  $HeavyArmour:
+    $args:
+      - $hp
+    :Modifiers:
+      - :36:
+          Target: Xenonauts.Common.Stats.HitPoints
+          Type: Additive
+          DeltaMinimum: 0
+          DeltaValue: $hp
+          DeltaMaximum: $hp
+          MinimumRounding: None
+          ValueRounding: None
+          MaximumRounding: None
+          Precedence: 0
+          UniqueKey: false
+      - :36:
+          Target: Common.Components.UnmodifiedTimeUnits
+          Type: Multiplication
+          DeltaMinimum: 1
+          DeltaValue: 0.8
+          DeltaMaximum: 1
+          MinimumRounding: None
+          ValueRounding: None
+          MaximumRounding: None
+          Precedence: 0
+          UniqueKey: false
+    $NoLocale: {}
+    :Description: "Heavy Armour is an optional module that increases the
+      {{_context.tooltips.concept filename:\"armour\" text:\"Armour\"}} of this
+      soldier, making them tougher.\r
+
+      \r
+
+      Unfortunately, the increased weight will also reduce the
+      {{_context.tooltips.concept filename:\"tu\" text:\"Time Units\"}} of the
+      wearer, making them slower and reducing their rate of fire." 
+
+groundcombat:
+  item:
+    armour:
+      human:
+        xenonaut:
+          tactical:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/tactical
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 25
+          warden:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/warden
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 32
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 5
+                _max: 100
+          stealthsuit:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/stealthsuit
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 40
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 5
+                _max: 100
+              :Modifiers:
+                - $CloakingDevice: 3
+              :Resistances:
+                thermal:
+                  _min: 0
+                  _val: 25
+                  _max: 100
+                gas:
+                  _min: 0
+                  _val: 100
+                  _max: 100
+                energy:
+                  _min: 0
+                  _val: 25
+                  _max: 100
+          guardian:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/guardian
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 60
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 10
+                _max: 100
+          guardian_v2:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/guardian_v2
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 75
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 15
+                _max: 100
+          exosuit:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/exosuit
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 150
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 20
+                _max: 100
+          colossus:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/colossus
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 200
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 20
+                _max: 100
+          colossus_v2:
+            parent:
+              screen: GC
+              path: item/armour/human/xenonaut/colossus_v2
+            $path: ""
+            components:
+              :HitPoints:
+                $MaxRange:
+                  $val: 300
+              :ArmourPenetrationReduction:
+                _min: 0
+                _val: 30
+                _max: 100
+
+      mechanical:
+        default:
+          parent:
+            screen: GC
+            path: item/armour/mechanical/default/sentrygun_enemy
+          $path: sentrygun_enemy
+          components: *SteelPlating
+
+        xenonaut:
+          sentrygun_steel:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/sentrygun_steel
+            $path: ""
+            components: *SteelPlating
+          mars_steel:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/mars_steel
+            $path: ""
+            components: *SteelPlating
+          ares_steel:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/ares_steel
+            $path: ""
+            components: *SteelPlatingARES
+          sentrygun_alloy:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/sentrygun_alloy
+            $path: ""
+            components: *AlloyPlating
+          mars_alloy:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/mars_alloy
+            $path: ""
+            components: *AlloyPlating
+          ares_alloy:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/ares_alloy
+            $path: ""
+            components: *AlloyPlatingARES
+          sentrygun_ceramite:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/sentrygun_ceramite
+            $path: ""
+            components: *CeramitePlating
+          mars_ceramite:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/mars_ceramite
+            $path: ""
+            components: *CeramitePlating
+          ares_ceramite:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/ares_ceramite
+            $path: ""
+            components: *CeramitePlatingARES
+          sentrygun_shielded:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/sentrygun_shielded
+            $path: ""
+            components: *ShieldedPlating
+          mars_shielded:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/mars_shielded
+            $path: ""
+            components: *ShieldedPlating
+          ares_shielded:
+            parent:
+              screen: GC
+              path: item/armour/mechanical/xenonaut/ares_shielded
+            $path: ""
+            components: *ShieldedPlatingARES
+
+    attachment/module/simple:
+      tactical^extra_armour:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/tactical^extra_armour
+        $path: ""
+        components:
+          $HeavyArmour:
+            $hp: 7
+      warden^extra_armour:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/warden^extra_armour
+        $path: ""
+        components:
+          $HeavyArmour:
+            $hp: 18
+      guardian^extra_armour:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/guardian^extra_armour
+        $path: ""
+        components:
+          $HeavyArmour:
+            $hp: 1.6
+            :Modifiers:
+              - :36: # So I don't have to go to the trouble of making a guardian_v2^extra_armour...
+                  Type: Multiplication
+      stealthsuit^extra_armour:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/stealthsuit^extra_armour
+        $path: ""
+        components:
+          $HeavyArmour:
+            $hp: 20
+      exosuit^extra_armour:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/exosuit^extra_armour
+        $path: ""
+        components:
+          $HeavyArmour:
+            $hp: 75
+      vehicle_tier1_heavy:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/vehicle_tier1_heavy
+        $path: ""
+        components:
+          $HeavyPlating:
+            $hp: 25
+      vehicle_tier2_heavy:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/vehicle_tier2_heavy
+        $path: ""
+        components:
+          $HeavyPlating:
+            $hp: 40
+      vehicle_tier3_heavy:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/vehicle_tier3_heavy
+        $path: ""
+        components:
+          $HeavyPlating:
+            $hp: 65
+      vehicle_tier4_heavy:
+        parent:
+          screen: GC
+          path: item/attachment/module/simple/vehicle_tier4_heavy
+        $path: ""
+        components:
+          $HeavyPlating:
+            $hp: 70
+      

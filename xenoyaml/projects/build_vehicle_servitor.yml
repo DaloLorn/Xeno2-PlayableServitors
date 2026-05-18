@@ -10,7 +10,6 @@ $aliases:
 
 strategy:
   projects/engineering:
-
     # Harbinger
     vehicle_servitor_heavy:
       parent:
@@ -25,9 +24,7 @@ strategy:
         :Name: Harbinger Support Platform
         :Prerequisites:
           - $HasCosts:
-              $costs:
-                - $CashCost:
-                    $amount: 250000
+              - $CashCost: 250000
         :ProjectFSM:
           TriggerEffects: {}
           EntryEffects:
@@ -36,18 +33,16 @@ strategy:
                   $amount: 1
                   $actor: actor/combatant/mechanical/xenonauts/servitor_heavy
               - $MyBaseEffect:
-                  $effects:
-                    - $AddItem:
-                        $amount: 1
-                        $item: item/armour/servitor_heavy
-                    - $AddItem:
-                        $amount: 1
-                        $item: item/weapon/alien_servitor_cannon_heavy
-                    - $AddItem:
-                        $amount: Infinity
-                        $item: item/ammo/alien_servitor_cell_heavy
-              - $AddItemToFutureBases:
-                  $item: item/ammo/alien_servitor_cell_heavy
+                  - $AddItem:
+                      $amount: 1
+                      $item: item/armour/servitor_heavy
+                  - $AddItem:
+                      $amount: 1
+                      $item: item/weapon/alien_servitor_cannon_heavy
+                  - $AddItem:
+                      $amount: Infinity
+                      $item: item/ammo/alien_servitor_cell_heavy
+              - $AddItemToFutureBases: item/ammo/alien_servitor_cell_heavy
           ExitEffects: {}
           State: Setup
         :SortOrder: 283
@@ -66,9 +61,7 @@ strategy:
         :Name: Herald Support Platform
         :Prerequisites:
           - $HasCosts:
-              $costs:
-                - $CashCost:
-                    $amount: 250000
+              - $CashCost: 250000
         :ProjectFSM:
           TriggerEffects: {}
           EntryEffects:
@@ -77,18 +70,16 @@ strategy:
                   $amount: 1
                   $actor: actor/combatant/mechanical/xenonauts/servitor
               - $MyBaseEffect:
-                  $effects:
-                    - $AddItem:
-                        $amount: 1
-                        $item: item/armour/servitor
-                    - $AddItem:
-                        $amount: 1
-                        $item: item/weapon/alien_servitor_cannon
-                    - $AddItem:
-                        $amount: Infinity
-                        $item: item/ammo/alien_servitor_cell
-              - $AddItemToFutureBases:
-                  $item: item/ammo/alien_servitor_cell
+                  - $AddItem:
+                      $amount: 1
+                      $item: item/armour/servitor
+                  - $AddItem:
+                      $amount: 1
+                      $item: item/weapon/alien_servitor_cannon
+                  - $AddItem:
+                      $amount: Infinity
+                      $item: item/ammo/alien_servitor_cell
+              - $AddItemToFutureBases: item/ammo/alien_servitor_cell
           ExitEffects: {}
           State: Setup
         :SortOrder: 282

@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-GC-::-item/armour/psyon_elite.json","$t":"ar_Template"},"_components":[{"_min":0,"_val":150,"_max":150,"$t":"HitPoints"},{"_min":0,"_val":15,"_max":100,"$t":"ArmourPenetrationReduction"}],"$t":"4"},"$t":"15"}

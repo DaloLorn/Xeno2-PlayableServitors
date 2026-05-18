@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-GC-::-item/armour/human/xenonaut/warden.json","$t":"ar_Template"},"_components":[{"_min":0,"_val":32,"_max":32,"$t":"HitPoints"},{"_min":0,"_val":5,"_max":100,"$t":"ArmourPenetrationReduction"}],"$t":"4"},"$t":"15"}

@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-ST-::-item/weapon/alien_shield_cyberdrone.json","$t":"ar_Template"},"_components":[{"$content":"ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer","$t":"SItemMeta"},{"$content":[],"$t":"LocalizableGUID"},{"$content":"Cyberdrone Plating","$t":"Name"}],"$t":"4"},"$t":"15"}

@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-GC-::-item/armour/wraith_praetorian.json","$t":"ar_Template"},"_components":[{"_min":0,"_val":225,"_max":225,"$t":"HitPoints"},{"_min":0,"_val":30,"_max":100,"$t":"ArmourPenetrationReduction"}],"$t":"4"},"$t":"15"}

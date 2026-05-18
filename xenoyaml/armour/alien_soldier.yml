@@ -1,0 +1,76 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    andron_soldier:
+      parent:
+        screen: ST
+        path: item/armour/andron_soldier
+      $path: ""
+      components: &AndronSoldier
+        $NoLocale: {}
+        :Name: Recon Plating
+
+groundcombat:
+  item/armour:
+    psyon_soldier:
+      parent:
+        screen: GC
+        path: item/armour/psyon_soldier
+      $path: ""
+      components:
+        $HitPoints: 50
+        $ArmorHardness: 10
+
+    secton_soldier:
+      parent:
+        screen: GC
+        path: item/armour/secton_soldier
+      $path: ""
+      components:
+        $HitPoints: 40
+        $ArmorHardness: 10
+
+    sebillian_soldier:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_soldier
+      $path: ""
+      components:
+        $HitPoints: 40
+        $ArmorHardness: 10
+
+    mantid_soldier:
+      parent:
+        screen: GC
+        path: item/armour/mantid_soldier
+      $path: ""
+      components:
+        $HitPoints: 25
+        $ArmorHardness: 5
+
+    wraith_soldier:
+      parent:
+        screen: GC
+        path: item/armour/wraith_soldier
+      $path: ""
+      components:
+        $HitPoints: 50
+        $ArmorHardness: 10
+        :Modifiers:
+          - $CloakingDevice: 3
+
+    andron_soldier:
+      parent:
+        screen: GC
+        path: item/armour/andron_soldier
+      $path: ""
+      components:
+        <<: *AndronSoldier
+        $HitPoints: 60
+        $ArmorHardness: 10
+        :Description: >-
+          The sturdy outer frame of an Andron is covered in thick, disposable plates
+          fashioned out of alien alloys. These can easily be replaced as new
+          armor technology becomes available.
+

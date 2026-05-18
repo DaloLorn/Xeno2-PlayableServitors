@@ -1,0 +1,50 @@
+$schema: 0.4.0
+$builders:
+  # Builds a BodyIDPq for a given species with all other props omitted.
+  # Essentially $Species, but for prerequisites.
+  $SpeciesPq:
+    $args: $species
+    :BodyIDPq:
+      Species:
+        "&v": $species
+      Group: false
+      Ethnicity: false
+      Gender: false
+      Variant: Unlocks
+      modifierStorage: null
+
+  # Crunched the Species enum out of source code.
+  # In case I forget: I made a slightly more generic version of the
+  # JS I used to do it, and put it in Decompiled/helper.txt.
+  # Should be helpful if I ever need to do it for, say, RoleGroup...
+
+  $IsDefault:  
+    $SpeciesPq: default
+  $IsAndron:
+    $SpeciesPq: andron
+  $IsCleaner:
+    $SpeciesPq: cleaner
+  $IsHuman:
+    $SpeciesPq: human
+  $IsCyberdrone:
+    $SpeciesPq: drone
+  $IsServitor:
+    $SpeciesPq: servitor
+  $IsMechanical:
+    $SpeciesPq: mechanical
+  $IsReaper:
+    $SpeciesPq: reaper
+  $IsSebillian:
+    $SpeciesPq: sebillian
+  $IsWraith:
+    $SpeciesPq: wraith
+  $IsMantid:
+    $SpeciesPq: mantid
+  $IsPsyon:
+    $SpeciesPq: psyon
+  $IsSecton:
+    $SpeciesPq: secton
+  $IsMentarch:
+    $SpeciesPq: mentarch
+  $IsEternal:
+    $SpeciesPq: eternal

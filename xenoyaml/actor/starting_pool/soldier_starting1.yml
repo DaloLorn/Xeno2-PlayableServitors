@@ -4,6 +4,6 @@ strategy:
     screen: ST
     path: actor/combatant/mechanical/xenonauts/servitor
   name: soldier_starting1
-  $path: actor/combatant/human/xenonauts/starting_pool/soldiers/soldier_starting1
+  $path: actor/combatant/human/xenonauts/starting_pool/soldiers/soldier_starting19
   components:
     :PreferredStrikeTeamSlot: 2

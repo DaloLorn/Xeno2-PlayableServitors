@@ -1,17 +1,6 @@
 $schema: 0.4.0
 $aliases:
   Name: &Name { :Name: Herald Armor }
-$builders:
-  $ServitorOnly:
-    $GCEquipReqs:
-      $reqs: 
-        $SlotOwnerPq:
-          $mode: All
-          $reqs:
-            - $SpeciesPq: 
-                $species: servitor
-            - $RankPq:
-                $rank: servitor
 
 strategy:
   parent:
@@ -38,3 +27,9 @@ groundcombat:
         TargetComponent: Common.Components.DescriptionComponent
         Request: Ignore
     $ServitorOnly: {}
+    :HitPoints:
+      $MaxRange: 60
+    :ArmourPenetrationReduction:
+      _min: 0
+      _val: 15
+      _max: 100

@@ -2,7 +2,6 @@ $schema: 0.4.0
 
 strategy:
   projects/research:
-
     # Heavy Servitor Reconstruction
     vehicle_servitor_heavy:
       parent:
@@ -17,13 +16,9 @@ strategy:
         :Name: Heavy Servitor Reconstruction
         :Prerequisites:
           - $HasTechs:
-              $techs:
-                - $HasTech:
-                    $tech: projects/research/vehicle_servitor
-                - $HasTech: 
-                    $tech: projects/research/alien_weapons_fusion
-                - $HasTech:
-                    $tech: projects/research/abstract_alien_antigrav_emitter
+              - $HasTech: projects/research/vehicle_servitor
+              - $HasTech: projects/research/alien_weapons_fusion
+              - $HasTech: projects/research/abstract_alien_antigrav_emitter
 
     # Servitor Reconstruction
     vehicle_servitor:
@@ -39,12 +34,7 @@ strategy:
         :Name: Servitor Reconstruction
         :Prerequisites:
           - $HasTechs:
-              $techs:
-                - $HasTech:
-                    $tech: projects/research/vehicle_mars
-                - $HasTech:
-                    $tech: projects/research/alien_weapons_plasma
-                - $HasTech:
-                    $tech: projects/engineering/corpse_analysis/analysis_corpse_servitor
-                - $HasTech:
-                    $tech: projects/research/abstract_alien_electronics
+              - $HasTech: projects/research/vehicle_mars
+              - $HasTech: projects/research/alien_weapons_plasma
+              - $HasTech: projects/engineering/corpse_analysis/analysis_corpse_servitor
+              - $HasTech: projects/research/abstract_alien_electronics

@@ -1,0 +1,106 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    mantid_noncom:
+      parent:
+        screen: ST
+        path: item/armour/mantid_noncom
+      $path: ""
+      components: &MantidNoncom
+        $NoLocale: {}
+        :Name: Mantid Carapace
+        
+    sebillian_noncom:
+      parent:
+        screen: ST
+        path: item/armour/sebillian_noncom
+      $path: ""
+      components: &SebillianNoncom
+        $NoLocale: {}
+        :Name: Sebillian Scales
+        
+    wraith_noncom:
+      parent:
+        screen: ST
+        path: item/armour/wraith_noncom
+      $path: ""
+      components: &WraithNoncom
+        $NoLocale: {}
+        :Name: Wraith Vest
+
+
+groundcombat:
+  item/armour:
+    psyon_noncom:
+      parent:
+        screen: GC
+        path: item/armour/psyon_noncom
+      $path: ""
+      components:
+        :HitPoints:
+          $MaxRange: 25
+        $ArmorHardness: 5
+        $NoLocale: {}
+        :Description: &CaesanJumpsuit >-
+          While not technically constituting armour, the jumpsuits worn by
+          either Caesan gender are reinforced with sturdy fibers woven from alien alloys, 
+          offering some protection against the hazards of multiversal travel while 
+          still remaining comfortable and easy to mass-produce.
+
+    mantid_noncom:
+      parent:
+        screen: GC
+        path: item/armour/mantid_noncom
+      $path: ""
+      components:
+        <<: *MantidNoncom
+        :Description: >- 
+          Unfortunately, the bare Mantid exoskeleton offers no 
+          meaningful protection against battlefield hazards.
+
+    sebillian_noncom:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_noncom
+      $path: ""
+      components:
+        <<: *SebillianNoncom
+        :HitPoints:
+          $MaxRange: 15
+        $ArmorHardness: 0
+        :Description: >-
+          The thick, leathery scales of a Sebillian afford them a token amount of
+          protection against injuries sustained on the battlefield - and seals
+          their dominance in barroom brawls against many of the softer species.
+    
+    secton_noncom:
+      parent:
+        screen: GC
+        path: item/armour/secton_noncom
+      $path: ""
+      components:
+        :HitPoints:
+          $MaxRange: 25
+        $ArmorHardness: 5
+        $NoLocale: {}
+        :Description: *CaesanJumpsuit
+
+    wraith_noncom:
+      parent:
+        screen: GC
+        path: item/armour/secton_noncom
+      $path: ""
+      components:
+        <<: *WraithNoncom
+        :HitPoints:
+          $MaxRange: 25
+        $ArmorHardness: 5
+        :Modifiers:
+          - $CloakingDevice: 3
+        :Description: >-
+          Despite their appearance, the greenish vests favored by off-duty
+          or noncombatant Wraiths offer no protective benefit, and are worn
+          purely for ornamental and storage purposes. Instead, they seem to
+          rely on their subdermal plating to prevent serious injury (with
+          the use of medical nanites to repair any damaged skin at home).

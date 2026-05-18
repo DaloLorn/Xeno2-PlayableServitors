@@ -49,12 +49,10 @@ groundcombat:
       dontInstantiate: true
       pool: false
     $GCEquipReqs:
-      $reqs: 
-        $SlotOwnerPq:
-          $mode: All
-          $reqs:
-            - $SpeciesPq: 
-                $species: servitor
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsServitor: {}
     :GCAbilityDefinitions:
       - :DL_X2UW_MedisprayAbility:
           Range: 5

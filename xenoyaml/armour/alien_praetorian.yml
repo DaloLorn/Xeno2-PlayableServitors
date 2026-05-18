@@ -1,0 +1,74 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    andron_praetorian:
+      parent:
+        screen: ST
+        path: item/armour/andron_praetorian
+      $path: ""
+      components: &AndronPraetorian
+        $NoLocale: {}
+        :Name: Praetorian Plating
+
+groundcombat:
+  item/armour:
+    psyon_praetorian:
+      parent:
+        screen: GC
+        path: item/armour/psyon_praetorian
+      $path: ""
+      components:
+        $HitPoints: 225
+        $ArmorHardness: 30
+
+    secton_praetorian:
+      parent:
+        screen: GC
+        path: item/armour/secton_praetorian
+      $path: ""
+      components:
+        $HitPoints: 200
+        $ArmorHardness: 30
+
+    sebillian_praetorian:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_praetorian
+      $path: ""
+      components:
+        $HitPoints: 200
+        $ArmorHardness: 30
+
+    mantid_praetorian:
+      parent:
+        screen: GC
+        path: item/armour/mantid_praetorian
+      $path: ""
+      components:
+        $HitPoints: 130
+        $ArmorHardness: 20
+
+    wraith_praetorian:
+      parent:
+        screen: GC
+        path: item/armour/wraith_praetorian
+      $path: ""
+      components:
+        $HitPoints: 225
+        $ArmorHardness: 30
+
+    andron_praetorian:
+      parent:
+        screen: GC
+        path: item/armour/andron_praetorian
+      $path: ""
+      components:
+        <<: *AndronPraetorian
+        $HitPoints: 250
+        $ArmorHardness: 30
+        :Description: >-
+          The sturdy outer frame of an Andron is covered in thick, disposable plates
+          fashioned out of alien alloys. These can easily be replaced as new
+          armor technology becomes available.
+

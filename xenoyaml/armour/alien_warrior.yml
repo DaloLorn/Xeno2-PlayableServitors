@@ -1,0 +1,162 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    andron_warrior:
+      parent:
+        screen: ST
+        path: item/armour/andron_warrior
+      $path: ""
+      components: &AndronWarrior
+        $NoLocale: {}
+        :Name: Tactical Plating
+
+groundcombat:
+  item/armour:
+    psyon_warrior:
+      parent:
+        screen: GC
+        path: item/armour/psyon_warrior
+      $path: ""
+      components:
+        $HitPoints: 80
+        $ArmorHardness: 15
+        
+    psyon_officer:
+      parent:
+        screen: GC
+        path: item/armour/psyon_officer
+      $path: ""
+      components:
+        $HitPoints: 70
+        $ArmorHardness: 20
+        $NoLocale: {}
+        :Description: >-
+          The distinctive purple suits favored by Psyon officers
+          feature a built-in psionic amplifier, increasing the effectiveness
+          of their mental powers. However, the amplifier's weight necessarily
+          reduces the amount of armour they can wear.
+        :Modifiers:
+          - :36:
+              Target: Xenonauts.Common.Stats.PsionicStrength
+              Type: Additive
+              DeltaMinimum: 0
+              DeltaValue: 30
+              DeltaMaximum: 30
+              MinimumRounding: None
+              ValueRounding: None
+              MaximumRounding: None
+              Precedence: 0
+              UniqueKey: false
+
+    secton_warrior:
+      parent:
+        screen: GC
+        path: item/armour/secton_warrior
+      $path: ""
+      components:
+        $HitPoints: 65
+        $ArmorHardness: 15
+
+    sebillian_warrior:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_warrior
+      $path: ""
+      components:
+        $HitPoints: 65
+        $ArmorHardness: 15
+        
+    sebillian_officer:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_officer
+      $path: ""
+      components:
+        $HitPoints: 65
+        $ArmorHardness: 15
+        $NoLocale: {}
+        :Description: >-
+          These robust suits of armour, favored by Sebillian officers,
+          feature a sealed helmet with a built-in rangefinder to improve their aim.
+          The suit's reinforced alloy plating is designed to tighten and seal itself
+          around the wearer, ensuring superior protection as long as any armour remains;
+          however, only the strongest and most disciplined Sebillians could endure
+          the discomfort of wearing it over prolonged periods.
+        :Modifiers:
+          - :36:
+              Target: Xenonauts.Common.Stats.Accuracy
+              Type: Additive
+              DeltaMinimum: 0
+              DeltaValue: 10
+              DeltaMaximum: 10
+              MinimumRounding: None
+              ValueRounding: None
+              MaximumRounding: None
+              Precedence: 0
+              UniqueKey: false
+        :Resistances:
+          kinetic: &SebOfficerDR
+            _min: 0
+            _val: 5
+            _max: 100
+          shock: *SebOfficerDR
+          chemical: *SebOfficerDR
+          default: *SebOfficerDR
+          thermal: *SebOfficerDR
+          gas:
+            $MaxRange: 100
+          suppression: *SebOfficerDR
+          energy: *SebOfficerDR
+          fall: *SebOfficerDR
+          explosive: *SebOfficerDR
+
+    mantid_warrior:
+      parent:
+        screen: GC
+        path: item/armour/mantid_warrior
+      $path: ""
+      components:
+        $HitPoints: 40
+        $ArmorHardness: 10
+
+    wraith_warrior:
+      parent:
+        screen: GC
+        path: item/armour/wraith_warrior
+      $path: ""
+      components:
+        $HitPoints: 80
+        $ArmorHardness: 15
+        :Modifiers:
+          - $CloakingDevice: 3
+
+    wraith_officer:
+      parent:
+        screen: GC
+        path: item/armour/wraith_officer
+      $path: ""
+      components:
+        $NoLocale: {}
+        $HitPoints: 70
+        $ArmorHardness: 20
+        :Modifiers:
+          - $CloakingDevice: 4
+        :Description: >-
+          Wraith officers typically wear armour with a more advanced cloaking device,
+          allowing them to more easily avoid harm upon the battlefield.
+
+    andron_warrior:
+      parent:
+        screen: GC
+        path: item/armour/andron_warrior
+      $path: ""
+      components:
+        <<: *AndronWarrior
+        $HitPoints: 115
+        $ArmorHardness: 15
+        :Description: >-
+          The sturdy outer frame of an Andron is covered in thick, disposable plates
+          fashioned out of alien alloys. These can easily be replaced as new
+          armor technology becomes available.
+

@@ -15,8 +15,7 @@ strategy:
         :SortOrder: 2104
         :SItemMeta: ExcludeFromArmory,Transferable,Sellable
         :Weight:
-          $FlatRange:
-            $val: 1
+          $FlatRange: 1
 
     # Harbinger Wreckage
     wreckage_servitor_heavy:

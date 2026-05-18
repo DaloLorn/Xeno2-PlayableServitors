@@ -1,0 +1,163 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    andron_elite:
+      parent:
+        screen: ST
+        path: item/armour/andron_elite
+      $path: ""
+      components: &AndronElite
+        $NoLocale: {}
+        :Name: Assault Plating
+
+groundcombat:
+  item/armour:
+    psyon_elite:
+      parent:
+        screen: GC
+        path: item/armour/psyon_elite
+      $path: ""
+      components:
+        $HitPoints: 150
+        $ArmorHardness: 15
+        
+    psyon_leader:
+      parent:
+        screen: GC
+        path: item/armour/psyon_leader
+      $path: ""
+      components:
+        $HitPoints: 135
+        $ArmorHardness: 25
+        $NoLocale: {}
+        :Description: >-
+          The distinctive purple suits favored by Psyon officers
+          feature a built-in psionic amplifier, increasing the effectiveness
+          of their mental powers. However, the amplifier's weight necessarily
+          reduces the amount of armour they can wear.
+        :Modifiers:
+          - :36:
+              Target: Xenonauts.Common.Stats.PsionicStrength
+              Type: Additive
+              DeltaMinimum: 0
+              DeltaValue: 50
+              DeltaMaximum: 50
+              MinimumRounding: None
+              ValueRounding: None
+              MaximumRounding: None
+              Precedence: 0
+              UniqueKey: false
+
+    secton_elite:
+      parent:
+        screen: GC
+        path: item/armour/secton_elite
+      $path: ""
+      components:
+        $HitPoints: 130
+        $ArmorHardness: 20
+
+    sebillian_elite:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_elite
+      $path: ""
+      components:
+        $HitPoints: 130
+        $ArmorHardness: 20
+        
+    sebillian_leader:
+      parent:
+        screen: GC
+        path: item/armour/sebillian_leader
+      $path: ""
+      components:
+        $HitPoints: 130
+        $ArmorHardness: 20
+        $NoLocale: {}
+        :Description: >-
+          These robust suits of armour, favored by Sebillian officers,
+          feature a sealed helmet with a built-in rangefinder to improve their aim.
+          The suit's reinforced alloy plating is designed to tighten and seal itself
+          around the wearer, ensuring superior protection as long as any armour remains;
+          however, only the strongest and most disciplined Sebillians could endure
+          the discomfort of wearing it over prolonged periods.
+        :Modifiers:
+          - :36:
+              Target: Xenonauts.Common.Stats.Accuracy
+              Type: Additive
+              DeltaMinimum: 0
+              DeltaValue: 20
+              DeltaMaximum: 20
+              MinimumRounding: None
+              ValueRounding: None
+              MaximumRounding: None
+              Precedence: 0
+              UniqueKey: false
+        :Resistances:
+          kinetic: &SebOfficerDR
+            _min: 0
+            _val: 10
+            _max: 100
+          shock: *SebOfficerDR
+          chemical: *SebOfficerDR
+          default: *SebOfficerDR
+          thermal: *SebOfficerDR
+          gas:
+            $MaxRange: 100
+          suppression: *SebOfficerDR
+          energy: *SebOfficerDR
+          fall: *SebOfficerDR
+          explosive: *SebOfficerDR
+
+    mantid_elite:
+      parent:
+        screen: GC
+        path: item/armour/mantid_elite
+      $path: ""
+      components:
+        $HitPoints: 80
+        $ArmorHardness: 15
+
+    wraith_elite:
+      parent:
+        screen: GC
+        path: item/armour/wraith_elite
+      $path: ""
+      components:
+        $HitPoints: 150
+        $ArmorHardness: 20
+        :Modifiers:
+          - $CloakingDevice: 3
+
+    wraith_leader:
+      parent:
+        screen: GC
+        path: item/armour/wraith_leader
+      $path: ""
+      components:
+        $NoLocale: {}
+        $HitPoints: 70
+        $ArmorHardness: 20
+        :Modifiers:
+          - $CloakingDevice: 5
+        :Description: >-
+          The cloaking device integrated into this Wraith officer's armor
+          is of peerless quality, enabling the wearer to traverse the most
+          heated firefights with virtual impunity.
+
+    andron_elite:
+      parent:
+        screen: GC
+        path: item/armour/andron_elite
+      $path: ""
+      components:
+        <<: *AndronElite
+        $HitPoints: 180
+        $ArmorHardness: 20
+        :Description: >-
+          The sturdy outer frame of an Andron is covered in thick, disposable plates
+          fashioned out of alien alloys. These can easily be replaced as new
+          armor technology becomes available.
+

@@ -1,17 +1,6 @@
 $schema: 0.4.0
 $aliases:
   Name: &Name { :Name: Harbinger Armor }
-$builders:
-  $HeavyServitorOnly:
-    $GCEquipReqs:
-      $reqs:
-        $SlotOwnerPq:
-          $mode: All
-          $reqs:
-            - $SpeciesPq:
-                $species: servitor
-            - $RankPq:
-                $rank: servitor_heavy
 
 strategy:
   parent:
@@ -38,3 +27,9 @@ groundcombat:
         TargetComponent: Common.Components.DescriptionComponent
         Request: Ignore
     $HeavyServitorOnly: {}
+    :HitPoints:
+      $MaxRange: 90
+    :ArmourPenetrationReduction:
+      _min: 0
+      _val: 20
+      _max: 100

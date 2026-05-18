@@ -1,0 +1,187 @@
+$schema: 0.4.0
+
+strategy:
+  item/weapon:
+    shield_combat:
+      parent:
+        screen: ST
+        path: item/weapon/shield_combat
+      $path: ""
+      components: &BallisticShield
+        $NoLocale: {}
+        :Name: Ballistic Shield
+
+    shield_assault:
+      parent:
+        screen: ST
+        path: item/weapon/shield_assault
+      $path: ""
+      components: &AlloyShield
+        $NoLocale: {}
+        :Name: Alloy Shield
+
+    shield_reinforced:
+      parent:
+        screen: ST
+        path: item/weapon/shield_reinforced
+      $path: ""
+      components: &CeramiteShield
+        $NoLocale: {}
+        :Name: Ceramite Shield
+
+    alien_shield_cyberdrone:
+      parent:
+        screen: ST
+        path: item/weapon/alien_shield_cyberdrone
+      $path: ""
+      components: &CyberdroneShieldShared
+        :SItemMeta: ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer
+        $NoLocale: {}
+        :Name: Cyberdrone Plating
+
+    alien_shield_cyberdrone_heavy:
+      parent:
+        screen: ST
+        path: item/weapon/alien_shield_cyberdrone_heavy
+      $path: ""
+      components: &CyberdroneShieldSharedHeavy
+        :SItemMeta: ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer
+        $NoLocale: {}
+        :Name: Heavy Cyberdrone Plating
+
+groundcombat:
+  masters/item/shield:
+    parent:
+      screen: GC
+      path: masters/item/shield
+    $path: ""
+    components:
+      :GCItemMeta: ""
+      :Description: >-
+        Shields are protective items held in the Primary slot that can absorb
+        incoming damage. Unlike shields in the original Xenonauts 2,
+        shields in Unification War behave like {{_context.tooltips.concept 
+        filename:"armour" text:"armour"}}, making them harder to destroy but subject to
+        {{_context.tooltips.concept
+        filename:"armour_penetration" text:"Armour Penetration"}}.
+
+
+        Shields have a 100% chance of blocking any projectile, melee attack, or explosion
+        striking the soldier in the forward 90-degree arc, but the protection
+        offered at the sides declines linearly until it reaches 20% at the
+        edges of the frontal 180-degree arc. No protection is offered to the rear, 
+        against weapons dealing gas damage, or against environmental effects
+        such as smoke, fire, or corrosive gas.
+
+
+        Soldiers can use a one-handed weapon in their Secondary slot while using a
+        shield. Pistols or melee weapons are a good choice.
+
+
+        Any damage absorbed by a shield will reduce its Armour, and the shield is
+        destroyed when this reaches 0.
+      $GCComplexEquipReqs:
+        $cost:
+          $OrPq:
+            - $UnequippedReq: {}
+            - $SlotOwnerPq:
+                $mode: All
+                $reqs:
+                  - $NotColossus: {}
+        $unlock:
+          $SlotOwnerPq:
+            $mode: All
+            $reqs:
+              - $TwoHandedReq: {}
+              - $NonePq:
+            #     - $IsMantid: {}
+                  - $IsPsyon: {}
+
+  item/weapon:
+    shield_combat:
+      parent:
+        screen: GC
+        path: item/weapon/shield_combat
+      $path: ""
+      components:
+        <<: *BallisticShield
+        :HitPoints:
+          $MaxRange: 30
+        $NoLocale: {}
+
+    shield_assault:
+      parent:
+        screen: GC
+        path: item/weapon/shield_assault
+      $path: ""
+      components:
+        <<: *AlloyShield
+        :HitPoints:
+          $MaxRange: 60
+        :ArmourPenetrationReduction:
+          _min: 0
+          _val: 10
+          _max: 100
+
+    shield_reinforced:
+      parent:
+        screen: GC
+        path: item/weapon/shield_reinforced
+      $path: ""
+      components:
+        <<: *CeramiteShield
+        :HitPoints:
+          $MaxRange: 120
+        :ArmourPenetrationReduction:
+          _min: 0
+          _val: 20
+          _max: 100
+
+    alien_shield_cyberdrone:
+      parent:
+        screen: GC
+        path: item/weapon/alien_shield_cyberdrone
+      $path: ""
+      components: &CyberdroneShield
+        <<: *CyberdroneShieldShared
+        :HitPoints:
+          $MaxRange: 100
+        :ArmourPenetrationReduction:
+          _min: 0
+          _val: 30
+          _max: 100
+        :StoppingChance: 100
+        :GCItemMeta: Integrated
+        :Description: >-
+          The heavy armor of a Cyberdrone is further reinforced with a thick frontal
+          layer of hardened alien alloys, conferring benefits not unlike those of a shield.
+          (As a reminder: Shields in Unification War behave like 
+          {{_context.tooltips.concept filename:"armour" text:"armour"}}.)
+
+
+          Cyberdrone plating has a 100% chance of blocking any projectile, melee attack, or explosion
+          striking the Cyberdrone's forward 90-degree arc, but the protection
+          offered at the sides declines linearly until it reaches 20% at the
+          edges of the frontal 180-degree arc. No protection is offered to the rear, 
+          against weapons dealing gas damage, or against environmental effects
+          such as smoke, fire, or corrosive gas.
+
+
+          Any damage absorbed by Cyberdrone plating will reduce its Armour, and the plating is
+          destroyed when this reaches 0.
+
+    alien_shield_cyberdrone_heavy:
+      parent:
+        screen: GC
+        path: item/weapon/alien_shield_cyberdrone_heavy
+      $path: ""
+      components:
+        <<:
+          - *CyberdroneShield
+          - *CyberdroneShieldSharedHeavy
+        :HitPoints:
+          $MaxRange: 150
+        :ArmourPenetrationReduction:
+          _min: 0
+          _val: 40
+          _max: 100

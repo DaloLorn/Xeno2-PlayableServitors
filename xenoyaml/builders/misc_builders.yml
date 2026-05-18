@@ -7,8 +7,7 @@ $builders:
   # Adds an unlock check for whether the player meets all of the specified conditions.
   # These can technically be non-tech things, but whatever.
   $HasTechs:
-    $args: 
-      - $techs
+    $args: $techs
     :ADelegatePq:
       Operator: All
       Number: 0
@@ -21,7 +20,7 @@ $builders:
 
   # Adds an unlock check for whether the player has completed a project.
   # (Meant to be used with $HasTechs or other ADelegatePqs.)
-  $HasTech:
+  $HasTechFromPack:
     $args:
       - $pack
       - $tech
@@ -34,13 +33,17 @@ $builders:
       Status: Finished
       Variant: Unlocks
       modifierStorage: null
+
+  $HasTech:
+    $args: $tech
+    $HasTechFromPack:
+      $tech: $tech
       
   # Checks whether all costs of a project are met.
   # Uses $HasTechs under the hood as a stress test,
   # because they're basically the same otherwise.
   $HasCosts:
-    $args:
-      - $costs
+    $args: $costs
     $HasTechs:
       :ADelegatePq:
         Variant: Cost
@@ -49,8 +52,7 @@ $builders:
   # Checks whether the player has enough cash to pay for the project.
   # Should be used inside a $HasCosts.
   $CashCost:
-    $args:
-      - $amount
+    $args: $amount
     :CashPq:
       value: $amount
       Variant: Cost
@@ -88,8 +90,7 @@ $builders:
 
   # Executes a delegate effect on the selected base.
   $MyBaseEffect:
-    $args:
-      - $effects
+    $args: $effects
     :ADelegateEffect:
       selector:
         :MyGeoBaseSe:
@@ -119,7 +120,7 @@ $builders:
   # Adds new items to future bases.
   # This is always assumed to be infinite because nothing else makes sense.
   # (I can always redefine it later.)
-  $AddItemToFutureBases:
+  $AddItemToFutureBasesFromPack:
     $args:
       - $pack
       - $item
@@ -139,19 +140,29 @@ $builders:
                 path: $item
             modifierStorage: null
       modifierStorage: null
+
+  $AddItemToFutureBases:
+    $args: $item
+    $AddItemToFutureBasesFromPack:
+      $item: $item
   
   # Flattens a RangeComponent into a single value.
   $FlatRange:
-    $args:
-      - $val
+    $args: $val
     _min: $val
+    _val: $val
+    _max: $val
+
+  # A RangeComponent whose value is always at max.
+  $MaxRange:
+    $args: $val
+    _min: 0
     _val: $val
     _max: $val
 
   # Sets up a body ID for a default unit of the given species.
   $Species:
-    $args:
-      - $species
+    $args: $species
     :BodyID:
       species: $species
       group: default
@@ -160,32 +171,16 @@ $builders:
 
   # Sets up a body ID for a Xenonaut defector unit of the given species.
   $XenonautSpecies:
-    $args:
-      - $species
+    $args: $species
     $Species:
       $species: $species
       :BodyID:
         group: xenonaut
     :DL_X2UW_ActorRoleGroupOverride: default
 
-  # Builds a BodyIDPq for a given species with all other props omitted.
-  # Essentially $Species, but for prerequisites.
-  $SpeciesPq:
-    $args:
-      - $species
-    :BodyIDPq:
-      Species:
-        "&v": $species
-      Group: false
-      Ethnicity: false
-      Gender: false
-      Variant: Unlocks
-      modifierStorage: null
-
   # Builds a prerequisite to check for the actor's rank (e.g. sentry guns).
   $RankPq:
-    $args:
-      - $rank
+    $args: $rank
     :DLEPq:
       Target: Xenonauts.Common.Components.Combatant.Rank
       Compare: Is
@@ -197,8 +192,7 @@ $builders:
 
   # Negates all child prerequisites.
   $NonePq:
-    $args:
-      - $reqs
+    $args: $reqs
     :LogicPq:
       Operator: None
       Number: 0
@@ -208,8 +202,7 @@ $builders:
 
   # Requires all child prerequisites to be met.
   $AndPq:
-    $args:
-      - $reqs
+    $args: $reqs
     :LogicPq:
       Operator: All
       Number: 0
@@ -219,8 +212,7 @@ $builders:
 
   # Requires any child prerequisites to be met.
   $OrPq:
-    $args:
-      - $reqs
+    $args: $reqs
     :LogicPq:
       Operator: Any
       Number: 0
@@ -241,18 +233,43 @@ $builders:
         :OneEntitySe:
           OneComponent: Xenonauts.Common.Components.Item.InventorySlotOwnerLink
       prerequisites: $reqs
+      Variant: Unlocks
+      modifierStorage: null
 
   # Builds a set of restrictions against equipping an item in ground combat.
   $GCEquipReqs:
-    $args:
-      - $reqs
+    $args: $reqs
     :InventorySlotAddPrerequisites:
-      - :IgnoreInTestWrapperPq:
-          Prerequisite:
-            :ForwardInventorySlotPq:
-              Forward: Slot
-              Delegate: $reqs
-              Variant: Unlocks
-              modifierStorage: null
+      - $SlotUnlockReqs: $reqs
+
+  $GCComplexEquipReqs:
+    $args:
+      - $cost
+      - $unlock
+    :InventorySlotAddPrerequisites:
+      - $SlotCostReqs: $cost
+      - $SlotUnlockReqs: $unlock
+
+  $SlotCostReqs:
+    $args: $reqs
+    :IgnoreInTestWrapperPq:
+      Prerequisite:
+        :ForwardInventorySlotPq:
+          Forward: Slot
+          Delegate: $reqs
+          Variant: Cost
+          modifierStorage: null
+      Variant: Cost
+      modifierStorage: null
+
+  $SlotUnlockReqs:
+    $args: $reqs
+    :IgnoreInTestWrapperPq:
+      Prerequisite:
+        :ForwardInventorySlotPq:
+          Forward: Slot
+          Delegate: $reqs
           Variant: Unlocks
           modifierStorage: null
+      Variant: Unlocks
+      modifierStorage: null

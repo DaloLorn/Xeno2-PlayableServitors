@@ -1,0 +1,109 @@
+$schema: 0.4.0
+$builders:
+  $HeavyServitorOnly:
+    $GCEquipReqs:
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsServitor: {}
+          - $RankPq: servitor_heavy
+
+  $ServitorOnly:
+    $GCEquipReqs:
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsServitor: {}
+          - $RankPq: servitor
+
+  $HitPoints:
+    $args: $val
+    :HitPoints:
+      $MaxRange: $val
+
+  $ArmorHardness:
+    $args: $hardness
+    :ArmourPenetrationReduction:
+      _min: 0
+      _val: $hardness
+      _max: 100
+
+  $UnequippedReq:
+    :DLEPq:
+      Target: Xenonauts.Common.Components.Item.CombatantSlots
+      Compare: Overlaps
+      Value:
+        :CombatantSlots: Belt,Backpack
+      UseInventoryType: true
+      Variant: Unlocks
+      modifierStorage: null
+  $ArmorTypeReq:
+    $args: $armor
+    :AManyDelegatePq:
+      Operator: Any
+      Number: 0
+      selector:
+        :ManyEntitySe:
+          ManyComponent: Xenonauts.Common.Components.Item.InventorySlotsLink
+      prerequisite:
+        $AndPq:
+          - :DLEPq:
+              Target: Xenonauts.Common.Components.Item.CombatantSlots
+              Compare: Is
+              Value:
+                :CombatantSlots: Armour
+              UseInventoryType: true
+              Variant: Unlocks
+              modifierStorage: null
+          - :AManyDelegatePq:
+              Operator: Any
+              Number: 0
+              selector:
+                :ManyEntitySe:
+                  ManyComponent: Xenonauts.Common.Components.Item.InventoryLink
+              prerequisite:
+                :DLEPq:
+                  Target: Xenonauts.GroundCombat.Assets.Identifiers.ArmorIdentifierComponent
+                  Compare: Overlaps
+                  Value:
+                    :ArmorID: $armor
+                  UseInventoryType: false
+                  Variant: Unlocks
+                  modifierStorage: null
+              Variant: Unlocks
+              modifierStorage: null
+      Variant: Unlocks
+      modifierStorage: null
+
+  $NotColossus:
+    $NonePq:
+      - $ArmorTypeReq: colossus
+
+  $NoHandsReq:
+    $OrPq:
+      - $IsServitor: {}
+      - $IsMechanical: {}
+      - $IsCyberdrone: {}
+      - $IsMentarch: {}
+      - $IsReaper: {}
+
+  $TwoHandedReq:
+    $NonePq:
+      - $IsSecton: {}
+      - $NoHandsReq: {}
+
+  $CloakingDevice:
+    $args: $magnitude
+    :35:
+      Precedence: 0
+      UniqueKey: false
+      _modificationType: Xenonauts.GroundCombat.Components.GCAbilityDefinitionsComponent
+      Added:
+        - :94:
+            Bonus: $magnitude
+            FlatBonus: true
+            Target: Defence
+            ActivationTrigger: MyTurnStart
+            DeactivationTrigger: AnyDamage
+            Name: Cloaking Field
+            Tooltip: false

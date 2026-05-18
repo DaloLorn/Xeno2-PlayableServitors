@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-GC-::-item/weapon/shield_assault.json","$t":"ar_Template"},"_components":[{"$content":[],"$t":"LocalizableGUID"},{"$content":"Alloy Shield","$t":"Name"},{"_min":0,"_val":60,"_max":60,"$t":"HitPoints"},{"_min":0,"_val":10,"_max":100,"$t":"ArmourPenetrationReduction"}],"$t":"4"},"$t":"15"}

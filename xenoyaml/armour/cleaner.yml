@@ -1,0 +1,65 @@
+$schema: 0.4.0
+
+groundcombat:
+  item/armour:
+    cleaner_suit:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_suit
+      $path: ""
+      components: &ConcealedArmor
+        :HitPoints:
+          $MaxRange: 15
+
+    cleaner_shirt:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_shirt
+      $path: ""
+      components: *ConcealedArmor
+
+    cleaner_commander:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_commander
+      $path: ""
+      components: *ConcealedArmor
+
+    cleaner_leader:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_leader
+      $path: ""
+      components: *ConcealedArmor
+
+    cleaner_bodyarmour:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_bodyarmour
+      $path: ""
+      components: &TacticalArmor
+        :HitPoints:
+          $MaxRange: 25
+
+    cleaner_brown:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_brown
+      $path: ""
+      components: *TacticalArmor
+
+    cleaner_green:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_green
+      $path: ""
+      components: *TacticalArmor
+
+    cleaner_green_bodyarmour:
+      parent:
+        screen: GC
+        path: item/armour/cleaner_green_bodyarmour
+      $path: ""
+      components:
+        :HitPoints:
+          $MaxRange: 32
