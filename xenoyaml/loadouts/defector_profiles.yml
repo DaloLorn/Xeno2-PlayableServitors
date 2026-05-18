@@ -1,0 +1,106 @@
+$schema: 0.4.0
+$aliases:
+  InventoryTemplateValueType: &InventoryTemplateValueType 
+    $valuetypekey: ar_Template
+
+strategy:
+  loadout_profiles:
+    # Psyon Loadout
+    psyon_defector:
+      parent:
+        screen: ST
+        path: masters/loadout_profiles/humanoid
+      name: psyon
+      $path: ""
+      components:
+        :Prerequisites:
+          - :InventoryTaxonomyIsAPq:
+              Target: Loadout/Combatant/Psyon
+              Variant: Cost
+              modifierStorage: null
+        :InventoryTemplate:
+          $content: ST-::-loadout/combatant/psyon^default^noncom^default.json
+          <<: *InventoryTemplateValueType
+        $NoLocale: {}
+        :Name: Psyon Defector
+        :Portrait: ST-::-loadout_profile/rifleman.png
+
+    # Mantid Loadout
+    mantid_defector:
+      parent:
+        screen: ST
+        path: masters/loadout_profiles/humanoid
+      name: mantid
+      $path: ""
+      components:
+        :Prerequisites:
+          - :InventoryTaxonomyIsAPq:
+              Target: Loadout/Combatant/Mantid
+              Variant: Cost
+              modifierStorage: null
+        :InventoryTemplate:
+          $content: ST-::-loadout/combatant/mantid^default^noncom^default.json
+          <<: *InventoryTemplateValueType
+        $NoLocale: {}
+        :Name: Mantid Defector
+        :Portrait: ST-::-loadout_profile/rifleman.png
+
+    # Sebillian Loadout
+    sebillian_defector:
+      parent:
+        screen: ST
+        path: masters/loadout_profiles/humanoid
+      name: sebillian
+      $path: ""
+      components:
+        :Prerequisites:
+          - :InventoryTaxonomyIsAPq:
+              Target: Loadout/Combatant/Sebillian
+              Variant: Cost
+              modifierStorage: null
+        :InventoryTemplate:
+          $content: ST-::-loadout/combatant/sebillian^default^noncom^default.json
+          <<: *InventoryTemplateValueType
+        $NoLocale: {}
+        :Name: Sebillian Defector
+        :Portrait: ST-::-loadout_profile/rifleman.png
+
+    # Secton Loadout
+    secton_defector:
+      parent:
+        screen: ST
+        path: masters/loadout_profiles/humanoid
+      name: secton
+      $path: ""
+      components:
+        :Prerequisites:
+          - :InventoryTaxonomyIsAPq:
+              Target: Loadout/Combatant/Secton
+              Variant: Cost
+              modifierStorage: null
+        :InventoryTemplate:
+          $content: ST-::-loadout/combatant/secton^default^noncom^default.json
+          <<: *InventoryTemplateValueType
+        $NoLocale: {}
+        :Name: Secton Defector
+        :Portrait: ST-::-loadout_profile/rifleman.png
+
+    # Wraith Loadout
+    wraith_defector:
+      parent:
+        screen: ST
+        path: masters/loadout_profiles/humanoid
+      name: wraith
+      $path: ""
+      components:
+        :Prerequisites:
+          - :InventoryTaxonomyIsAPq:
+              Target: Loadout/Combatant/Wraith
+              Variant: Cost
+              modifierStorage: null
+        :InventoryTemplate:
+          $content: ST-::-loadout/combatant/wraith^default^noncom^default.json
+          <<: *InventoryTemplateValueType
+        $NoLocale: {}
+        :Name: Wraith Defector
+        :Portrait: ST-::-loadout_profile/rifleman.png

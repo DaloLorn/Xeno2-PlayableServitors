@@ -1,0 +1,74 @@
+$schema: 0.4.0
+strategy:
+  parent:
+    screen: ST
+    path: masters/actor/combatant/human/xenonauts/soldier_master
+  name: secton_defector
+  $path: actor/combatant/secton/xenonauts/secton_defector
+  components:
+    :DefaultLoadoutProfile:
+      Target: ST-::-loadout_profiles/secton_defector.json
+      $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+    $XenonautSpecies: secton
+    :InventoryTaxonomy: Loadout/Combatant/Secton
+    :DefaultArmour:
+      $content: GC-::-item/armour/secton_noncom.json
+      $valuetypekey: ar_Template
+    :PortraitLayers:
+      - ST-::-ui/portraits/character/mars^head.png
+    
+  
+groundcombat:
+  actor/combatant/secton/xenonaut:
+    private:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/default/soldier/default
+      name: secton_defector
+      $path: default
+      components:
+        $NoLocale: {}
+        :PortraitLayers:
+          - ST-::-ui/portraits/character/mars^head.png
+    corporal:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default
+    sergeant:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default
+    sergeantmajor:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default
+    lieutenant:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default
+    captain:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default
+    major:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default
+    colonel:
+      parent:
+        screen: GC
+        path: actor/combatant/secton/xenonaut/private/default
+      name: secton_defector
+      $path: default

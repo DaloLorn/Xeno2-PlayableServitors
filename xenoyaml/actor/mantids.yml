@@ -1,0 +1,74 @@
+$schema: 0.4.0
+strategy:
+  parent:
+    screen: ST
+    path: masters/actor/combatant/human/xenonauts/soldier_master
+  name: mantid_defector
+  $path: actor/combatant/mantid/xenonauts/mantid_defector
+  components:
+    :DefaultLoadoutProfile:
+      Target: ST-::-loadout_profiles/mantid_defector.json
+      $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
+    $XenonautSpecies: mantid
+    :InventoryTaxonomy: Loadout/Combatant/Mantid
+    :DefaultArmour:
+      $content: GC-::-item/armour/mantid_noncom.json
+      $valuetypekey: ar_Template
+    :PortraitLayers:
+      - ST-::-ui/portraits/character/mars^head.png
+    
+  
+groundcombat:
+  actor/combatant/mantid/xenonaut:
+    private:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/default/officer/default
+      name: mantid_defector
+      $path: default
+      components:
+        $NoLocale: {}
+        :PortraitLayers:
+          - ST-::-ui/portraits/character/mars^head.png
+    corporal:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default
+    sergeant:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default
+    sergeantmajor:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default
+    lieutenant:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default
+    captain:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default
+    major:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default
+    colonel:
+      parent:
+        screen: GC
+        path: actor/combatant/mantid/xenonaut/private/default
+      name: mantid_defector
+      $path: default

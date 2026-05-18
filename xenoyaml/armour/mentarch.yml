@@ -1,0 +1,59 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    mentarch_heavy:
+      parent:
+        screen: ST
+        path: item/armour/mentarch_heavy
+      name: mentokyr
+      $path: ""
+      components: &Mentokyr
+        :Name: Mentokyr Shield Generator
+        $NoLocale: {}
+
+    mentarch:
+      parent:
+        screen: ST
+        path: item/armour/mentarch
+      name: mentarch
+      $path: ""
+      components: &Mentarch
+        :Name: Mentarch Shield Generator
+        $NoLocale: {}
+
+groundcombat:
+  item/armour:
+    mentarch_heavy:
+      parent:
+        screen: GC
+        path: item/armour/mentarch_heavy
+      name: mentokyr
+      $path: ""
+      components:
+        <<: *Mentokyr
+        $HeavyMentarchOnly: {}
+        $HitPoints: 340
+        :Description: >-
+          Although it has no armor worth speaking of, the Mentokyr's
+          chassis contains an extremely powerful shield generator, capable
+          of soaking up multiple heavy weapon blasts. However,
+          like the lesser Mentarch, it is unable to regenerate in combat.
+        :GCItemMeta: Integrated,X1ArmourModel
+
+    mentarch:
+      parent:
+        screen: GC
+        path: item/armour/mentarch
+      name: mentarch
+      $path: ""
+      components:
+        <<: *Mentarch
+        $MentarchOnly: {}
+        $HitPoints: 160
+        :Description: >-
+          While it is completely unarmored, the Mentarch does possess
+          a potent energy shield, apparently fueled by its psionic powers.
+          This shield allows it to withstand several direct hits from most weapons,
+          but cannot be recharged during combat.
+        :GCItemMeta: Integrated,X1ArmourModel

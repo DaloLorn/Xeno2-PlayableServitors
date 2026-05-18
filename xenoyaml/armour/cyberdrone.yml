@@ -1,0 +1,49 @@
+$schema: 0.4.0
+
+strategy:
+  item/armour:
+    cyberdrone_heavy:
+      parent:
+        screen: ST
+        path: item/armour/cyberdrone_heavy
+      name: gundrone
+      $path: ""
+      components: &Cybertank
+        :Name: Cybertank Hull
+        $NoLocale: {}
+
+    cyberdrone:
+      parent:
+        screen: ST
+        path: item/armour/cyberdrone
+      name: gundrone
+      $path: ""
+      components: &Herald
+        :Name: Cyberdrone Hull
+        $NoLocale: {}
+
+groundcombat:
+  item/armour:
+    cyberdrone_heavy:
+      parent:
+        screen: GC
+        path: item/armour/cyberdrone_heavy
+      name: gundrone
+      $path: ""
+      components:
+        <<: *Cybertank
+        $HeavyCyberdroneOnly: {}
+        $HitPoints: 300
+        $ArmorHardness: 30
+
+    cyberdrone:
+      parent:
+        screen: GC
+        path: item/armour/cyberdrone
+      name: gundrone
+      $path: ""
+      components:
+        <<: *Herald
+        $CyberdroneOnly: {}
+        $HitPoints: 200
+        $ArmorHardness: 20

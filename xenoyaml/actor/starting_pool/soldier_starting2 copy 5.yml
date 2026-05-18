@@ -1,0 +1,7 @@
+$schema: 0.4.0
+strategy:
+  parent:
+    screen: ST
+    path: actor/combatant/mantid/xenonauts/mantid_defector
+  name: soldier_starting1
+  $path: actor/combatant/human/xenonauts/starting_pool/soldiers/soldier_starting35

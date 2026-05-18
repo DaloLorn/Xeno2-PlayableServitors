@@ -1,35 +1,49 @@
 $schema: 0.4.0
-$aliases:
-  Name: &Name { :Name: Herald Armor }
 
 strategy:
-  parent:
-    pack: xenonauts
-    screen: ST
-    path: item/armour/servitor
-  name: gundrone
-  $path: item/armour/servitor
-  components:
-    <<: *Name
-    $NoLocale: {}
+  item/armour:
+    servitor_heavy:
+      parent:
+        screen: ST
+        path: item/armour/servitor_heavy
+      name: gundrone
+      $path: ""
+      components: &Harbinger
+        :Name: Harbinger Plating
+        $NoLocale: {}
+
+    servitor:
+      parent:
+        screen: ST
+        path: item/armour/servitor
+      name: gundrone
+      $path: ""
+      components: &Herald
+        :Name: Herald Plating
+        $NoLocale: {}
 
 groundcombat:
-  parent:
-    pack: xenonauts
-    screen: GC
-    path: item/armour/servitor
-  name: gundrone
-  $path: item/armour/servitor
-  components:
-    <<: *Name
-    :LocalizableGUID:
-      - GUID: ca58e768-4f67-4af7-9106-4bd8239bab3d
-        TargetComponent: Common.Components.DescriptionComponent
-        Request: Ignore
-    $ServitorOnly: {}
-    :HitPoints:
-      $MaxRange: 60
-    :ArmourPenetrationReduction:
-      _min: 0
-      _val: 15
-      _max: 100
+  item/armour:
+    servitor_heavy:
+      parent:
+        screen: GC
+        path: item/armour/servitor_heavy
+      name: gundrone
+      $path: ""
+      components:
+        <<: *Harbinger
+        $HeavyServitorOnly: {}
+        $HitPoints: 90
+        $ArmorHardness: 20
+
+    servitor:
+      parent:
+        screen: GC
+        path: item/armour/servitor
+      name: gundrone
+      $path: ""
+      components:
+        <<: *Herald
+        $ServitorOnly: {}
+        $HitPoints: 60
+        $ArmorHardness: 15

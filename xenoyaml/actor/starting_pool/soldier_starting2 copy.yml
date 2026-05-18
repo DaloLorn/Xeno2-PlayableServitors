@@ -5,5 +5,3 @@ strategy:
     path: actor/combatant/psyon/xenonauts/psyon_defector
   name: soldier_starting1
   $path: actor/combatant/human/xenonauts/starting_pool/soldiers/soldier_starting30
-  components:
-    :PreferredStrikeTeamSlot: 4

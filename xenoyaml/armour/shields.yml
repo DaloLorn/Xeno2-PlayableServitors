@@ -47,7 +47,7 @@ strategy:
       components: &CyberdroneShieldSharedHeavy
         :SItemMeta: ExcludeFromBaseStoresSell,ExcludeFromBaseStoresTransfer
         $NoLocale: {}
-        :Name: Heavy Cyberdrone Plating
+        :Name: Cybertank Plating
 
 groundcombat:
   masters/item/shield:
@@ -152,6 +152,7 @@ groundcombat:
           _max: 100
         :StoppingChance: 100
         :GCItemMeta: Integrated
+        $CyberdroneOnly: {}
         :Description: >-
           The heavy armor of a Cyberdrone is further reinforced with a thick frontal
           layer of hardened alien alloys, conferring benefits not unlike those of a shield.
@@ -181,6 +182,7 @@ groundcombat:
           - *CyberdroneShieldSharedHeavy
         :HitPoints:
           $MaxRange: 150
+        $HeavyCyberdroneOnly: {}
         :ArmourPenetrationReduction:
           _min: 0
           _val: 40

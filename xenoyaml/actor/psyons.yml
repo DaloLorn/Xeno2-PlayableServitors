@@ -12,6 +12,7 @@ strategy:
     :PsionicStrength:
       $FlatRange: 50
     $XenonautSpecies: psyon
+    :InventoryTaxonomy: Loadout/Combatant/Psyon
     :DefaultArmour:
       $content: GC-::-item/armour/psyon_noncom.json
       $valuetypekey: ar_Template

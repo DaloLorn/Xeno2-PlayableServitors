@@ -16,6 +16,38 @@ $builders:
           - $IsServitor: {}
           - $RankPq: servitor
 
+  $HeavyMentarchOnly:
+    $GCEquipReqs:
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsMentarch: {}
+          - $RankPq: mentarch_heavy
+
+  $MentarchOnly:
+    $GCEquipReqs:
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsMentarch: {}
+          - $RankPq: mentarch
+
+  $HeavyCyberdroneOnly:
+    $GCEquipReqs:
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsCyberdrone: {}
+          - $RankPq: cyberdrone_heavy
+
+  $CyberdroneOnly:
+    $GCEquipReqs:
+      $SlotOwnerPq:
+        $mode: All
+        $reqs:
+          - $IsCyberdrone: {}
+          - $RankPq: cyberdrone
+
   $HitPoints:
     $args: $val
     :HitPoints:
