@@ -104,3 +104,23 @@ strategy:
         $NoLocale: {}
         :Name: Wraith Defector
         :Portrait: ST-::-loadout_profile/rifleman.png
+
+    # Eternal Loadout
+    eternal_defector:
+      parent:
+        screen: ST
+        path: masters/loadout_profiles/humanoid
+      name: eternal
+      $path: ""
+      components:
+        :Prerequisites:
+          - :InventoryTaxonomyIsAPq:
+              Target: Loadout/Combatant/Eternal
+              Variant: Cost
+              modifierStorage: null
+        :InventoryTemplate:
+          $content: ST-::-loadout/combatant/eternal^default^commander^default
+          <<: *InventoryTemplateValueType
+        $NoLocale: {}
+        :Name: Eternal Iconoclast
+        :Portrait: ST-::-loadout_profile/rifleman.png

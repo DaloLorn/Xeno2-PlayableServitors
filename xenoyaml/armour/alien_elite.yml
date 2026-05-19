@@ -109,7 +109,6 @@ groundcombat:
           suppression: *SebOfficerDR
           energy: *SebOfficerDR
           fall: *SebOfficerDR
-          explosive: *SebOfficerDR
 
     mantid_elite:
       parent:
