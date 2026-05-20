@@ -97,6 +97,16 @@ $builders:
           Target: null
       effects: $effects
       modifierStorage: null
+
+  # Executes a delegate effect on all current bases.
+  $AllBasesEffect:
+    $args: $effects
+    :AManyDelegateEffect:
+      selector:
+        :GEntitySe:
+          Group: Xenonauts.Strategy.Components.GeoBaseGroup
+      effects: $effects
+      modifierStorage: null
   
   # Adds new items to the selected base's inventory.
   # (Should be invoked inside a MyBaseEffect or similar.)
@@ -124,26 +134,43 @@ $builders:
     $args:
       - $pack
       - $item
-    :ADelegateEffect:
-      selector:
-        :TaggedEntitySe:
-          Tag: Xenonauts.Common.CampaignTag
-      effects:
-        - :AddItemToGeoBaseRequisitionEffect:
-            Quantity: Infinity
-            SlotType:
-              :MainBaseSlots: Stores
-            Item:
-              :ar_Template:
-                pack: $pack
-                screen: ST
-                path: $item
-            modifierStorage: null
-      modifierStorage: null
+    $CampaignEffect:
+      - $RequisitionItemFromPack:
+          $pack: $pack
+          $item: $item
 
   $AddItemToFutureBases:
     $args: $item
     $AddItemToFutureBasesFromPack:
+      $item: $item
+
+  $CampaignEffect:
+    $args: $effects
+    :ADelegateEffect:
+      selector:
+        :TaggedEntitySe:
+          Tag: Xenonauts.Common.CampaignTag
+      effects: $effects
+      modifierStorage: null
+
+  $RequisitionItemFromPack:
+    $args:
+      - $pack
+      - $item
+    :AddItemToGeoBaseRequisitionEffect:
+      Quantity: Infinity
+      SlotType:
+        :MainBaseSlots: Stores
+      Item:
+        :ar_Template:
+          pack: $pack
+          screen: ST
+          path: $item
+      modifierStorage: null
+
+  $RequisitionItem: 
+    $args: $item
+    $RequisitionItemFromPack:
       $item: $item
   
   # Flattens a RangeComponent into a single value.

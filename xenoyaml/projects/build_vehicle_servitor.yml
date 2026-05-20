@@ -32,17 +32,20 @@ strategy:
               - $RecruitActor:
                   $amount: 1
                   $actor: actor/combatant/mechanical/xenonauts/servitor_heavy
-              - $MyBaseEffect:
+              - $AllBasesEffect:
                   - $AddItem:
-                      $amount: 1
+                      $amount: Infinity
                       $item: item/armour/servitor_heavy
                   - $AddItem:
-                      $amount: 1
+                      $amount: Infinity
                       $item: item/weapon/alien_servitor_cannon_heavy
                   - $AddItem:
                       $amount: Infinity
                       $item: item/ammo/alien_servitor_cell_heavy
-              - $AddItemToFutureBases: item/ammo/alien_servitor_cell_heavy
+              - $CampaignEffect:
+                  - $RequisitionItem: item/ammo/alien_servitor_cell_heavy
+                  - $RequisitionItem: item/armour/servitor_heavy
+                  - $RequisitionItem: item/weapon/alien_servitor_cannon_heavy
           ExitEffects: {}
           State: Setup
         :SortOrder: 283
@@ -69,17 +72,20 @@ strategy:
               - $RecruitActor:
                   $amount: 1
                   $actor: actor/combatant/mechanical/xenonauts/servitor
-              - $MyBaseEffect:
+              - $AllBasesEffect:
                   - $AddItem:
-                      $amount: 1
+                      $amount: Infinity
                       $item: item/armour/servitor
                   - $AddItem:
-                      $amount: 1
+                      $amount: Infinity
                       $item: item/weapon/alien_servitor_cannon
                   - $AddItem:
                       $amount: Infinity
                       $item: item/ammo/alien_servitor_cell
-              - $AddItemToFutureBases: item/ammo/alien_servitor_cell
+              - $CampaignEffect:
+                  - $RequisitionItem: item/ammo/alien_servitor_cell
+                  - $RequisitionItem: item/armour/servitor
+                  - $RequisitionItem: item/weapon/alien_servitor_cannon
           ExitEffects: {}
           State: Setup
         :SortOrder: 282
