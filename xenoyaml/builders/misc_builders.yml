@@ -20,9 +20,9 @@ $builders:
 
   # Adds an unlock check for whether the player has completed a project.
   # (Meant to be used with $HasTechs or other ADelegatePqs.)
-  $HasTechFromPack:
+  $HasTech:
     $args:
-      - $pack
+      - $pack: $none
       - $tech
     :ProjectPq:
       Project:
@@ -33,11 +33,6 @@ $builders:
       Status: Finished
       Variant: Unlocks
       modifierStorage: null
-
-  $HasTech:
-    $args: $tech
-    $HasTechFromPack:
-      $tech: $tech
       
   # Checks whether all costs of a project are met.
   # Uses $HasTechs under the hood as a stress test,
@@ -61,9 +56,11 @@ $builders:
   # Generates and recruits new actors at the selected base.
   $RecruitActor:
     $args:
-      - $amount
-      - $pack
+      - $amount: 1
+      - $pack: $none
       - $actor
+      - $min: $amount
+      - $max: $amount
     :BinaryArgsDelegateEffect:
       Arg0Selector:
         :PlayerSe:
@@ -74,9 +71,9 @@ $builders:
       Effect:
         :GenerateAndRecruitActorEffect:
           Quantity:
-            _min: $amount
+            _min: $min
             _val: $amount
-            _max: $amount
+            _max: $max
           TemplateRef:
             :ar_Template:
               pack: $pack
@@ -112,8 +109,8 @@ $builders:
   # (Should be invoked inside a MyBaseEffect or similar.)
   $AddItem:
     $args:
-      - $amount
-      - $pack
+      - $amount: 1
+      - $pack: $none
       - $item
     :DeltaItemEffect:
       Quantity: $amount
@@ -130,19 +127,14 @@ $builders:
   # Adds new items to future bases.
   # This is always assumed to be infinite because nothing else makes sense.
   # (I can always redefine it later.)
-  $AddItemToFutureBasesFromPack:
-    $args:
-      - $pack
+  $AddItemToFutureBases:
+    $args: 
+      - $pack: $none
       - $item
     $CampaignEffect:
-      - $RequisitionItemFromPack:
+      - $RequisitionItem:
           $pack: $pack
           $item: $item
-
-  $AddItemToFutureBases:
-    $args: $item
-    $AddItemToFutureBasesFromPack:
-      $item: $item
 
   $CampaignEffect:
     $args: $effects
@@ -153,12 +145,14 @@ $builders:
       effects: $effects
       modifierStorage: null
 
-  $RequisitionItemFromPack:
+  $RequisitionItem:
     $args:
-      - $pack
+      - $pack: $none
+      # Not that it makes much sense for it to ever be finite...
+      - $amount: Infinity 
       - $item
     :AddItemToGeoBaseRequisitionEffect:
-      Quantity: Infinity
+      Quantity: $amount
       SlotType:
         :MainBaseSlots: Stores
       Item:
@@ -167,42 +161,43 @@ $builders:
           screen: ST
           path: $item
       modifierStorage: null
-
-  $RequisitionItem: 
-    $args: $item
-    $RequisitionItemFromPack:
-      $item: $item
   
-  # Flattens a RangeComponent into a single value.
-  $FlatRange:
-    $args: $val
-    _min: $val
+  # A (potentially) simplified RangeComponent!
+  $Range:
+    $args:
+      - $min: $val
+      - $val
+      - $max: $val
+    _min: $min
     _val: $val
-    _max: $val
+    _max: $max
 
   # A RangeComponent whose value is always at max.
   $MaxRange:
     $args: $val
-    _min: 0
-    _val: $val
-    _max: $val
+    $Range:
+      $min: 0
+      $val: $val
 
-  # Sets up a body ID for a default unit of the given species.
+  # Sets up a body ID for a unit of the given species.
   $Species:
-    $args: $species
+    $args: 
+    - $species
+    - $group: default
+    - $ethnicity: default
+    - $gender: default
     :BodyID:
       species: $species
-      group: default
-      ethnicity: default
-      gender: default
+      group: $group
+      ethnicity: $ethnicity
+      gender: $gender
 
   # Sets up a body ID for a Xenonaut defector unit of the given species.
   $XenonautSpecies:
     $args: $species
     $Species:
       $species: $species
-      :BodyID:
-        group: xenonaut
+      $group: xenonaut
     :DL_X2UW_ActorRoleGroupOverride: default
 
   # Builds a prerequisite to check for the actor's rank (e.g. sentry guns).

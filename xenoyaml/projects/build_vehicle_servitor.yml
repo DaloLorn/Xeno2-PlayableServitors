@@ -29,9 +29,7 @@ strategy:
           TriggerEffects: {}
           EntryEffects:
             Finished:
-              - $RecruitActor:
-                  $amount: 1
-                  $actor: actor/combatant/mechanical/xenonauts/servitor_heavy
+              - $RecruitActor: actor/combatant/mechanical/xenonauts/servitor_heavy
               - $AllBasesEffect:
                   - $AddItem:
                       $amount: Infinity
@@ -69,9 +67,7 @@ strategy:
           TriggerEffects: {}
           EntryEffects:
             Finished:
-              - $RecruitActor:
-                  $amount: 1
-                  $actor: actor/combatant/mechanical/xenonauts/servitor
+              - $RecruitActor: actor/combatant/mechanical/xenonauts/servitor
               - $AllBasesEffect:
                   - $AddItem:
                       $amount: Infinity

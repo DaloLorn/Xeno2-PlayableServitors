@@ -11,9 +11,7 @@ strategy:
       EntryEffects:
         Finished:
           - $MyBaseEffect:
-              - $AddItem:
-                  $amount: 1
-                  $item: item/armour/human/xenonaut/stealthsuit
+              - $AddItem: item/armour/human/xenonaut/stealthsuit
           - $AllBasesEffect:
               - $AddItem:
                   $amount: Infinity

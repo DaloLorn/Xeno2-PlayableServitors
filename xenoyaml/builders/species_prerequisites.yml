@@ -3,15 +3,23 @@ $builders:
   # Builds a BodyIDPq for a given species with all other props omitted.
   # Essentially $Species, but for prerequisites.
   $SpeciesPq:
-    $args: $species
+    $args: 
+      - $species
+      - $group: false
+      - $ethnicity: false
+      - $gender: false
     :BodyIDPq:
       Species:
         "&v": $species
-      Group: false
-      Ethnicity: false
-      Gender: false
+      Group: $group
+      Ethnicity: $ethnicity
+      Gender: $gender
       Variant: Unlocks
       modifierStorage: null
+
+  $V:
+    $args: $val
+    "&v": $val
 
   # Crunched the Species enum out of source code.
   # In case I forget: I made a slightly more generic version of the

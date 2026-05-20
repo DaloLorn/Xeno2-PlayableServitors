@@ -10,11 +10,11 @@ strategy:
     components:
       $NoLocale: {}
       :Age:
-        $FlatRange: 1891
+        $Range: 1891
       $XenonautSpecies:
         $species: eternal
       :CombatRating:
-        $FlatRange: 1
+        $Range: 1
       :Name: Dewachorin
       :DefaultArmour:
         $content: GC-::-item/armour/eternal.json
@@ -26,19 +26,19 @@ strategy:
       :PortraitLayers:
         - ST-::-ui/portraits/character/mars^head.png
       :HitPoints: 
-        $FlatRange: 100
+        $Range: 100
       :PsionicStrength:
-        $FlatRange: 120
+        $Range: 120
       :Accuracy:
-        $FlatRange: 100
+        $Range: 100
       :Bravery:
-        $FlatRange: 100
+        $Range: 100
       :Strength:
-        $FlatRange: 100
+        $Range: 100
       :Reflexes:
-        $FlatRange: 100
+        $Range: 100
       :TimeUnits:
-        $FlatRange: 100
+        $Range: 100
       :Expense: 20000
       :InventoryTaxonomy: Loadout/Combatant/Eternal
       :MechanicalActorAssignmentFSM:
@@ -52,19 +52,19 @@ strategy:
         _val: 10
         _max: 99
       :Cash:
-        $FlatRange: 0
+        $Range: 0
       :PersonnelCapacity:
-        $FlatRange: 1
+        $Range: 1
       :Quantity:
-        $FlatRange: 1
+        $Range: 1
       :Rank: commander
       :SortOrder: 250
       :SCombatantMeta: NoExperienceGain,NoMedalGain
       :SItemMeta: ""
       :UnmodifiedHitPoints:
-        $FlatRange: 100
+        $Range: 100
       :Weight:
-        $FlatRange: 0
+        $Range: 0
       :FundingCategory: Expenses/Personnel/Soldier
       :SellPriceMax: 1
       :GCCombatantMeta: Flying

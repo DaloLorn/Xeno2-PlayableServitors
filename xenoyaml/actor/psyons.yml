@@ -10,7 +10,7 @@ strategy:
       Target: ST-::-loadout_profiles/psyon_defector.json
       $valuetype: Xenonauts.Strategy.Components.ReferencedDefaultLoadoutProfileStrategy
     :PsionicStrength:
-      $FlatRange: 50
+      $Range: 50
     $XenonautSpecies: psyon
     :InventoryTaxonomy: Loadout/Combatant/Psyon
     :DefaultArmour:
