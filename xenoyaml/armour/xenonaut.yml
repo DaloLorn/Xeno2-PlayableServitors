@@ -143,10 +143,6 @@ groundcombat:
               :Modifiers:
                 - $CloakingDevice: 3
               :Resistances:
-                thermal:
-                  _min: 0
-                  _val: 25
-                  _max: 100
                 gas:
                   _min: 0
                   _val: 100

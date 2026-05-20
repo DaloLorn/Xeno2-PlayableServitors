@@ -1,0 +1,23 @@
+$schema: 0.4.0
+strategy:
+  parent:
+    screen: ST
+    path: projects/engineering/armour_soldier_stealthsuit
+  name: armour_soldier_stealthsuit
+  $path: projects/engineering/armour_soldier_stealthsuit
+  components:
+    :ProjectFSM:
+      TriggerEffects: {}
+      EntryEffects:
+        Finished:
+          - $MyBaseEffect:
+              - $AddItem:
+                  $amount: 1
+                  $item: item/armour/human/xenonaut/stealthsuit
+              - $AddItem:
+                  $amount: Infinity
+                  $item: item/attachment/module/simple/stealthsuit^extra_armour
+          - $AddItemToFutureBases: item/attachment/module/simple/stealthsuit^extra_armour
+      ExitEffects: {}
+      Prerequisites: {}
+      State: Setup

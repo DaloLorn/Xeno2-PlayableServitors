@@ -106,7 +106,7 @@ $builders:
       - $pack
       - $item
     :DeltaItemEffect:
-      Quantity: 1
+      Quantity: $amount
       Rounding: None
       Item:
         :ar_Template:
