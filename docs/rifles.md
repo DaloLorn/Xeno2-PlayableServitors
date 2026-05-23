@@ -67,10 +67,19 @@
 - 30 Kinetic, 25 Penetration, 1 Destruction, 12.5% Bleed
 - Snap Shot: 16% TU, 48% ACC
 - Normal Shot: 24% TU, 82% ACC
-- Aimed Shot: 36% TU, 110% ACC
+- Aimed Shot: 36% TU, 120% ACC
 - Burst: 40% TU, 50% ACC, 10% Recoil
 - Reload: 25 TU
 - Ammo: 50
+
+## Symbiote Launcher
+
+- 30 Kinetic, 20 Penetration, 3 Destruction, Bleed x2
+    - Symbiote Incubator: 35 Kinetic, 30 Penetration, fires twice per attack
+- Snap Shot: 40% TU, 82% ACC
+- Normal Shot: 50% TU, 110% ACC
+- Spawn Symbiote
+- Unusable by Xenonaut units
 
 ## Heavy Blaster
 
@@ -89,7 +98,10 @@
 - 135 Energy (with dropoff), 40 Penetration, 40 Destruction, Blast (2 tiles)
     - Fusion Mortar upgrades to 170/60/60/2.5
 - Range: 20 (0/5)
+- Snap Shot: 36% TU, 80% ACC
+- Burst x3: 80% TU, 60% ACC
 - 999 Ammo
+- Cannot overwatch
 
 ## Psi Amp
 
@@ -99,3 +111,4 @@
 - Normal Shot: 40% TU
 - Ammo: 999
 - Mind Shields confer 100% Psionic DR (this does not reduce Stun damage)
+- Cannot overwatch
