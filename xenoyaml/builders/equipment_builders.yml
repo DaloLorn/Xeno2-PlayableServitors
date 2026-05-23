@@ -69,6 +69,7 @@ $builders:
       UseInventoryType: true
       Variant: Unlocks
       modifierStorage: null
+
   $ArmorTypeReq:
     $args: $armor
     :AManyDelegatePq:

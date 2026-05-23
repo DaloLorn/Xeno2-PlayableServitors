@@ -1,0 +1,57 @@
+$schema: 0.4.0
+groundcombat:
+  parent:
+    screen: GC
+    path: masters/actor/combatant/biter/biter
+  name: biter
+  $path: masters/actor/combatant/biter/biter
+  components:
+    :Resistances: # Added 100% Gas DR so they don't die to Poison Gas.
+      kinetic:
+        _min: 0
+        _val: 0
+        _max: 100
+      shock:
+        _min: 0
+        _val: 0
+        _max: 100
+      chemical:
+        _min: 0
+        _val: 100
+        _max: 100
+      default:
+        _min: 0
+        _val: 0
+        _max: 100
+      thermal:
+        _min: 0
+        _val: 0
+        _max: 100
+      gas:
+        _min: 0
+        _val: 100
+        _max: 100
+      psionic:
+        _min: 0
+        _val: 0
+        _max: 100
+      suppression:
+        _min: 0
+        _val: 0
+        _max: 100
+      alien_atmosphere:
+        _min: 100
+        _val: 100
+        _max: 100
+      energy:
+        _min: 0
+        _val: 0
+        _max: 100
+      fall:
+        _min: 0
+        _val: 0
+        _max: 100
+      heal:
+        _min: 0
+        _val: 0
+        _max: 100
