@@ -177,7 +177,7 @@ Semi-sapient mechanical warriors with little sense for self-preservation.
 - 70 TU
 - 50 ACC
 - 60 REF
-- Servitor Burst Cannon
+- Plasma Cutter
 - Small
 - Flying
 - Mechanical
@@ -187,7 +187,7 @@ Semi-sapient mechanical warriors with little sense for self-preservation.
 ### Herald
 
 - 90 (90/20) HP
-- Herald Burst Cannon
+- Fusion Cutter
 - Upgrades Volatile to 60 Kinetic
 
 ## Cyberdrone
