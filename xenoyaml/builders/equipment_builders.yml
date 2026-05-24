@@ -271,3 +271,30 @@ $builders:
       Crosshair: $crosshair
       Accuracy: $accuracy
       Tooltip: $tooltip
+
+  $DropItem:
+    $args:
+      - $pack: $none
+      - $screen: ST
+      - $item
+      - $amount: 1
+    Elements:
+      - $RandomResult:
+          :0:
+            parent:
+              pack: $pack
+              screen: $screen
+              path: $item
+            components:
+              :Quantity:
+                _min: 0
+                _val: $amount
+                _max: Infinity
+
+  $RandomResult:
+    $args:
+      - $weight: 1
+      - $result
+    $template:
+      - $weight
+      - $result
