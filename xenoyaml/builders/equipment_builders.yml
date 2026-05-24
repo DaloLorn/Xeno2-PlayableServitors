@@ -280,16 +280,29 @@ $builders:
       - $amount: 1
     Elements:
       - $RandomResult:
-          :0:
-            parent:
-              pack: $pack
-              screen: $screen
-              path: $item
-            components:
-              :Quantity:
-                _min: 0
-                _val: $amount
-                _max: Infinity
+          $ItemDrop:
+            $pack: $pack
+            $screen: $screen
+            $item: $item
+            $amount: $amount
+
+  $ItemDrop:
+    $args:
+      - $pack: $none
+      - $screen: ST
+      - $item
+      - $amount: 1
+    :0:
+      parent:
+        pack: $pack
+        screen: $screen
+        path: $item
+      components:
+        :Quantity:
+          _min: 0
+          _val: $amount
+          _max: Infinity
+    
 
   $RandomResult:
     $args:
