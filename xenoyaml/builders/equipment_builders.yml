@@ -194,12 +194,6 @@ $builders:
     :ArmourDestruction:
       $MaxRange: $val
 
-  $StationaryBonus:
-    $args: $val
-    NoMoveAccuracyBonus:
-      "&v":
-        $Range: $val
-    
   $OptimalRange:
     $args: $range
     :LongRange:
@@ -240,6 +234,12 @@ $builders:
         $val: $cost
         $max: *FloatMax
 
+  $StationaryBonus:
+    $args: $val
+    NoMoveAccuracyBonus:
+      "&v":
+        $Range: $val
+
   $ShotAbility:
     $args:
       - $mode
@@ -256,3 +256,18 @@ $builders:
       - $crosshair
       - $accuracy
       - $tooltip: false
+    :114:
+      FireMode: $mode
+      Trajectory: $trajectory
+      NoMoveAccuracyBonus: $stationaryBonus
+      Ik: $ik
+      ConsumesAmmo: $useAmmo
+      Shots: $shots
+      ShotsDelay: $shotDelay
+      Name: $name
+      AbsoluteCostTimeUnits: $absoluteCost
+      PercentageCostTimeUnits: $percentCost
+      ImportanceScale: $importanceScale
+      Crosshair: $crosshair
+      Accuracy: $accuracy
+      Tooltip: $tooltip
