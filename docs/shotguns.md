@@ -8,7 +8,7 @@
 - Snap Shot: 30% TU, 36% ACC
 - Normal Shot: 43% TU, 68% ACC
 - Reload: 24 TU
-- Range: 18 (8/20)
+- Range: 9 (8/20), max 14
 - Quad Shot
 - 1.25x REF
 - Ammo: 8 (weight 4)
@@ -22,7 +22,7 @@
 - Laser Accuracy Bonus, Laser Burst
 - Ammo: 16 (regens 2/turn)
 - Alloy Optics: 7 Energy, 6 Penetration, 3 Destruction
-- Range: 10 (12/10)
+- Range: 5 (12/10), max 15
 - Supercapacitors: +50% capacity, regen 4/turn
 
 ## Plasma/Fusion
@@ -30,14 +30,15 @@
 - 30 Energy, 15 Penetration, 10 Destruction, 25% Fire, 0% Bleed, 10 Suppression
 - Micro-Fusion Chamber: 35 Energy, 12 Destruction, 3% Bleed, 13 Suppression
 - Atmospheric Feeds: Ammo Regeneration
-- Range: 6 (20/20)
-- Ammo: 6
+- Range: 3 (20/20), max 8
+- Ammo: 4
 
 ## Gauss
 
 - 25 Kinetic, 10 Penetration, 2 Destruction, 10% Bleed, 10 Suppression
 - Supermagnetic Rails: 26 Kinetic, 12 Penetration, 3 Destruction, 13 Suppression
 - Stiletto Rounds: +2 Penetration, +1 Destruction
+- Ammo: 6
 
 ## Assault Needler (ancestor of all alien shotguns)
 
@@ -50,13 +51,13 @@
 ## Assault Blaster
 
 - 20 Energy, 20 Penetration, 5 Destruction, 35% Fire, 10 Suppression
-- Range: 4 (25/10)
+- Range: 2 (25/10), max 12
 - Ammo: 8
 
 ## Nova Gun
 
 - 45 Energy, 20 Penetration, 15 Destruction, +1 Range, 35% Fire, 4% Bleed (x3), 15 Suppression
-- Range: 4 (25/2)
+- Range: 2 (25/6.25), max 18
 - Snap Shot: 40% TU
 - Normal Shot: 52% TU
 - Ammo: 6

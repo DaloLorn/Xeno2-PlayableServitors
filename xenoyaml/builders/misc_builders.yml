@@ -198,7 +198,7 @@ $builders:
     $Species:
       $species: $species
       $group: xenonaut
-    :DL_X2UW_ActorRoleGroupOverride: default
+    :Xenonauts.Common.Components.RoleGroup: default
 
   # Builds a prerequisite to check for the actor's rank (e.g. sentry guns).
   $RankPq:

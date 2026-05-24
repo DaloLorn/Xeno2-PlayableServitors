@@ -37,17 +37,9 @@ groundcombat:
           of their mental powers. However, the amplifier's weight necessarily
           reduces the amount of armour they can wear.
         :Modifiers:
-          - :36:
-              Target: Xenonauts.Common.Stats.PsionicStrength
-              Type: Additive
-              DeltaMinimum: 0
-              DeltaValue: 50
-              DeltaMaximum: 50
-              MinimumRounding: None
-              ValueRounding: None
-              MaximumRounding: None
-              Precedence: 0
-              UniqueKey: false
+          - $ModSoldierStat:
+              $stat: Xenonauts.Common.Stats.PsionicStrength
+              $amount: 50
 
     secton_elite:
       parent:
@@ -84,17 +76,9 @@ groundcombat:
           however, only the strongest and most disciplined Sebillians could endure
           the discomfort of wearing it over prolonged periods.
         :Modifiers:
-          - :36:
-              Target: Xenonauts.Common.Stats.Accuracy
-              Type: Additive
-              DeltaMinimum: 0
-              DeltaValue: 20
-              DeltaMaximum: 20
-              MinimumRounding: None
-              ValueRounding: None
-              MaximumRounding: None
-              Precedence: 0
-              UniqueKey: false
+          - $ModSoldierStat:
+              $stat: Xenonauts.Common.Stats.Accuracy
+              $amount: 20
         :Resistances:
           kinetic: &SebOfficerDR
             _min: 0
@@ -155,6 +139,11 @@ groundcombat:
         <<: *AndronElite
         $HitPoints: 180
         $ArmorHardness: 20
+        :Modifiers:
+          - $ModSoldierStat:
+              $stat: Xenonauts.Common.Stats.HitPoints
+              $amount: 30
+        $Weight: 0
         :Description: >-
           The sturdy outer frame of an Andron is covered in thick, disposable plates
           fashioned out of alien alloys. These can easily be replaced as new

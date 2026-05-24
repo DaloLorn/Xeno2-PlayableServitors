@@ -8,8 +8,7 @@ groundcombat:
         path: item/armour/cleaner_suit
       $path: ""
       components: &ConcealedArmor
-        :HitPoints:
-          $MaxRange: 15
+        $HitPoints: 15
 
     cleaner_shirt:
       parent:
@@ -38,8 +37,7 @@ groundcombat:
         path: item/armour/cleaner_bodyarmour
       $path: ""
       components: &TacticalArmor
-        :HitPoints:
-          $MaxRange: 25
+        $HitPoints: 25
 
     cleaner_brown:
       parent:
@@ -61,5 +59,4 @@ groundcombat:
         path: item/armour/cleaner_green_bodyarmour
       $path: ""
       components:
-        :HitPoints:
-          $MaxRange: 32
+        $HitPoints: 32

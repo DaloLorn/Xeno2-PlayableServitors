@@ -16,6 +16,5 @@ namespace X2UnificationWar {
         #endregion
 
         public static readonly string MedisprayType = "DL_X2UW_MedisprayAbility";
-        public static readonly string ActorRoleGroupOverrideType = "DL_X2UW_ActorRoleGroupOverride";
     }
 }

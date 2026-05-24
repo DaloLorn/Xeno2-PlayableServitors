@@ -140,3 +140,119 @@ $builders:
             DeactivationTrigger: AnyDamage
             Name: Cloaking Field
             Tooltip: false
+
+  # Bumps a modifier up into a parent's modifier.
+  # Useful for armor modules or ammo trying to affect
+  # the soldier wearing the armor or holding the weapon.
+  $PropagatedModifier:
+    $args:
+      - $modifiers
+      - $precedence: 0
+      - $key: false
+    :35:
+      Precedence: $precedence
+      UniqueKey: $key
+      _modificationType: Common.Components.ModifiersComponent
+      Added: $modifiers
+
+  $ModSoldierStat:
+    $args:
+      - $stat
+      - $amount
+      - $modType: Additive
+      - $precedence: 0
+      - $key: false
+      - $min: 0
+      - $max: $amount
+    :36:
+      Target: $stat
+      Type: $modType
+      DeltaMinimum: $min
+      DeltaValue: $amount
+      DeltaMaximum: $max
+      MinimumRounding: None
+      ValueRounding: None
+      MaximumRounding: None
+      Precedence: $precedence
+      UniqueKey: $key
+
+  $Weight:
+    $args: $val
+    :Weight:
+      $MaxRange: $val
+
+  $ArmorPenetration:
+    $args: $val
+    :ArmourPenetration:
+      $Range:
+        $min: 0
+        $val: $val
+        $max: 100
+
+  $ArmorDestruction:
+    $args: $val
+    :ArmourDestruction:
+      $MaxRange: $val
+
+  $StationaryBonus:
+    $args: $val
+    NoMoveAccuracyBonus:
+      "&v":
+        $Range: $val
+    
+  $OptimalRange:
+    $args: $range
+    :LongRange:
+      $Range: 
+        $min: 0
+        $val: $range
+        $max: &FloatMax 3.402823e+38
+
+  $RangeDropoff:
+    $args: $dropoff
+    :LongRangeBonus:
+      $Range:
+        $min: 0
+        $val: $dropoff
+        $max: 1
+
+  $CloseRange:
+    $args: $range
+    :ShortRange:
+      $Range:
+        $min: 0
+        $val: $range
+        $max: *FloatMax
+
+  $RangeBonus:
+    $args: $bonus
+    :ShortRangeBonus:
+      $Range:
+        $min: 0
+        $val: $bonus
+        $max: 1
+
+  $ReloadCost:
+    $args: $cost
+    :ReloadCost:
+      $Range:
+        $min: 0
+        $val: $cost
+        $max: *FloatMax
+
+  $ShotAbility:
+    $args:
+      - $mode
+      - $trajectory: Straight
+      - $stationaryBonus: false
+      - $ik: true
+      - $useAmmo: true
+      - $shots: 1
+      - $shotDelay: 0.1
+      - $name
+      - $absoluteCost: 0
+      - $percentCost
+      - $importanceScale: 1
+      - $crosshair
+      - $accuracy
+      - $tooltip: false

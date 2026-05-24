@@ -1,53 +1,28 @@
 $schema: 0.4.0
 $aliases:
   SteelPlating: &SteelPlating
-    :HitPoints:
-      $MaxRange:
-        $val: 45
+    $HitPoints: 45
   AlloyPlating: &AlloyPlating
-    :HitPoints:
-      $MaxRange:
-        $val: 70
-    :ArmourPenetrationReduction:
-      _min: 0
-      _val: 10
-      _max: 100
+    $HitPoints: 70
+    $ArmorHardness: 10
   CeramitePlating: &CeramitePlating
-    :HitPoints:
-      $MaxRange:
-        $val: 105
-    :ArmourPenetrationReduction:
-      _min: 0
-      _val: 20
-      _max: 100
+    $HitPoints: 105
+    $ArmorHardness: 20
   ShieldedPlating: &ShieldedPlating
-    :HitPoints:
-      $MaxRange:
-        $val: 165
-    :ArmourPenetrationReduction:
-      _min: 0
-      _val: 30
-      _max: 100
+    $HitPoints: 165
+    $ArmorHardness: 30
   SteelPlatingARES: &SteelPlatingARES
     <<: *SteelPlating
-    :HitPoints:
-      $MaxRange:
-        $val: 50
+    $HitPoints: 50
   AlloyPlatingARES: &AlloyPlatingARES
     <<: *AlloyPlating
-    :HitPoints:
-      $MaxRange:
-        $val: 75
+    $HitPoints: 75
   CeramitePlatingARES: &CeramitePlatingARES
     <<: *CeramitePlating
-    :HitPoints:
-      $MaxRange:
-        $val: 115
+    $HitPoints: 115
   ShieldedPlatingARES: &ShieldedPlatingARES
     <<: *ShieldedPlating
-    :HitPoints:
-      $MaxRange:
-        $val: 180
+    $HitPoints: 180
 $builders:
   $HeavyPlating:
     $args:
@@ -66,29 +41,19 @@ $builders:
   $HeavyArmour:
     $args:
       - $hp
+      - $hpType: Additive
     :Modifiers:
-      - :36:
-          Target: Xenonauts.Common.Stats.HitPoints
-          Type: Additive
-          DeltaMinimum: 0
-          DeltaValue: $hp
-          DeltaMaximum: $hp
-          MinimumRounding: None
-          ValueRounding: None
-          MaximumRounding: None
-          Precedence: 0
-          UniqueKey: false
-      - :36:
-          Target: Common.Components.UnmodifiedTimeUnits
-          Type: Multiplication
-          DeltaMinimum: 1
-          DeltaValue: 0.8
-          DeltaMaximum: 1
-          MinimumRounding: None
-          ValueRounding: None
-          MaximumRounding: None
-          Precedence: 0
-          UniqueKey: false
+      - $ModSoldierStat:
+          $stat: Xenonauts.Common.Stats.HitPoints
+          $amount: $hp
+          $modType: $hpType
+      - $PropagatedModifier:
+        - $ModSoldierStat:
+            $stat: Common.Components.UnmodifiedTimeUnits
+            $modType: Multiplication
+            $min: 1
+            $amount: 0.8
+            $max: 1
     $NoLocale: {}
     :Description: "Heavy Armour is an optional module that increases the
       {{_context.tooltips.concept filename:\"armour\" text:\"Armour\"}} of this
@@ -111,35 +76,23 @@ groundcombat:
               path: item/armour/human/xenonaut/tactical
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 25
+              $HitPoints: 25
           warden:
             parent:
               screen: GC
               path: item/armour/human/xenonaut/warden
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 32
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 5
-                _max: 100
+              $HitPoints: 32
+              $ArmorHardness: 5
           stealthsuit:
             parent:
               screen: GC
               path: item/armour/human/xenonaut/stealthsuit
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 40
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 5
-                _max: 100
+              $HitPoints: 40
+              $ArmorHardness: 5
               :Modifiers:
                 - $CloakingDevice: 3
               :Resistances:
@@ -157,65 +110,40 @@ groundcombat:
               path: item/armour/human/xenonaut/guardian
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 60
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 10
-                _max: 100
+              $HitPoints: 60
+              $ArmorHardness: 10
           guardian_v2:
             parent:
               screen: GC
               path: item/armour/human/xenonaut/guardian_v2
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 75
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 15
-                _max: 100
+              $HitPoints: 75
+              $ArmorHardness: 15
           exosuit:
             parent:
               screen: GC
               path: item/armour/human/xenonaut/exosuit
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 150
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 20
-                _max: 100
+              $HitPoints: 150
+              $ArmorHardness: 20
           colossus:
             parent:
               screen: GC
               path: item/armour/human/xenonaut/colossus
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 200
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 20
-                _max: 100
+              $HitPoints: 200
+              $ArmorHardness: 20
           colossus_v2:
             parent:
               screen: GC
               path: item/armour/human/xenonaut/colossus_v2
             $path: ""
             components:
-              :HitPoints:
-                $MaxRange:
-                  $val: 300
-              :ArmourPenetrationReduction:
-                _min: 0
-                _val: 30
-                _max: 100
+              $HitPoints: 300
+              $ArmorHardness: 30
 
       mechanical:
         default:
@@ -306,16 +234,14 @@ groundcombat:
           path: item/attachment/module/simple/tactical^extra_armour
         $path: ""
         components:
-          $HeavyArmour:
-            $hp: 7
+          $HeavyArmour: 7
       warden^extra_armour:
         parent:
           screen: GC
           path: item/attachment/module/simple/warden^extra_armour
         $path: ""
         components:
-          $HeavyArmour:
-            $hp: 18
+          $HeavyArmour: 18
       guardian^extra_armour:
         parent:
           screen: GC
@@ -324,55 +250,48 @@ groundcombat:
         components:
           $HeavyArmour:
             $hp: 1.6
-            :Modifiers:
-              - :36: # So I don't have to go to the trouble of making a guardian_v2^extra_armour...
-                  Type: Multiplication
+            # So I don't have to go to the trouble of making a guardian_v2^extra_armour...
+            $hpType: Multiplication
       stealthsuit^extra_armour:
         parent:
           screen: GC
           path: item/attachment/module/simple/stealthsuit^extra_armour
         $path: ""
         components:
-          $HeavyArmour:
-            $hp: 20
+          $HeavyArmour: 20
       exosuit^extra_armour:
         parent:
           screen: GC
           path: item/attachment/module/simple/exosuit^extra_armour
         $path: ""
         components:
-          $HeavyArmour:
-            $hp: 75
+          $HeavyArmour: 75
       vehicle_tier1_heavy:
         parent:
           screen: GC
           path: item/attachment/module/simple/vehicle_tier1_heavy
         $path: ""
         components:
-          $HeavyPlating:
-            $hp: 25
+          $HeavyPlating: 25
       vehicle_tier2_heavy:
         parent:
           screen: GC
           path: item/attachment/module/simple/vehicle_tier2_heavy
         $path: ""
         components:
-          $HeavyPlating:
-            $hp: 40
+          $HeavyPlating: 40
       vehicle_tier3_heavy:
         parent:
           screen: GC
           path: item/attachment/module/simple/vehicle_tier3_heavy
         $path: ""
         components:
-          $HeavyPlating:
-            $hp: 65
+          $HeavyPlating: 65
       vehicle_tier4_heavy:
         parent:
           screen: GC
           path: item/attachment/module/simple/vehicle_tier4_heavy
         $path: ""
         components:
-          $HeavyPlating:
-            $hp: 70
+          $HeavyPlating: 70
       

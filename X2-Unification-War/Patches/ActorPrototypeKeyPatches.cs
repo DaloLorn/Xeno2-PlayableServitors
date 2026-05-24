@@ -31,22 +31,11 @@ namespace X2UnificationWar.Patches {
                 {
                     var composable = (IComposable)obj;
                     var bodyId = composable.Get<BodyIdentifierComponent>();
-                    // The fact that this works despite my fetching the wrong component 
-                    // (I was experimenting with a different approach before
-                    // landing on ActorRoleGroupOverride, and forgot to edit it)
-                    // speaks volumes about the game's inner workings.
-                    //
-                    // Unfortunately, it's all Wraith to me. My best guess:
-                    // https://discord.com/channels/702822278148390983/1352327469180387388/1504914652763521094
-                    //
-                    // (Sidenote: I don't know if the Has check is needed,
-                    // but didn't want to risk crashing the game on a Get 
-                    // against a nonexistent component.)
                     var groupOverride = composable.Has<RoleGroup>() ? composable.Get<RoleGroup>() : null;
                     var group = bodyId.group;
                     return groupOverride != null ? groupOverride.value : group;
                 };
-                Log.Info($"[X2-Unification-War] Patched combatant::body_identifier.group - checking for override component ${ActorRoleGroupOverrideType}");
+                Log.Info($"[X2-Unification-War] Patched combatant::body_identifier.group - checking for override component ${nameof(RoleGroup)}");
             }
         }
     

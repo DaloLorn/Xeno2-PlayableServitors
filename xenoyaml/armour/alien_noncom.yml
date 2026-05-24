@@ -51,8 +51,7 @@ groundcombat:
         path: item/armour/psyon_noncom
       $path: ""
       components:
-        :HitPoints:
-          $MaxRange: 25
+        $HitPoints: 25
         $ArmorHardness: 5
         $NoLocale: {}
         :Description: &CaesanJumpsuit >-
@@ -79,9 +78,7 @@ groundcombat:
       $path: ""
       components:
         <<: *SebillianNoncom
-        :HitPoints:
-          $MaxRange: 15
-        $ArmorHardness: 0
+        $HitPoints: 15
         :Description: >-
           The thick, leathery scales of a Sebillian afford them a token amount of
           protection against injuries sustained on the battlefield - and seals
@@ -93,8 +90,7 @@ groundcombat:
         path: item/armour/secton_noncom
       $path: ""
       components:
-        :HitPoints:
-          $MaxRange: 25
+        $HitPoints: 25
         $ArmorHardness: 5
         $NoLocale: {}
         :Description: *CaesanJumpsuit
@@ -106,8 +102,7 @@ groundcombat:
       $path: ""
       components:
         <<: *WraithNoncom
-        :HitPoints:
-          $MaxRange: 25
+        $HitPoints: 25
         $ArmorHardness: 5
         :Modifiers:
           - $CloakingDevice: 3

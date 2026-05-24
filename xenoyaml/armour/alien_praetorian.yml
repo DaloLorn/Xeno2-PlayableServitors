@@ -77,6 +77,11 @@ groundcombat:
         <<: *AndronPraetorian
         $HitPoints: 250
         $ArmorHardness: 30
+        :Modifiers:
+          - $ModSoldierStat:
+              $stat: Xenonauts.Common.Stats.HitPoints
+              $amount: 60
+        $Weight: 0
         :Description: >-
           The sturdy outer frame of an Andron is covered in thick, disposable plates
           fashioned out of alien alloys. These can easily be replaced as new

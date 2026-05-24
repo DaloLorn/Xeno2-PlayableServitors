@@ -2,10 +2,17 @@
 
 ## Preface
 
-- Unless specified otherwise, Range is divided evenly across two groups: Short and Long.
+- Range is not very intuitively labeled in the files.
     - For every tile under Short Range, the attacker receives a +X% bonus to ACC.
-    - For every tile past the sum of Short and Long Ranges, the attacker receives a -X% penalty to ACC and damage.
-    - This is expressed as `TotalRange (ShortBonus/LongMalus)`, e.g. `20 (4/10)`.
+    - For every tile past *both* Short and Long Ranges, the attacker receives a -X% penalty to ACC and damage.
+    - Short Range and Long Range are usually identical. The UI does not expect otherwise (one exception: Short Range is 0 on sniper rifles); therefore, the mod will not perform otherwise.
+    - This is expressed as `Range (ShortBonus/LongMalus)`, e.g. `20 (4/10)`.
+
+Formula extracted from 7.20.4 codebase:
+> - ShortRangeModifiers: (ShortRange - distance) * ShortRangeBonus
+> - LongRangeModifiers: (distance - LongRange) * LongRangeBonus
+> - DamageDropoff: LongRangeModifiers(distance)
+> - AccuracyModifier: ShortRange <= distance ? -LongRangeModifiers : +ShortRangeModifiers
 
 ## Ballistic (ancestor of *everything else*)
 
@@ -15,7 +22,7 @@
 - Snap Shot: 20% TU, 55% ACC
 - Normal Shot: 30% TU, 95% ACC
 - Reload: 18 TU
-- Range: 20 (4/10)
+- Range: 10 (4/10), max 20
 - Special: One-Handed, 1.25x REF
 - Ammo: 15
 - Ammo Weight: 4
@@ -30,14 +37,14 @@
 - Snap Shot: 65% ACC
 - Normal Shot: 105% ACC
 - Ammo: 20 (recharges 1/turn)
-- Range: 10 (8/5)
+- Range: 5 (8/5), max 25
 - Alloy Optics: 9 Energy, 10 Penetration, 3 Destruction
 - Supercapacitors: 30 Ammo, recharges 2/turn
 
 ## Plasma/Fusion
 
 - 40 Energy, 15 Penetration, 15 Destruction, 0% Bleed, 50% Fire, 30 Suppression
-- Range: 16 (6/25)
+- Range: 8 (6/25), max 12
 - Ammo: 8
 - Micro-Fusion Chamber: 45 Energy, 18 Destruction, 5% Bleed (x3)
 - Atmospheric Feeds: Recharge 1/turn
@@ -52,7 +59,7 @@
 ## Stun (ancestor of Electroshock)
 
 - 10 Shock, 15 Stun, 15 EMP, 50 Penetration, 15 Suppression
-- Range: 8 (10/10)
+- Range: 4 (10/10), max 14
 - Ammo: 4
 
 ## Electroshock
@@ -60,7 +67,7 @@
 - 15 Shock, 25 Stun, 30 EMP, 100 Penetration
 - Snap Shot: 45% ACC
 - Normal Shot: 80% ACC
-- Range: 16 (6/25)
+- Range: 8 (6/25), max 12
 - Ammo: 3
 
 ## Needler (ancestor of other alien guns)
@@ -75,13 +82,13 @@
 ## Blaster
 
 - 30 Energy, 30 Penetration, 8 Destruction, 50% Fire, 20 Suppression
-- Range: 10 (8/10)
+- Range: 5 (8/10), max 15
 - Ammo: 18
 
 ## Handcannon
 
 - 75 Energy, 20 Penetration, 20 Destruction, 50% Fire, 6.5% Bleed (x3), 30 Suppression
-- Range: 10 (8/4)
+- Range: 5 (8/5), max 25
 - Snap Shot: 25% TU, 65% ACC
 - Normal Shot: 40% TU, 105% ACC
 - Ammo: 9

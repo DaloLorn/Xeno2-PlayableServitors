@@ -9,7 +9,7 @@
 - Normal Shot: 36% TU, 72% ACC
 - Aimed Shot: 48% TU, 110% ACC
 - Burst x3: 50% TU, 40% ACC, 20% Recoil
-- Range: 40 (2/10)
+- Range: 20 (2/10), max 30
 - Reload: 30 TU
 - Accelerated: 33 Kinetic, 15 Penetration, 3 Destruction
 - Advanced Accelerated: 36 Kinetic, 20 Penetration, 4 Destruction
@@ -21,7 +21,7 @@
 - 8 Suppression
 - Weight: 8
 - Reload: 15 TU
-- Range: 32 (2.5/10)
+- Range: 16 (2.5/10), max 26
 
 ## Laser
 
@@ -30,7 +30,7 @@
 - Normal Shot: 82% ACC
 - Aimed Shot: 120% ACC
 - Burst: 50% ACC, 0 Recoil
-- Range: 20 (4/5)
+- Range: 10 (4/5), max 30
 - Ammo: 30 (recharge 3/turn)
 - Alloy Optics: 11 Energy, 18 Penetration, 5 Destruction
 - Supercapacitors: +50% capacity, double recharge rate
@@ -40,7 +40,7 @@
 - 50 Energy, 15 Penetration, 20 Destruction, 65% Fire, 0% Bleed, 30 Suppression
 - Micro-Fusion Chamber: 60 Damage, 25 Destruction, 8% Bleed (x3), 38 Suppression
 - Atmospheric Feeds: Ammo Regeneration
-- Range: 24 (3/12.5)
+- Range: 12 (3/12.5), max 20
 - Ammo: 15
 
 ## Gauss
@@ -53,13 +53,13 @@
 ## Electroshock
 
 - 20 Shock, 40 Stun, 60 EMP, 100 Penetration
-- Range: 24 (3/12.5)
+- Range: 12 (3/12.5), max 20
 - Ammo: 8
 
 ## Arc Caster
 
 - 2 Shock, 5 Stun, 5 EMP, 80 Penetration, Burst x10
-- Range: 8 (6/25)
+- Range: 4 (6/25), max 8
 - 999 Ammo
 
 ## Heavy Needler (ancestor of other alien guns)
@@ -84,20 +84,20 @@
 ## Heavy Blaster
 
 - 35 Energy, 35 Penetration, 15 Destruction, 65% Fire
-- Range: 16 (4/5)
+- Range: 8 (4/5), max 28
 - Ammo: 30
 
 ## Fusion Caster
 
-- 85 Energy, 20 Penetration, 25 Destruction, +2 Range, 65% Fire, 10% Bleed (x3)
-- Range: 16 (4/2.5)
+- 85 Energy, 20 Penetration, 25 Destruction, 65% Fire, 10% Bleed (x3)
+- Range: 8 (4/4), max 33
 - Ammo: 15
 
 ## Plasma Mortar
 
 - 135 Energy (with dropoff), 40 Penetration, 40 Destruction, Blast (2 tiles)
     - Fusion Mortar upgrades to 170/60/60/2.5
-- Range: 20 (0/5)
+- Range: 10 (0/5), max 30
 - Snap Shot: 36% TU, 80% ACC
 - Burst x3: 80% TU, 60% ACC
 - 999 Ammo
@@ -106,8 +106,9 @@
 ## Psi Amp
 
 - 20 Psionic, 30 Stun, 1000 Penetration, 1000% ACC, On Hit: Mind Control
-    - Mentarch & Advanced Amp have 30/45, Mentokyr & High Eternal Amp have 40/60
+    - Mentarch & Advanced/Eternal Amp have 30/45, Mentokyr & High Eternal Amp have 40/60
 - Range: Visual (100% dropoff; High Eternal Amp has unlimited range)
+    - This necessitates different amps for different races due to different visual ranges
 - Normal Shot: 40% TU
 - Ammo: 999
 - Mind Shields confer 100% Psionic DR (this does not reduce Stun damage)

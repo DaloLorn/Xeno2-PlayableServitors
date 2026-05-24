@@ -103,8 +103,7 @@ groundcombat:
       $path: ""
       components:
         <<: *BallisticShield
-        :HitPoints:
-          $MaxRange: 30
+        $HitPoints: 30
         $NoLocale: {}
 
     shield_assault:
@@ -114,12 +113,8 @@ groundcombat:
       $path: ""
       components:
         <<: *AlloyShield
-        :HitPoints:
-          $MaxRange: 60
-        :ArmourPenetrationReduction:
-          _min: 0
-          _val: 10
-          _max: 100
+        $HitPoints: 60
+        $ArmorHardness: 10
 
     shield_reinforced:
       parent:
@@ -128,12 +123,8 @@ groundcombat:
       $path: ""
       components:
         <<: *CeramiteShield
-        :HitPoints:
-          $MaxRange: 120
-        :ArmourPenetrationReduction:
-          _min: 0
-          _val: 20
-          _max: 100
+        $HitPoints: 120
+        $ArmorHardness: 20
 
     alien_shield_cyberdrone:
       parent:
@@ -142,12 +133,8 @@ groundcombat:
       $path: ""
       components: &CyberdroneShield
         <<: *CyberdroneShieldShared
-        :HitPoints:
-          $MaxRange: 100
-        :ArmourPenetrationReduction:
-          _min: 0
-          _val: 30
-          _max: 100
+        $HitPoints: 100
+        $ArmorHardness: 30
         :StoppingChance: 100
         :GCItemMeta: Integrated
         $CyberdroneOnly: {}
@@ -178,10 +165,6 @@ groundcombat:
         <<:
           - *CyberdroneShield
           - *CyberdroneShieldSharedHeavy
-        :HitPoints:
-          $MaxRange: 150
+        $HitPoints: 150
         $HeavyCyberdroneOnly: {}
-        :ArmourPenetrationReduction:
-          _min: 0
-          _val: 40
-          _max: 100
+        $ArmorHardness: 40
