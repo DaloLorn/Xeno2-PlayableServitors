@@ -1,0 +1,381 @@
+$schema: 0.4.0
+$aliases:
+  SnapShot: &SnapShot
+    $mode: snap
+    $name: Snap Shot
+    $percentCost: 24
+    $accuracy: 38
+    $crosshair: GC-::-ui/crosshairs/crosshair_snap
+  NormalShot: &NormalShot
+    $mode: normal
+    $name: Normal Shot
+    $percentCost: 36
+    $accuracy: 72
+    $crosshair: GC-::-ui/crosshairs/crosshair_normal
+  AimedShot: &AimedShot
+    $mode: aimed
+    $name: Aimed Shot
+    $percentCost: 48
+    $accuracy: 110
+    $crosshair: GC-::-ui/crosshairs/crosshair_aimed
+  BurstShot: &BurstShot
+    $mode: burst
+    $name: Short Burst
+    $shots: 3
+    $shotDelay: 0.05
+    $percentCost: 50
+    $accuracy: 40
+  LaserShot: &LaserShot
+    $trajectory: Line
+    $shots: 4
+    $shotDelay: 0.05
+
+strategy:
+  item/ammo:
+    plasma_rifle_cell:
+      parent: ST%item/ammo/plasma_rifle_cell
+      $path: ""
+      components: &PlasmaCell
+        $NoLocale: {}
+        :Name: Plasma Rifle Cell
+
+    plasma_rifle_cell_v2:
+      parent: ST%item/ammo/plasma_rifle_cell_v2
+      $path: ""
+      components: &FusionCell
+        $NoLocale: {}
+        :Name: Fusion Rifle Cell
+
+  item/weapon:
+    ballistic_rifle_v3:
+      parent: ST%item/weapon/ballistic_rifle_v2
+      $path: ""
+      components: &AdvAccRifle
+        $NoLocale: {}
+        :Name: Advanced Accelerated Rifle
+
+    plasma_rifle:
+      parent: ST%item/weapon/plasma_rifle
+      $path: ""
+      components: &PlasmaRifle
+        $NoLocale: {}
+        :Name: Plasma Rifle
+
+    plasma_rifle_v2:
+      parent: ST%item/weapon/plasma_rifle_v2
+      $path: ""
+      components: &FusionRifle
+        $NoLocale: {}
+        :Name: Fusion Rifle
+
+    arc_caster:
+      parent: ST%item/weapon/alien_servitor_cannon
+      $path: ""
+      components: &ArcCaster
+        :Name: Arc Caster
+
+groundcombat:
+  item/ammo:
+    ballistic_rifle:
+      parent: GC%item/ammo/ballistic_rifle
+      $path: ""
+      components: 
+        $Shots: 30
+
+    ballistic_rifle_alloy:
+      parent: GC%item/ammo/ballistic_rifle_alloy
+      $path: ""
+      components:
+        $Weight: 3
+        :DamageModifier:
+          _min: 0
+          _val: 1
+          _max: 3.402823e+38
+        :Modifiers:
+          - $ModSoldierStat: # So that turned out to be a misnomer... oops.
+              $stat: Xenonauts.GroundCombat.ArmourDestruction
+              $amount: 2
+    
+    laser_rifle:
+      parent: GC%item/ammo/laser_rifle
+      $path: ""
+      components:
+        $Shots: 30
+        :GCAbilityDefinitions:
+          - :117:
+              Regenerate: 3
+              Name: Regenerate Ammo
+              Tooltip: false
+
+    laser_rifle_v2:
+      parent: GC%item/ammo/laser_rifle_v2
+      $path: ""
+      components:
+        $Shots: 45
+        :GCAbilityDefinitions:
+          - :117:
+              Regenerate: 6
+              Name: Regenerate Ammo
+              Tooltip: false
+    
+    plasma_rifle_cell:
+      parent: GC%item/ammo/plasma_rifle_cell
+      $path: ""
+      components:
+        <<: *PlasmaCell
+        :AmmoID: plasma
+        $Shots: 15
+        # TODO: 65% chance of starting fires.
+
+    plasma_rifle_cell_v2:
+      parent: GC%item/ammo/plasma_rifle_cell_v2
+      $path: ""
+      components:
+        <<: *FusionCell
+        :AmmoID: fusion
+        :GCAbilityDefinitions:
+          - :117:
+              Regenerate: 1
+              Name: Regenerate Ammo
+              Tooltip: false
+
+    gauss_rifle_clip:
+      parent: GC%item/ammo/gauss_rifle_clip
+      $path: ""
+      components:
+        $Shots: 24
+
+    gauss_rifle_clip_v2:
+      parent: GC%item/ammo/gauss_rifle_clip_v2
+      $path: ""
+      components:
+        :Modifiers:
+          - $ModSoldierStat:
+              $stat: Xenonauts.GroundCombat.ArmourDestruction
+              $amount: 2
+          - $ModSoldierStat:
+              $stat: Xenonauts.GroundCombat.ArmourPenetration
+              $amount: 5
+
+
+  item/weapon:
+    ballistic_rifle:
+      parent: &BallRifle GC%item/weapon/ballistic_rifle
+      $path: ""
+      components:
+        # No custom fire modes needed, ballistics are fine as-is.
+        # Ditto for weight, reload cost, size, and ammo standard.
+        $Damage: 30
+        $ArmorDestruction: 2
+        $ArmorPenetration: 10
+        $GCComplexEquipReqs:
+          $cost:
+            $OrPq:
+              - $UnequippedReq: {}
+              - $SlotOwnerPq:
+                  $mode: All
+                  $reqs:
+                    - $NotColossus: {}
+          $unlock:
+            $SlotOwnerPq:
+              $mode: Any
+              $reqs: 
+                - $TwoHandedReq: {}
+
+    ballistic_rifle_v2:
+      parent: &AccRifle GC%item/weapon/ballistic_rifle_v2
+      $path: ""
+      components:
+        $Damage: 33
+        $ArmorDestruction: 3
+        $ArmorPenetration: 15
+
+    ballistic_rifle_v3:
+      parent: *AccRifle
+      $path: ""
+      components:
+        <<: *AdvAccRifle
+        $Damage: 36
+        $ArmorDestruction: 4
+        $ArmorPenetration: 20
+        :RecoveredItems:
+          - $DropItem: item/weapon/ballistic_rifle_v3
+
+    laser_rifle:
+      parent: GC%item/weapon/laser_rifle
+      $path: ""
+      components:
+        $Damage: 8
+        $ArmorPenetration: 15
+        $ArmorDestruction: 3
+        $SuppressionDamage: 5
+        :Description: >-
+          Lasers are a unique kind of energy weapon. Like most energy weapons,
+          they inflict more total damage, do not inflict Bleeding Wounds,
+          and have reduced Armour Penetration, but have exceptional Armour Destruction
+          for their size.
+
+          
+          Unlike other energy weapons, lasers fire 4 weaker beams for every shot
+          fired by an equivalent non-laser weapon, and do not require research
+          to regenerate ammunition. Additionally, they are not subject to recoil
+          (except machineguns, which only have half recoil), and have increased accuracy
+          as well as an accuracy bonus for low-accuracy soldiers.
+
+
+          Lasers are not as prone to dissipation as most energy weapons. While they still
+          have a much shorter optimal range than similar ballistic weapons, lasers suffer
+          fairly limited accuracy/damage dropoff allowing them similar range to ballistics;
+          this laser rifle only loses 5% per tile, compared to the 10% of a ballistic rifle.
+        :GCAbilityDefinitions:
+          - $ShotAbility:
+              <<:
+                - *SnapShot
+                - *LaserShot
+              $accuracy: 48
+          - $ShotAbility:
+              <<:
+                - *NormalShot
+                - *LaserShot
+              $accuracy: 82
+          - $ShotAbility:
+              <<:
+                - *AimedShot
+                - *LaserShot
+              $accuracy: 120
+          - $ShotAbility:
+              <<:
+                - *BurstShot
+                - *LaserShot
+              $shots: 12
+              $shotDelay: 0.0125
+              $accuracy: 50
+        $Recoil: 0
+        $WeaponRange: 10
+        $RangeBonus: 0.04
+        $RangeDropoff: 0.05
+
+    laser_rifle_v2:
+      parent: GC%item/weapon/laser_rifle_v2
+      $path: ""
+      components:
+        $Damage: 11
+        $ArmorPenetration: 18
+        $ArmorDestruction: 5
+
+    plasma_rifle:
+      parent: GC%item/weapon/plasma_rifle
+      $path: ""
+      components:
+        <<: *PlasmaRifle
+        $Damage: 50
+        $ArmorPenetration: 15
+        $ArmorDestruction: 20
+        $BleedChance: 0
+        $SuppressionDamage: 30
+        :WeaponID: plasma
+        $WeaponRange: 12
+        $RangeBonus: 0.03
+        $RangeDropoff: 0.125
+        :Description: >-
+          Plasma weapons are powerful, but short-ranged energy weapons.
+          Like most energy weapons, they inflict more total damage, do not
+          inflict Bleeding Wounds, and have reduced Armour Penetration,
+          but have exceptional Armour Destruction for their size.
+
+
+          Plasma weapons tend to destabilize quickly in atmosphere,
+          resulting in very short optimal ranges and a more rapid
+          accuracy/damage dropoff than ballistic weapons. However,
+          they have somewhat improved ammo economy over lasers,
+          and have a high chance of starting fires wherever they hit.
+
+
+          This plasma rifle has a range dropoff of 12.5% (ballistics are 10%),
+          and a 65% chance of setting a tile ablaze.
+        
+    plasma_rifle_v2:
+      parent: GC%item/weapon/plasma_rifle_v2
+      $path: ""
+      components:
+        <<: *FusionRifle
+        $Damage: 60
+        $ArmorDestruction: 25
+        $BleedChance: 8
+        $BleedRollMultiplier: 3
+        $SuppressionDamage: 38
+        :WeaponID: fusion
+        :Description: >-
+          Fusion weapons are a powerful variant of plasma weapons.
+          Like most energy weapons, they inflict more total damage
+          and have reduced Armour Penetration, with exceptional
+          Armour Destruction for their size. However, they can
+          also inflict a lot of Bleeding Wounds.
+
+
+          Fusion weapons tend to destabilize quickly in atmosphere,
+          resulting in very short optimal ranges and a more rapid
+          accuracy/damage dropoff than ballistic weapons. However,
+          they have somewhat improved ammo economy over lasers,
+          and have a high chance of starting fires wherever they hit.
+
+
+          This fusion rifle has a range dropoff of 12.5% (ballistics are 10%),
+          and a 65% chance of setting a tile ablaze.
+
+    electroshock_rifle:
+      parent: GC%item/weapon/electroshock_rifle
+      $path: ""
+      components:
+        $Damage: 20
+        $StunDamage: 40
+        $EMPDamage: 60
+        $ArmorPenetration: 100
+        $WeaponRange: 12
+        $RangeBonus: 0.03
+        $RangeDropoff: 0.125
+        :Description: >-
+          Electroshock weapons are a special kind of plasma weapon.
+          Unlike most energy weapons, they have extremely high Armour Penetration
+          and no Armour Destruction, and do not inflict a lot of direct damage.
+          However, they inflict considerable amounts of Stun and EMP damage,
+          making them useful for capturing living aliens or destroying mechanical units.
+
+
+          Electroshock weapons tend to destabilize quickly in atmosphere,
+          resulting in very short optimal ranges and a more rapid
+          accuracy/damage dropoff than ballistic weapons. Additionally, they
+          have considerably less ammo than plasma weapons, and cannot be upgraded
+          further.
+
+
+          This electroshock rifle has a range dropoff of 12.5% (ballistics are 10%).
+
+    arc_caster:
+      parent: GC%item/weapon/alien_servitor_cannon
+      $path: ""
+      components:
+        <<: *ArcCaster
+        $Damage: 2
+        :DamageType: shock
+        $StunDamage: 5
+        $EMPDamage: 5
+        $ArmorPenetration: 80
+        :DisableReactionFire: true
+        $GCEquipReqs:
+          $SlotOwnerPq:
+            $mode: All
+            $reqs:
+              - $IsServitor: {}
+        :Description: >-
+          A powerful electroshock cannon piggybacking off the power supply
+          for the Servitor's plasma cutter, mounted in the place of its
+          nanite medspray. It functions like a hybridization of the
+          plasma cutter and an electroshock rifle, firing a short-range
+          barrage of projectiles inflicting heavy stunning damage to enemies
+          in the vicinity.
+        :InventorySlotType:
+          - :CombatantSlots: Secondary
+        :Portrait: GC-::-ui/item/weapon/electroshock_rifle.png
+
+    

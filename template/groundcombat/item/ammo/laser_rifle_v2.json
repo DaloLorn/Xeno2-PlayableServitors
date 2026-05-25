@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-GC-::-item/ammo/laser_rifle_v2.json","$t":"ar_Template"},"_components":[{"_min":0,"_val":45,"_max":45,"$t":"Shots"},{"$content":[{"Regenerate":6,"Name":"Regenerate Ammo","Tooltip":false,"$t":"117"}],"$t":"GCAbilityDefinitions"}],"$t":"4"},"$t":"15"}

@@ -120,6 +120,23 @@ $builders:
       - $IsMentarch: {}
       - $IsReaper: {}
 
+  $AlienUnit:
+    $NonePq:
+      - $IsHuman: {}
+      - $IsMechanical: {}
+
+  $EnemyUnit:
+    $NonePq:
+      - :BodyIDPq:
+          Species: false
+          Group:
+            $V: xenonauts
+          Ethnicity: ethnicity
+          Gender: gender
+          Variant: Unlocks
+          modifierStorage: null
+          
+
   $TwoHandedReq:
     $NonePq:
       - $IsSecton: {}
@@ -194,7 +211,7 @@ $builders:
     :ArmourDestruction:
       $MaxRange: $val
 
-  $OptimalRange:
+  $SniperRange:
     $args: $range
     :LongRange:
       $Range: 
@@ -210,13 +227,14 @@ $builders:
         $val: $dropoff
         $max: 1
 
-  $CloseRange:
+  $WeaponRange:
     $args: $range
     :ShortRange:
       $Range:
         $min: 0
         $val: $range
         $max: *FloatMax
+    $SniperRange: $range
 
   $RangeBonus:
     $args: $bonus
@@ -226,6 +244,46 @@ $builders:
         $val: $bonus
         $max: 1
 
+  $Recoil:
+    $args: $recoil
+    :Recoil:
+      $Range:
+        $min: 0
+        $val: $recoil
+        $max: 1
+    
+  $Damage:
+    $args: $dmg
+    :Damage:
+      $Range:
+        $min: 0
+        $val: $dmg
+        $max: *FloatMax
+
+  $SuppressionDamage:
+    $args: $dmg
+    :SuppressionDamage:
+      $Range:
+        $min: 0
+        $val: $dmg
+        $max: *FloatMax
+
+  $StunDamage:
+    $args: $dmg
+    :StunDamage:
+      $Range:
+        $min: 0
+        $val: $dmg
+        $max: *FloatMax
+
+  $EMPDamage:
+    $args: $dmg
+    :EMPDamage:
+      $Range:
+        $min: 0
+        $val: $dmg
+        $max: *FloatMax
+
   $ReloadCost:
     $args: $cost
     :ReloadCost:
@@ -233,6 +291,27 @@ $builders:
         $min: 0
         $val: $cost
         $max: *FloatMax
+
+  $BleedChance:
+    $args: $chance
+    :BleedChance:
+      $Range:
+        $min: 0
+        $val: $chance
+        $max: 100
+
+  $BleedRollMultiplier:
+    $args: $rolls
+    :BleedWoundsInAttack:
+      $Range:
+        $min: 0
+        $val: $rolls
+        $max: 100
+
+  $Shots:
+    $args: $shots
+    :Shots:
+      $MaxRange: $shots
 
   $StationaryBonus:
     $args: $val

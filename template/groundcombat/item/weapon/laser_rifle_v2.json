@@ -1,0 +1,1 @@
+{"version":"0.1.0","asset":{"Parent":{"$content":"xenonauts-:-GC-::-item/weapon/laser_rifle_v2.json","$t":"ar_Template"},"_components":[{"_min":0,"_val":11,"_max":3.402823e+38,"$t":"Damage"},{"_min":0,"_val":18,"_max":100,"$t":"ArmourPenetration"},{"_min":0,"_val":5,"_max":5,"$t":"ArmourDestruction"}],"$t":"4"},"$t":"15"}

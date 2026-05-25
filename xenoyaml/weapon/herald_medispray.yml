@@ -2,23 +2,6 @@ $schema: 0.4.0
 $aliases:
   Shared: &Shared
     $NoLocale: {}
-    :Description: >-
-      A ranged alien medikit designed for use by Servitors,
-      spraying healing nanites at wounded soldiers to restore their lost
-      {{_context.tooltips.concept filename:"hp" text:"Hit Points"}} and cure their
-      {{_context.tooltips.concept filename:"bleeding_wounds" text:"Bleeding
-      Wounds"}} within a range of 5 tiles.
-
-
-      If a healable ally takes damage within the Nano-Medspray's range,
-      they are automatically healed without spending Time Units. However,
-      this reactive spray is not precise enough to cure Bleeding Wounds,
-      and a manual follow-up is needed. This manual follow-up will cost
-      only 20% of the normal TU cost (rounding down) of using the Nano-Medspray.
-      
-
-      Like the Medikit, the Nano-Medspray can only restore half of the damage
-      taken by your soldiers; the other half must be healed back at a base.
     :Name: Nano-Medspray
 
 strategy:
@@ -43,11 +26,30 @@ groundcombat:
     :GCItemMeta: CannotBeActive,Integrated,HideAmmoSlot
     :RecoveredItems: []
     :Portrait: GC-::-ui/item/weapon/alien_magnetic_rifle.png
+    :InventorySlotType:
+      - :CombatantSlots: Secondary
     :Prototype:
       value: GC-::-item/weapon/empty.prefab
       addColliders: false
       dontInstantiate: true
       pool: false
+    :Description: >-
+      A ranged alien medikit designed for use by Servitors,
+      spraying healing nanites at wounded soldiers to restore their lost
+      {{_context.tooltips.concept filename:"hp" text:"Hit Points"}} and cure their
+      {{_context.tooltips.concept filename:"bleeding_wounds" text:"Bleeding
+      Wounds"}} within a range of 5 tiles.
+
+
+      If a healable ally takes damage within the Nano-Medspray's range,
+      they are automatically healed without spending Time Units. However,
+      this reactive spray is not precise enough to cure Bleeding Wounds,
+      and a manual follow-up is needed. This manual follow-up will cost
+      only 20% of the normal TU cost (rounding down) of using the Nano-Medspray.
+      
+
+      Like the Medikit, the Nano-Medspray can only restore half of the damage
+      taken by your soldiers; the other half must be healed back at a base.
     $GCEquipReqs:
       $SlotOwnerPq:
         $mode: All
